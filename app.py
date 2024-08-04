@@ -12,7 +12,7 @@ def entrar():
 
 @app.route('/dashboard')
 def dashboard():
-    return render_template('dashboard.html')
+    return render_template('pagina-dashboard.html')
 
 
 if __name__ == '__main__':

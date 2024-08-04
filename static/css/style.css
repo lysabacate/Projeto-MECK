@@ -24,10 +24,8 @@ html, body{
 .texto-logo{
     color: var(--branco, #F1F1F1);
     font-family: "Odor Mean Chey";
-    font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
 }
 
 .informacoes .rounded{
@@ -37,4 +35,26 @@ html, body{
 
 .informacoes ::-webkit-input-placeholder{
     color: #ADA9A9;
+}
+
+/*dashboard*/
+.logo-meck{
+    display: flex;
+    gap: 6px;
+    align-self: flex-start;
+}
+
+.capybara-logo-dashboard{
+    width: 18px;
+    height: 25px;
+}
+
+.texto-logo.dashboard{
+    font-size: 16px;
+    margin: 0;
+}
+
+.navbar{
+    width: 114px;
+    background: #7641C5;
 }
