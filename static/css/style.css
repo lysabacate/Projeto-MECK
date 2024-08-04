@@ -28,9 +28,14 @@ html, body{
     font-weight: 400;
 }
 
+.informacoes{
+    width: 60%;
+}
+
 .informacoes .rounded{
     background: rgba(201, 196, 210, 0.35);
     border: 0;
+    outline: none;
 }
 
 .informacoes ::-webkit-input-placeholder{
@@ -57,4 +62,17 @@ html, body{
 .navbar{
     width: 114px;
     background: #7641C5;
+}
+
+.informacoes .btn{
+    background-color: #7641C5;
+    color: #F1F1F1;
+}
+
+.informacoes .btn:hover{
+    color: #F1F1F1 !important;
+}
+
+.informacoes a, p{
+    font-size: 12px;
 }
