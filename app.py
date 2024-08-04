@@ -10,9 +10,13 @@ def paginainicial():
 def entrar():
     return render_template('pagina-login.html')
 
+@app.route('/registre-se')
+def registrar():
+    return render_template('pagina-registrar-conta.html')
+
 @app.route('/dashboard')
 def dashboard():
-    return render_template('dashboard.html')
+    return render_template('pagina-dashboard.html')
 
 
 if __name__ == '__main__':
