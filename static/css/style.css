@@ -1,3 +1,40 @@
-h1{
-    color: red;
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+#login{
+    font-family: open sans;
+}
+
+.roxobg{
+    background-color: #7641C5;
+}
+
+.imglogin{
+    width: 80%;
+    height: 95%
+}
+
+.texto-logo{
+    color: var(--branco, #F1F1F1);
+    font-family: "Odor Mean Chey";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.informacoes .rounded{
+    background: rgba(201, 196, 210, 0.35);
+    border: 0;
+}
+
+.informacoes ::-webkit-input-placeholder{
+    color: #ADA9A9;
 }
