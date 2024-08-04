@@ -43,26 +43,66 @@ html, body{
 }
 
 /*dashboard*/
+.tudo-dashboard .opc-ingles h6, .tudo-dashboard a{
+    font-family: "Open Sans", sans-serif;
+    color: #F1F1F1;
+}
+
+.tudo-dashboard .opc-ingles h6{
+    font-size: 20px;
+    margin: 0;
+}
+
+.selecione-opc a img{
+    width: 20px;
+    height: 40px;
+}
+
+.tudo-dashboard .opc-ingles a{
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.tudo-dashboard .opc-ingles a:hover{
+    cursor: pointer;
+    color: #F1F1F1
+}
+
 .logo-meck{
     display: flex;
     gap: 6px;
     align-self: flex-start;
 }
 
+.opc-ingles{
+    width: 76%;
+}
+
+.selecione-opc a{
+    margin: 0
+}
+
 .capybara-logo-dashboard{
-    width: 18px;
-    height: 25px;
+    width: 32px;
+    height: 40px;
 }
 
 .texto-logo.dashboard{
-    font-size: 16px;
     margin: 0;
+    font-size: 24px;
+    line-height: 100%;
+    padding-top: 8px;
 }
 
 .navbar{
-    width: 114px;
     background: #7641C5;
 }
+
+.conteudo-dashboard .barra-topo-dashboard {
+    background: #F1F1F1;
+}
+
+/*final do dashboard*/
 
 .informacoes .btn{
     background-color: #7641C5;

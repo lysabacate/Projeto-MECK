@@ -12,16 +12,49 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Odor+Mean+Chey&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="tudo-dashboard w-100 h-100">
-        <nav class="navbar h-100 d-flex justify-content-center">
-            <div class="logo-meck border-bottom w-75">
+    <section class="tudo-dashboard w-100 h-100 row">
+        <nav class="navbar h-100 d-flex flex-column justify-content-start col-2 gap-3">
+            <div class="logo-meck border-bottom w-75 pb-2 d-flex align-self-center align-items-center justify-content-center">
                 <img src="static/img/capybara-branca.svg" alt="" class="capybara-logo-dashboard">
-                <p class="texto-logo dashboard pt-1">MECK</p>
+                <h2 class="texto-logo dashboard">MECK</h2>
             </div>
-            <div class="opc-ingles-I">
-                <h6>Inglês I</h6>
+            <div class="opc-ingles d-flex flex-column gap-3">
+                <div class="opc-ingles-I">
+                    <h6>Inglês I</h6>
+                    <div class="selecione-opc ingles-I d-flex flex-column ps-1">
+                        <a href="#" class="material d-flex align-items-center gap-1 link-underline link-underline-opacity-0">
+                            <img src="static/img/imagem-material.svg" alt="">
+                            Material I
+                        </a>
+                        <a href="#" class="atividades d-flex align-items-center gap-1">
+                            <img src="static/img/imagem-atvs.svg" alt="">
+                            Atividades I
+                        </a>
+                    </div> 
+                </div>
+                <div class="opc-ingles-II">
+                    <h6>Inglês II</h6>
+                    <div class="selecione-opc ingles-II d-flex flex-column ps-1">
+                        <a href="#" class="material d-flex align-items-center gap-1">
+                            <img src="static/img/imagem-material.svg" alt="">
+                            Material II
+                        </a>
+                        <a href="#" class="atividades d-flex align-items-center gap-1">
+                            <img src="static/img/imagem-atvs.svg" alt="">
+                            Atividades II
+                        </a>
+                    </div> 
+                </div>
             </div>
         </nav>
+        <section class="conteudo-dashboard col d-flex flex-column">
+            <div class="conteudo-dashboard-barra-topo">
+
+            </div>
+            <div class="conteudo-dashboard-cinza">
+
+            </div> 
+        </section>
     </section>
 </body>
 </html>
