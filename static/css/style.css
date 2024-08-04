@@ -29,3 +29,12 @@ html, body{
     font-weight: 400;
     line-height: normal;
 }
+
+.informacoes .rounded{
+    background: rgba(201, 196, 210, 0.35);
+    border: 0;
+}
+
+.informacoes ::-webkit-input-placeholder{
+    color: #ADA9A9;
+}
