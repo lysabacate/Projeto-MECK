@@ -1,6 +1,6 @@
 *{
-    margin: 0;
-    padding: 0;
+    margin: 0 !important; 
+    padding: 0 !important;
 }
 
 html, body{
@@ -98,8 +98,23 @@ html, body{
     background: #7641C5;
 }
 
-.conteudo-dashboard .barra-topo-dashboard {
+.conteudo-dashboard .conteudo-dashboard-barra-topo {
     background: #F1F1F1;
+    height: 10%;
+}
+
+.conteudo-dashboard{
+    height: 100%;
+}
+
+.conteudo-dashboard-cinza{
+    background: #E3E3E3;
+    height: 90%;
+}
+
+.conteudo-dashboard .box-shadow-dashboard {
+    background: linear-gradient(180deg, #C9C9C9 0%, #E3E3E3 31%);
+    height: 5%;
 }
 
 /*final do dashboard*/
