@@ -32,6 +32,9 @@ def autenticar():
 def dashboard():
     return render_template('pagina-dashboard.html')
 
+@app.route('/dashboard1')
+def dashboard1():
+    return render_template('pagina-dashboard-1.html')
 
 if __name__ == '__main__':
     app.run()
