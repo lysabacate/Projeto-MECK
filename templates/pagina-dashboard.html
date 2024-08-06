@@ -14,7 +14,7 @@
 <body>
     <section class="tudo-dashboard w-100 h-100 row">
         <nav class="navbar h-100 d-flex flex-column justify-content-start col-2 gap-3">
-            <div class="logo-meck border-bottom w-75 pb-2 d-flex align-self-center align-items-center justify-content-center">
+            <div class="logo-meck border-bottom w-75 pb-2 d-flex align-self-center align-items-center justify-content-center pt-2">
                 <img src="static/img/capybara-branca.svg" alt="" class="capybara-logo-dashboard">
                 <h2 class="texto-logo dashboard">MECK</h2>
             </div>
@@ -48,17 +48,24 @@
             </div>
         </nav>
         <section class="conteudo-dashboard col d-flex flex-column">
-            <div class="conteudo-dashboard-barra-topo">
-          
+            <div class="conteudo-dashboard-barra-topo d-flex justify-content-between">
+                <div class="busca-dashboard d-flex align-items-center ps-5 gap-1">
+                    <input type="text" placeholder="Buscar" class="p-2"/>
+                    <a href=""><img src="static/img/imagem-lupa.svg" alt=""></a>
+                </div>
+                <div class="pessoal-dashboard d-flex align-items-center gap-3 pe-5">
+                    <div class="notificacao-mensagem-dashboard">
+                        <img src="static/img/imagem-notificacao.svg" alt="">
+                        <img src="static/img/imagem-mensagem.svg" alt="">
+                    </div>
+                    <div class="perfil-dashboard d-flex align-items-center gap-1">
+                        <a><img src="static/img/imagem-usuario.svg" alt=""></a>
+                        <a class="perfil-texto-dashboard">Perfil</a>
+                    </div>
+                </div>
             </div>
             <div class="box-shadow-dashboard"></div>
             <div class="conteudo-dashboard-cinza">
-                <div class="busca-dashboard">
-                    
-                </div>
-                <div class="pessoal-dashboard">
-
-                </div>
             </div> 
         </section>
     </section>
