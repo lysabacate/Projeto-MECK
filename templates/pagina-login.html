@@ -13,19 +13,27 @@
         <div id='loginimg' class='col-7 roxobg d-flex justify-content-center align-items-center'>
             <img class='imglogin' src="/static/img/imagemlogin.png" alt="">
         </div>
+
+
         <div class='blocoentrar col p-0 d-flex flex-column align-items-center justify-content-center'>
+            {% set mensagens = get_flashed_messages() %} 
+            {% if mensagens %}     
+            <div class='alert alert-danger d-flex justify-content-center' role="alert">
+            Matrícula ou senha incorretos
+            </div>
+            {% endif %}
             <h1 class='fw-bold'>Entrar</h1>
-            <form action="{{url_for('dashboard')}}" class='informacoes d-flex flex-column align-items-center gap-2'>
+            <form action="{{url_for('autenticar')}}" method="post" class='informacoes d-flex flex-column align-items-center gap-2'>
                 <div class='w-100'>
-                    <label class='align-self-start' for="Matrícula">Matrícula</label>
-                    <input class='p-1 rounded w-100' type="text" name="Matrícula" placeholder="Ex.: 20221041110022">
+                    <label class='align-self-start' for="matricula">Matrícula</label>
+                    <input class='p-1 rounded w-100' type="text" name="matricula" placeholder="Ex.: 20221041110022">
                 </div>
                 <div class='w-100'>
-                    <label class='align-self-start' for="Senha">Senha</label>
-                    <input class='p-1 rounded w-100' type="text" name="Senha" placeholder="Senha">
+                    <label class='align-self-start' for="senha">Senha</label>
+                    <input class='p-1 rounded w-100' type="text" name="senha" placeholder="Senha">
                 </div>
                 <a class='align-self-start' href="#">Esqueci a senha?</a>
-                <input class='fw-bold bentrar btn w-100' type="submit" value="Entrar">
+                <input class='fw-bold bentrar btn w-100 p-2' type="submit" value="Entrar">
                 <p class='align-self-start'>Não tem uma conta? <a href="{{url_for('registrar')}}">Registre-se</a></p>
             </form>
         </div>
