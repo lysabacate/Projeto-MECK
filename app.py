@@ -18,6 +18,9 @@ def registrar():
 def dashboard():
     return render_template('pagina-dashboard.html')
 
+@app.route('/materiais')
+def materiais():
+    return render_template('pagina-materiais.html')
 
 if __name__ == '__main__':
     app.run()
