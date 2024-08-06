@@ -1,18 +1,32 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash, redirect
+import json
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'abuble'
 
-@app.route('/aaa')
+@app.route('/')
 def paginainicial():
     return render_template('pagina-inicial.html')
 
-@app.route('/')
-def entrar():
-    return render_template('pagina-login.html')
+
 
 @app.route('/registre-se')
 def registrar():
     return render_template('pagina-registrar-conta.html')
+
+@app.route('/entrar')
+def entrar():
+    return render_template('pagina-login.html')
+
+@app.route('/autenticar', methods=['POST'])
+def autenticar():
+    matricula = request.form["matricula"]
+    senha = request.form["senha"]
+    if matricula != '22222222222222' or senha != 'senha123':
+        flash("Login ou senha incorretos")
+        return redirect("/entrar")
+    else:
+        return redirect('/dashboard')
 
 @app.route('/dashboard')
 def dashboard():

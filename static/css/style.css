@@ -1,6 +1,6 @@
 *{
-    margin: 0 !important; 
-    padding: 0 !important;
+    margin: 0; 
+    padding: 0;
 }
 
 html, body{
@@ -28,8 +28,12 @@ html, body{
     font-weight: 400;
 }
 
-.informacoes{
+.blocoentrar .alert{
     width: 60%;
+}
+
+.informacoes{
+    width: 50%;
 }
 
 .informacoes .rounded{
@@ -42,6 +46,18 @@ html, body{
     color: #ADA9A9;
 }
 
+.informacoes .btn{
+    background-color: #7641C5;
+    color: #F1F1F1;
+}
+
+.informacoes .btn:hover{
+    color: #F1F1F1 !important;
+}
+
+.informacoes a, p{
+    font-size: 12px;
+}
 /*dashboard*/
 .tudo-dashboard .opc-ingles h6, .tudo-dashboard a{
     font-family: "Open Sans", sans-serif;
@@ -119,15 +135,3 @@ html, body{
 
 /*final do dashboard*/
 
-.informacoes .btn{
-    background-color: #7641C5;
-    color: #F1F1F1;
-}
-
-.informacoes .btn:hover{
-    color: #F1F1F1 !important;
-}
-
-.informacoes a, p{
-    font-size: 12px;
-}
