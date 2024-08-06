@@ -43,7 +43,7 @@ html, body{
 }
 
 /*dashboard*/
-.tudo-dashboard .opc-ingles h6, .tudo-dashboard a{
+.tudo-dashboard .opc-ingles h6, .tudo-dashboard .selecione-opc a{
     font-family: "Open Sans", sans-serif;
     color: #F1F1F1;
 }
@@ -100,7 +100,7 @@ html, body{
 
 .conteudo-dashboard .conteudo-dashboard-barra-topo {
     background: #F1F1F1;
-    height: 10%;
+    height: 8%;
 }
 
 .conteudo-dashboard{
@@ -115,6 +115,36 @@ html, body{
 .conteudo-dashboard .box-shadow-dashboard {
     background: linear-gradient(180deg, #C9C9C9 0%, #E3E3E3 31%);
     height: 5%;
+}
+
+.busca-dashboard img{
+    width: 26px;
+    height: 26px;
+}
+
+.busca-dashboard input{
+    width: 142px;
+    height: 26px;
+    border-radius: 3px 0px 0px 3px;
+    border: 0;
+    background: rgba(221, 221, 221, 0.37);
+}
+
+.pessoal-dashboard img{
+    width: 26px;
+    height: 26px;
+}
+
+.perfil-texto-dashboard {
+    color: #7641C5;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.perfil-dashboard a:hover{
+    cursor: pointer;
+    color: #7641C5;
 }
 
 /*final do dashboard*/
