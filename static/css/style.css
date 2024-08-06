@@ -116,7 +116,7 @@ html, body{
 
 .conteudo-dashboard .conteudo-dashboard-barra-topo {
     background: #F1F1F1;
-    height: 8%;
+
 }
 
 .conteudo-dashboard{
@@ -125,30 +125,21 @@ html, body{
 
 .conteudo-dashboard-cinza{
     background: #E3E3E3;
-    height: 90%;
+    height: 100vh;
+    box-shadow: inset -1px 75px 14px -65px rgba(0,0,0,0.09);
 }
 
-.conteudo-dashboard .box-shadow-dashboard {
-    background: linear-gradient(180deg, #C9C9C9 0%, #E3E3E3 31%);
-    height: 5%;
-}
-
-.busca-dashboard img{
-    width: 26px;
-    height: 26px;
-}
 
 .busca-dashboard input{
-    width: 142px;
-    height: 26px;
+    max-width: 142px;
     border-radius: 3px 0px 0px 3px;
     border: 0;
-    background: rgba(221, 221, 221, 0.37);
+    background-color: rgba(221, 221, 221, 0.37);
 }
 
 .pessoal-dashboard img{
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
 }
 
 .perfil-texto-dashboard {

@@ -12,13 +12,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Odor+Mean+Chey&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="tudo-dashboard w-100 h-100 row">
+    <section class="tudo-dashboard h-100 row">
         <nav class="navbar h-100 d-flex flex-column justify-content-start col-2 gap-3">
-            <div class="logo-meck border-bottom w-75 pb-2 d-flex align-self-center align-items-center justify-content-center pt-2">
-                <img src="static/img/capybara-branca.svg" alt="" class="capybara-logo-dashboard">
-                <h2 class="texto-logo dashboard">MECK</h2>
-            </div>
+            
             <div class="opc-ingles d-flex flex-column gap-3">
+                <div class="logo-meck border-bottom w-100 py-2 d-flex justify-content-center">
+                    <img src="static/img/capybara-branca.svg" alt="" class="capybara-logo-dashboard">
+                    <h2 class="texto-logo dashboard">MECK</h2>
+                </div>
+
                 <div class="opc-ingles-I">
                     <h6>Inglês I</h6>
                     <div class="selecione-opc ingles-I d-flex flex-column ps-1">
@@ -47,11 +49,13 @@
                 </div>
             </div>
         </nav>
-        <section class="conteudo-dashboard col d-flex flex-column">
-            <div class="conteudo-dashboard-barra-topo d-flex justify-content-between">
-                <div class="busca-dashboard d-flex align-items-center ps-5 gap-1">
-                    <input type="text" placeholder="Buscar" class="p-2"/>
-                    <a href=""><img src="static/img/imagem-lupa.svg" alt=""></a>
+        <section class="conteudo-dashboard col px-0 d-flex flex-column">
+            <div class="conteudo-dashboard-barra-topo  d-flex justify-content-between">
+                <div class="busca-dashboard d-flex ps-5 gap-1">
+                    <input type="text" placeholder="Buscar " class="ps-1"/>
+                    <div>
+                        <img src="static/img/imagem-lupa.svg" alt="">
+                    </div>
                 </div>
                 <div class="pessoal-dashboard d-flex align-items-center gap-3 pe-5">
                     <div class="notificacao-mensagem-dashboard">
@@ -64,7 +68,6 @@
                     </div>
                 </div>
             </div>
-            <div class="box-shadow-dashboard"></div>
             <div class="conteudo-dashboard-cinza">
             </div> 
         </section>
