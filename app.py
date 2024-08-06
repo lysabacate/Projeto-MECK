@@ -32,9 +32,15 @@ def autenticar():
 def dashboard():
     return render_template('pagina-dashboard.html')
 
+<<<<<<< HEAD
 @app.route('/dashboard1')
 def dashboard1():
     return render_template('pagina-dashboard-1.html')
+=======
+@app.route('/materiais')
+def materiais():
+    return render_template('pagina-materiais.html')
+>>>>>>> dcb8b6c0a6514946298fc4377aae01a32d42a29d
 
 if __name__ == '__main__':
     app.run()
