@@ -32,12 +32,26 @@ def autenticar():
 def dashboard():
     return render_template('pagina-dashboard.html')
 
-@app.route('/dashboard1')
-def dashboard1():
-    return render_template('pagina-dashboard-1.html')
+@app.route('/atividades1')
+def atividades1():
+    return render_template('pagina-dashboard-atividades-1.html')
+
+@app.route('/atividades2')
+def atividades2():
+    return render_template('pagina-dashboard-atividades-2.html')
+
+@app.route('/materiais1')
+def materiais1():
+    return render_template('pagina-dashboard-materiais-1.html')
+
+@app.route('/materiais2')
+def materiais2():
+    return render_template('pagina-dashboard-materiais-2.html')
+
 @app.route('/materiais')
 def materiais():
     return render_template('pagina-materiais.html')
+
 
 if __name__ == '__main__':
     app.run()
