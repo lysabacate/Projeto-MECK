@@ -5,17 +5,31 @@
 {% endblock %}
 
 {% block conteudo %}
-<div>
+<div class='blocomateriais'>
     <h1 class='ingles-titulo'>Inglês I</h1>
-    <div class='d-flex'>
+    <div class='d-flex gap-4'>
         <div class='d-flex flex-column'>
-            <div class='rounded'>
+            <div class='opca position-relative rounded'>
                 <img src="/static/img/imagem-videos.svg" alt="">
-                <div class=''></div>
+                <div class='position-absolute z-1 top-0 roxoesc bg-opacity-50  w-100 h-100 d-flex align-items-center justify-content-end p-3'>
+                    <h2 class='position-absolute top-3 opacity'>Vídeos</h2>
+                </div>
             </div>
-            <div></div>
+            <div class='opca'>
+                <img src="/static/img/imagem-apostilas.svg" alt="">
+                <div class='roxoesc opacity-50'></div>
+                <h2>Apostilas</h2>
+            </div>
         </div>
-        <div></div>
+        <div>
+            <div>
+                <div class='opca'>
+                    <img src="/static/img/imagem-ola-casada.svg" alt="">
+                    <div class='roxoesc opacity-50'></div>
+                    <h2>Material Adcional</h2>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}

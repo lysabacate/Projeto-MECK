@@ -17,7 +17,7 @@ html, body{
 }
 
 .roxoesc{
-    background-color: #4D2B80;
+    background-color: rgba(77, 43, 128, 0.60) ;
 }
 
 .imglogin{
@@ -169,7 +169,13 @@ html, body{
     height: 500px;
 }
 
+/*dashboard materiais 1*/
+.blocomateriais h2{
+    color: #F1F1F1;
+}
+
 /*dashboard atividades 1*/
+
 .ingles-titulo{
     color: #4D2B80;
     text-align: center;
