@@ -10,6 +10,43 @@ html, body{
     height: 100%;
 }
 
+.bg-roxo-claro{
+    background-color: #6335A7;
+}
+.bg-roxo{
+    background-color: #4D2B80;
+}
+
+.section1{
+    background-image: url(img/background.png);
+    background-repeat: no-repeat;
+    height: 80vh;
+	background-size: cover;
+    
+}
+
+.section2{
+    background-color: #EDE7E7;
+
+}
+.services div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.services img{
+    width: 100px;
+}
+.nosso{
+    max-width: 500px;
+    text-align: center;
+    padding-top: 20px;
+}
+.hh{
+	height: 60vh;
+}
+
 #login{
     font-family: open sans;
 }
@@ -86,13 +123,6 @@ html, body{
     cursor: pointer;
     color: #F1F1F1
 }
-
-.logo-meck{
-    display: flex;
-    gap: 6px;
-    align-self: flex-start;
-}
-
 
 
 .selecione-opc a{
