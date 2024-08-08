@@ -38,9 +38,6 @@ html, body{
     width: 60%;
 }
 
-.informacoes{
-    width: 50%;
-}
 
 .informacoes .rounded{
     background: rgba(201, 196, 210, 0.35);
@@ -172,6 +169,10 @@ html, body{
 .lupa{
     height: 100%;
     width: 33px;
+}
+.div-login{
+    padding: 75px;
+    border-radius: 20px;
 }
 /*final do dashboard*/
 
