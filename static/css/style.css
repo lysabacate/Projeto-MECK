@@ -2,7 +2,9 @@
     margin: 0; 
     padding: 0;
 }
-
+body {
+     overflow-x: hidden; 
+    }
 html, body{
     width: 100%;
     height: 100%;
@@ -94,9 +96,7 @@ html, body{
     align-self: flex-start;
 }
 
-.opc-ingles{
-    width: 76%;
-}
+
 
 .selecione-opc a{
     margin: 0
@@ -114,13 +114,10 @@ html, body{
     padding-top: 8px;
 }
 
-.navbar{
-    background: #7641C5;
-}
 
 .conteudo-dashboard .conteudo-dashboard-barra-topo {
     background: #F1F1F1;
-
+    height: 57px;
 }
 
 .conteudo-dashboard{
@@ -130,12 +127,12 @@ html, body{
 .conteudo-dashboard-cinza{
     background: #E3E3E3;
     height: 100vh;
-    box-shadow: inset -1px 75px 14px -65px rgba(0,0,0,0.09);
+    box-shadow: inset -1px 75px 14px -65px rgba(0,0,0,0.02);
 }
 
 
 .busca-dashboard input{
-    max-width: 142px;
+    
     border-radius: 3px 0px 0px 3px;
     border: 0;
     background-color: rgba(221, 221, 221, 0.37);
@@ -168,6 +165,15 @@ html, body{
     width: 500px;
     height: 500px;
 }
+.conteudo-dashboard-barra-topo{
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.lupa{
+    height: 100%;
+    width: 33px;
+}
+/*final do dashboard*/
 
 /*dashboard materiais e atvs*/
 .ingles-titulo{
