@@ -22,7 +22,7 @@ def entrar():
 def autenticar():
     matricula = request.form["matricula"]
     senha = request.form["senha"]
-    if matricula != '22222222222222' or senha != 'senha123':
+    if matricula != '123' or senha != 'senha123':
         flash("Login ou senha incorretos")
         return redirect("/entrar")
     else:
