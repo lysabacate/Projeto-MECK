@@ -19,7 +19,7 @@ html, body{
 }
 
 .roxoesc{
-    background-color: #4D2B80;
+    background-color: rgba(77, 43, 128, 0.60) ;
 }
 
 .imglogin{
@@ -176,11 +176,45 @@ html, body{
 }
 /*final do dashboard*/
 
-/*dashboard atividades 1*/
+/*dashboard materiais 1*/
+.blocomateriais h2{
+    color: #F1F1F1;
+}
+
+/*dashboard materiais e atvs*/
 .ingles-titulo{
     color: #4D2B80;
     text-align: center;
     font-family: "Montserrat", sans-serif;
     font-size: 30px;
     font-weight: 700;
+}
+
+.card .card-title{
+    color: #4D2B80;
+    font-family: "Open Sans";
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.card a{
+    text-decoration: none;
+}
+
+.card a:hover{
+    cursor: pointer;
+}
+
+.setinha-card{
+    width: 20px;
+    height: 30px;
+}
+
+.card .card-img-top{
+    width: 280px;
+    height: 150px;
+}
+
+.card{
+    border-radius: 14px!important;
 }
