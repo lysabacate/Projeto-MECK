@@ -258,3 +258,8 @@ html, body{
 .card{
     border-radius: 14px!important;
 }
+
+.area-atv.roxoesc{
+    border-top-left-radius: .42rem;
+    border-top-right-radius: .42rem
+}
