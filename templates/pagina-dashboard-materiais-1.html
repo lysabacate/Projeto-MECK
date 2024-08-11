@@ -36,30 +36,30 @@
 {% endblock %}
 
 {% block conteudo %}
-<div class='blocomateriais'>
-    <h1 class='ingles-titulo'>Inglês I</h1>
-    <div class='d-flex gap-4'>
-        <div class='d-flex flex-column'>
-            <div class='opca position-relative rounded'>
+<div class='blocomateriais d-flex flex-column gap-2'>
+    <h1 class='ingles-titulo text-start'>Inglês I</h1>
+    <div class='d-flex gap-4 ps-4'>
+        <div class='d-flex flex-column justify-content-between'>
+            <a href='#' class='opcah position-relative rounded'>
                 <img src="/static/img/imagem-videos.svg" alt="">
-                <div class='position-absolute z-1 top-0 roxoesc bg-opacity-50  w-100 h-100 d-flex align-items-center justify-content-end p-3'>
+                <div class='position-absolute z-1 top-0 roxoesc bg-opacity-50 w-100 h-100 d-flex align-items-center justify-content-end p-3'>
                     <h2 class='position-absolute top-3 opacity'>Vídeos</h2>
                 </div>
-            </div>
-            <div class='opca'>
+            </a>
+            <a href='#' class='opcah position-relative'>
                 <img src="/static/img/imagem-apostilas.svg" alt="">
-                <div class='roxoesc opacity-50'></div>
-                <h2>Apostilas</h2>
-            </div>
-        </div>
-        <div>
-            <div>
-                <div class='opca'>
-                    <img src="/static/img/imagem-ola-casada.svg" alt="">
-                    <div class='roxoesc opacity-50'></div>
-                    <h2>Material Adcional</h2>
+                <div class='position-absolute z-1 top-0 roxoesc bg-opacity-50 w-100 h-100 d-flex align-items-center justify-content-start p-3'>
+                    <h2 class='position-absolute top-3 opacity'>Apostilas</h2>
                 </div>
-            </div>
+            </a>
+        </div>
+        <div class='d-flex'>
+            <a href="#" class='opcav position-relative'>
+                <img  src="/static/img/imagem-ola-casada.svg" alt="">
+                <div class='position-absolute z-1 top-0 roxoesc bg-opacity-50 w-100 h-100 d-flex align-items-center justify-content-center p-3 text-center'>
+                    <h2 class='position-absolute top-3 opacity h3'>Material Adicional</h2>
+                </div>
+            </a>
         </div>
     </div>
 </div>
