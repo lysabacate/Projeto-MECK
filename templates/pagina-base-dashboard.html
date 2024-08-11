@@ -15,40 +15,14 @@
     <section class="tudo-dashboard h-100 row">
         <nav class="pe-0 roxobg d-flex flex-column col-2 gap-3">
             
-            <div class="w-100 px-5 opc-ingles d-flex flex-column gap-3">
+            <div class="w-100 px-4 opc-ingles d-flex flex-column gap-3">
                 <div class="logo-meck border-bottom w-100 py-2 d-flex justify-content-center">
                     <img src="static/img/capybara-branca.svg" alt="" class="capybara-logo-dashboard">
                     <h2 class="texto-logo dashboard">MECK</h2>
                 </div>
 
-                <div class="opc-ingles-I">
-                    <div class="material d-flex align-items-center gap-1">
-                        <img src="static/img/imagem-material.svg" alt="">
-                        <h6>Materiais</h6>
-                    </div>
-                    <div class="selecione-opc ingles-I d-flex flex-column ps-4">
-                        <a href="/materiais1" class="material d-flex align-items-center gap-1 link-underline link-underline-opacity-0">
-                            Inglês I
-                        </a>
-                        <a href="/materiais2" class="atividades d-flex align-items-center gap-1">
-                            Inglês II
-                        </a>
-                    </div> 
-                </div>
-                <div class="opc-ingles-II">
-                    <div class="material d-flex align-items-center gap-1">
-                        <img src="static/img/imagem-atvs.svg" alt="">
-                        <h6>Atividades</h6>
-                    </div>
-                    <div class="selecione-opc ingles-II d-flex flex-column ps-4">
-                        <a href="/atividades1">
-                            Inglês I
-                        </a>
-                        <a href="/atividades2">
-                            Inglês II
-                        </a>
-                    </div> 
-                </div>
+                {%block opcao %}
+                {% endblock %}
             </div>
         </nav>
         

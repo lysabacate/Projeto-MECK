@@ -109,7 +109,7 @@ html, body{
     margin: 0;
 }
 
-.material img{
+.materiais img, .atividades img{
     width: 22px;
     height: 30px;
 }
@@ -124,9 +124,16 @@ html, body{
     color: #F1F1F1
 }
 
-
 .selecione-opc a{
     margin: 0
+}
+
+.selecionado{
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.eng1:hover, .eng2:hover{
+    background: rgba(0, 0, 0, 0.08);
 }
 
 .capybara-logo-dashboard{

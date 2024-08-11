@@ -4,6 +4,37 @@
     Atividades - Inglês II
 {% endblock %}
 
+{% block opcao %}
+<div class="opc-materiais d-flex flex-column gap-1">
+    <div class="materiais d-flex align-items-center gap-1">
+        <img src="static/img/imagem-material.svg" alt="">
+        <h6>Materiais</h6>
+    </div>
+    <div class="selecione-opc d-flex flex-column ps-4 gap-1">
+        <a href="/materiais1" class="eng1">
+            Inglês I
+        </a>
+        <a href="/materiais2" class="eng2">
+            Inglês II
+        </a>
+    </div> 
+</div>
+<div class="opc-atividades d-flex flex-column gap-1">
+    <div class="atividades d-flex align-items-center gap-1">
+        <img src="static/img/imagem-atvs.svg" alt="">
+        <h6>Atividades</h6>
+    </div>
+    <div class="selecione-opc d-flex flex-column ps-4 gap-1">
+        <a href="/atividades1" class='eng1'>
+            Inglês I
+        </a>
+        <a href="/atividades2" class='selecionado'>
+            Inglês II
+        </a>
+    </div> 
+</div>
+{% endblock %}
+
 {% block conteudo %}
 <div class="conteudo-atividades ingles-1">
     <h1 class="ingles-titulo d-flex align-self-start ps-4">Inglês II</h1>
