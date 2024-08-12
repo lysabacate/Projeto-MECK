@@ -49,7 +49,7 @@ html, body{
 }
 
 #login{
-    font-family: open sans;
+    font-family: "Open Sans", sans-serif;
 }
 
 .roxobg{
@@ -213,20 +213,7 @@ html, body{
 }
 /*final do dashboard*/
 
-/*dashboard materiais 1*/
-.blocomateriais h2{
-    color: #F1F1F1;
-}
 
-.opcah img{
-    width: 580px;
-    height: 194px;
-}
-
-.opcav img{
-    height: 420px;
-    width: 230px;
-}
 
 /*dashboard materiais e atvs*/
 .ingles-titulo{
@@ -236,6 +223,31 @@ html, body{
     font-size: 34px;
     font-weight: 700;
 }
+
+/*dashboard materiais 1*/
+.blocomateriais h2{
+    color: #F1F1F1;
+}
+
+.opcah{
+    width: 584px;
+    height: 194px;
+}
+
+.opcav{
+    height: 426px;
+    width: 230px;
+}
+
+.roxoesc.videos,.roxoesc.apostilas{
+    border-radius: 8px;
+}
+
+.roxoesc.mat-add{
+    border-radius: 10px;
+}
+
+/*dashboard atividades*/
 
 .conteudo-atividades .card-text{
     color: #000;
@@ -273,7 +285,7 @@ html, body{
 }
 
 .card{
-    border-radius: 14px!important;
+    border-radius: 14px !important;
 }
 
 .area-atv.roxoesc{
