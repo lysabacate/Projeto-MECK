@@ -18,7 +18,8 @@ html, body{
 }
 
 .section1{
-    background-image: url(static/img/background.png);
+    background-image: url(/static/img/background.png);
+    backdrop-filter: sepia(90%);
     background-repeat: no-repeat;
     height: 80vh;
 	background-size: cover;
