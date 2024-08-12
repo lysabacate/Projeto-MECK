@@ -48,7 +48,7 @@ html, body{
 }
 
 #login{
-    font-family: open sans;
+    font-family: "Open Sans", sans-serif;
 }
 
 .roxobg{
@@ -228,18 +228,22 @@ html, body{
     color: #F1F1F1;
 }
 
-.opcah img{
-    width: 580px;
+.opcah{
+    width: 584px;
     height: 194px;
 }
 
-.opcav img{
-    height: 420px;
+.opcav{
+    height: 426px;
     width: 230px;
 }
 
-.opcah, .opcah{
-    border-radius: 14px !important;
+.roxoesc.videos,.roxoesc.apostilas{
+    border-radius: 8px;
+}
+
+.roxoesc.mat-add{
+    border-radius: 10px;
 }
 
 /*dashboard atividades*/
