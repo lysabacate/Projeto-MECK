@@ -276,7 +276,7 @@ html, body{
 }
 
 .conteudo-atividades .card{
-    width: 320px;;
+    max-height: 383px
 }
 
 .conteudo-atividades .setinha-card{
@@ -305,8 +305,15 @@ html, body{
 }
 
 .itematv{
-    width: 32%;
-    height: 50%;
+    width: 22%;
+}
+
+.itematv .card-body{
+    height: 20%;
+}
+
+.itematv .card-text{
+    height: 20%;
 }
 
 .atividade{
