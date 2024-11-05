@@ -292,3 +292,23 @@ html, body{
     border-top-left-radius: .42rem;
     border-top-right-radius: .42rem
 }
+
+/*dashboard lista-atividades*/
+.bloco-lista{
+    width: 90%;
+}
+
+.bloco-lista .card a{
+    background-color: #4D2B80;
+    color: #FFF;
+    font-size: 80%;
+}
+
+.itematv{
+    width: 32%;
+    height: 50%;
+}
+
+.atividade{
+    width: 100%;
+}

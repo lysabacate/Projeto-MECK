@@ -52,6 +52,17 @@ def materiais2():
 def materiais():
     return render_template('pagina-materiais.html')
 
+@app.route('/listaatvs')
+def listaatvs():
+    habilidades = [
+        {'nome':'Nome_Atv', 'descricao':'Atividade complexa e bem feita'},
+        {'nome':'Nome_Atv2', 'descricao':'Atividade complexa e bem feita legal'},
+        {'nome':'Nome_Atv3', 'descricao':'Atividade complexa e bem feita legal'},
+        {'nome':'Nome_Atv4', 'descricao':'Atividade complexa e bem feita legal'},
+        {'nome':'Nome_Atv5', 'descricao':'Atividade complexa e bem feita legal'},
+        {'nome':'Nome_Atv6', 'descricao':'Atividade complexa e bem feita legal'}
+    ]
+    return render_template('pagina-lista-atividades.html', habilidades = habilidades)
 
 if __name__ == '__main__':
     app.run()
