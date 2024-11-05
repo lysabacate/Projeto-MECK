@@ -177,14 +177,18 @@ html, body{
     height: 24px;
 }
 
-.perfil-texto-dashboard {
+.perfil-dashboard {
     color: #7641C5;
-    font-size: 18px;
-    font-weight: 600;
     text-decoration: none;
 }
 
-.perfil-dashboard a:hover{
+.perfil-texto-dashboard{
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.perfil-dashboard:hover{
     cursor: pointer;
     color: #7641C5;
 }
