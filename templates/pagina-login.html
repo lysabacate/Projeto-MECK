@@ -10,13 +10,13 @@
 </head>
 <body id="login">
     <section class='container-fluid h-100 p-0 m-0 row'>
-        <div id='loginimg' class='col-7 roxobg d-flex justify-content-center align-items-center'>
+        <div id='loginimg' class='col-7 roxobg d-sm-flex d-none justify-content-center align-items-center'>
             <img class='imglogin' src="/static/img/imagemlogin.png" alt="">
         </div>
 
 
         <div class='blocoentrar roxobg col p-0 d-flex flex-column align-items-center justify-content-center'>
-            <div class="div-login bg-light">
+            <div class="div-login p-sm-5 p-4 py-5 me-sm-5 ms-sm-0 mx-5 rounded-5 bg-light">
                 {% set mensagens = get_flashed_messages() %} 
                 {% if mensagens %}     
                 <div class='alert alert-danger d-flex justify-content-center w-100' role="alert">
@@ -34,7 +34,7 @@
                         <input class='p-1 rounded w-100' type="password" name="senha" placeholder="Senha">
                     </div>
                     <a class='align-self-start' href="#">Esqueci a senha?</a>
-                    <input class='fw-bold bentrar btn w-100 p-2' type="submit" value="Entrar">
+                    <input class='fw-bold bentrar btn w-100 p-1' type="submit" value="Entrar">
                     <p class='align-self-start'>Não tem uma conta? <a href="{{url_for('registrar')}}">Registre-se</a></p>
                 </form>
             </div>

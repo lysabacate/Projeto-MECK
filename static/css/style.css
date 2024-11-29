@@ -30,23 +30,18 @@ html, body{
     background-color: #EDE7E7;
 
 }
-.services div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
+
 .services img{
     width: 100px;
+    min-width:100px;
 }
 .nosso{
     max-width: 500px;
-    text-align: center;
-    padding-top: 20px;
 }
 .hh{
 	height: 60vh;
 }
+
 
 #login{
     font-family: "Open Sans", sans-serif;
@@ -150,7 +145,7 @@ html, body{
 
 
 .conteudo-dashboard .conteudo-dashboard-barra-topo {
-    background: #F1F1F1;
+    background: #F1F1F1!important;
     height: 57px;
 }
 
@@ -212,7 +207,6 @@ html, body{
     width: 33px;
 }
 .div-login{
-    padding: 75px;
     border-radius: 20px;
 }
 /*final do dashboard*/
@@ -323,3 +317,35 @@ html, body{
 .atividade{
     width: 100%;
 }
+
+@media (max-width: 600px) {
+    .hh{
+        height: 30vh;
+    }
+    .section1{
+        height: fit-content;
+    }
+    .services img{
+        width: 80px;
+        min-width:80px;
+    }
+    .blocoentrar{
+        background-image: url(/static/img/imagemlogin.png)!important;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size:contain;
+    }
+    .busca-dashboard input{
+        max-width: 140px;
+        border-radius: 3px 0px 0px 3px;
+        border: 0;
+        background-color: rgba(221, 221, 221, 0.37);
+        padding-inline: 10px;
+    }
+    .lupa img{
+        height: 24px!important;
+    }
+}
+
+
+  
