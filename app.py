@@ -14,6 +14,10 @@ def paginainicial():
 def registrar():
     return render_template('pagina-registrar-conta.html')
 
+@app.route('/redefinir_senha')
+def redefinir_senha():
+    return render_template('pagina-redefinir-senha.html')
+
 @app.route('/entrar')
 def entrar():
     return render_template('pagina-login.html')

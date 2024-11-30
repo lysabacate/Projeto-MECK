@@ -120,6 +120,10 @@ html, body{
     color: #F1F1F1
 }
 
+.nav-roxo{
+    min-width: 180px;
+}
+
 .selecione-opc a{
     margin: 0
 }
@@ -146,16 +150,13 @@ html, body{
 
 .conteudo-dashboard .conteudo-dashboard-barra-topo {
     background: #F1F1F1!important;
-    height: 57px;
+   
 }
 
-.conteudo-dashboard{
-    height: 100%;
-}
 
 .conteudo-dashboard-cinza{
     background: #E3E3E3;
-    height: 100vh;
+    height: 100%;
     box-shadow: inset -1px 75px 14px -65px rgba(0,0,0,0.02);
 }
 
@@ -316,6 +317,15 @@ html, body{
 
 .atividade{
     width: 100%;
+}
+.senha{
+    background-image: url(/static/img/imagemlogin.png)!important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:contain;
+}
+.ff{
+    min-width: 185px;
 }
 
 @media (max-width: 600px) {
