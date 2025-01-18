@@ -328,6 +328,8 @@ html, body{
     min-width: 185px;
 }
 
+/*Responsividade*/
+
 @media (max-width: 600px) {
     .hh{
         height: 30vh;
