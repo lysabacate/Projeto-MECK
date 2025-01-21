@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, flash
+"""from flask import render_template, request, redirect, flash
 from models.Nivel import Nivel
 from utils import db
 from flask import Blueprint
@@ -16,4 +16,4 @@ def create():
 		nivel = Nivel(numeracao, conteudo)
 		db.session.add(nivel)
 		db.session.commit()
-		return 'Nível definido com sucesso!'
+		return 'Nível definido com sucesso!'"""

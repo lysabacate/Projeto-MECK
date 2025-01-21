@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, flash
+"""from flask import render_template, request, redirect, flash
 from models.Material import Material
 from utils import db
 from flask import Blueprint
@@ -19,4 +19,4 @@ def create():
 		material = Material(nome, habilidade_eng, codigo_prof, numeracao_nv, tipo)
 		db.session.add(material)
 		db.session.commit()
-		return 'Material postado com sucesso!'
+		return 'Material postado com sucesso!'"""

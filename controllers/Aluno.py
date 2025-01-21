@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, flash
+"""from flask import render_template, request, redirect, flash
 from models.Aluno import Aluno
 from utils import db
 from flask import Blueprint
@@ -18,4 +18,4 @@ def create():
 		aluno = Aluno(nome, email, senha, csenha)
 		db.session.add(aluno)
 		db.session.commit()
-		return 'Dados cadastrados com sucesso!'
+		return 'Dados cadastrados com sucesso!'"""

@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, flash
+"""from flask import render_template, request, redirect, flash
 from models.Saladeaula import Saladeaula
 from utils import db
 from flask import Blueprint
@@ -17,4 +17,4 @@ def create():
 		saladeaula = Saladeaula(numeracao_nv, turma, nome)
 		db.session.add(saladeaula)
 		db.session.commit()
-		return 'Dados cadastrados com sucesso!'
+		return 'Dados cadastrados com sucesso!'"""

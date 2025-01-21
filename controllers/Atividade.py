@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, flash
+"""from flask import render_template, request, redirect, flash
 from models.Atividade import Atividade
 from utils import db
 from flask import Blueprint
@@ -19,4 +19,4 @@ def create():
 		atividade = Atividade(nome, habilidade_eng, codigo_prof, numeracao_nv, questoes)
 		db.session.add(atividade)
 		db.session.commit()
-		return 'Atividade postada com sucesso!'
+		return 'Atividade postada com sucesso!'"""
