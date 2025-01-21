@@ -6,6 +6,9 @@ class Repostas(db.Model):
 	resposta = db.Column(db.Integer, primary_key = True)
 	id_atividade = db.Column(db.Integer, db.ForeignKey('atividade.id'))
 
+	atividade = db.relationship('atividade', foreign_keys=id_atividade)
+    
+
     def __init__(self, usuario_matr):
         self.id_atividade = id_atividade
 
