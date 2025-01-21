@@ -4,7 +4,7 @@ from utils import db
 import os
 from flask_migrate import Migrate
 from flask_migrate import Migrate 
-from models.Usuario import Usuario
+from models.usuario import Usuario
 
 
 
