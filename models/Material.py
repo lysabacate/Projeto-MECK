@@ -1,4 +1,4 @@
-from utils import db
+"""from utils import db
 
 class Material(db.Model):
     __tablename__= "material"
@@ -17,4 +17,4 @@ class Material(db.Model):
         self.tipo = tipo
     
     def __repr__(self):
-        return "<Material: {} - {} - {}>".format(self.codigo_prof.nome, self.nivel.numeracao, self.tipo)
+        return "<Material: {} - {} - {}>".format(self.codigo_prof.nome, self.nivel.numeracao, self.tipo)"""

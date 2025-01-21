@@ -1,4 +1,4 @@
-from utils import db
+"""from utils import db
 
 class Nivel(db.Model):
 	__tablename__= "nivel"
@@ -9,4 +9,4 @@ class Nivel(db.Model):
             self.conteudo = conteudo
 
 	def __repr__(self):
-		return "<Nível: {}".format(self.nivel.conteudo)
+		return "<Nível: {}".format(self.nivel.conteudo)"""

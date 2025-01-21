@@ -1,4 +1,4 @@
-from utils import db
+"""from utils import db
 
 #Tabela usada no exemplo da prof:
 class Professor(db.Model):
@@ -13,4 +13,4 @@ class Professor(db.Model):
 
 	def __repr__(self):
 		return "<Professor: {}>".format(self.usuario.nome)
-
+"""

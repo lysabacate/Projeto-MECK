@@ -1,4 +1,4 @@
-from utils import db
+"""from utils import db
 
 #Tabela usada no exemplo da prof:
 class Aluno(db.Model):
@@ -12,4 +12,4 @@ class Aluno(db.Model):
             self.usuario_matr = usuario_matr
 
 def __repr__(self):
-		return "<Aluno: {}".format(self.usuario.nome)
+		return "<Aluno: {}".format(self.usuario.nome)"""

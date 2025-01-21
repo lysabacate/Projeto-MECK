@@ -1,4 +1,4 @@
-from utils import db
+"""from utils import db
 
 #Tabela usada no exemplo da prof:
 class Atividade(db.Model):
@@ -21,4 +21,4 @@ class Atividade(db.Model):
         self.habilidade_eng = habilidade_eng
     
     def __repr__(self):
-        return "<Atividade: {} - {} - {}>".format(self.codigo_prof.nome, self.nivel.numeracao, self.habilidade_eng)
+        return "<Atividade: {} - {} - {}>".format(self.codigo_prof.nome, self.nivel.numeracao, self.habilidade_eng)"""

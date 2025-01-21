@@ -1,4 +1,4 @@
-from utils import db
+"""from utils import db
 
 class Repostas(db.Model):
 	__tablename__= "respostas"
@@ -12,4 +12,4 @@ class Repostas(db.Model):
     	self.id_atividade = id_atividade
 
 	def __repr__(self):
-		return "<Respostas: {} - {}".format(self.atividade.id, self.atividade.nome)
+		return "<Respostas: {} - {}".format(self.atividade.id, self.atividade.nome)"""
