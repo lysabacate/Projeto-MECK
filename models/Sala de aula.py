@@ -6,10 +6,13 @@ class Classroom(db.Model):
 	id = db.Column(db.Integer, primary_key = True)
 	codigo_prof = db.Column(db.Integer, db.ForeignKey('professor.codigo')
     numeracao_nv = db.Column(db.Integer, db.ForeignKey('nivel.numeracao')
+	turma = db.Column(db.String(100))
+	nome = db.Column(db.String(100))
+							
 
-def __init__(self, nome, email, senha):
+    def __init__(self, nome, email, senha):
         self.codigo_prof = codigo_prof
         self.numeracao_nv = numeracao_nv
     
-def __repr__(self):
-    return "<Sala de Aula: {} - {}>".format(self.codigo_prof.nome, self.nivel.numeracao)
+    def __repr__(self):
+        return "<Sala de Aula: {} - {}>".format(self.codigo_prof.nome, self.nivel.numeracao)
