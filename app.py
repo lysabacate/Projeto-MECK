@@ -9,7 +9,7 @@ from models.usuario import Usuario
 
 
 
-app = Flask(__name__)
+
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 db_usuario = os.getenv('DB_USERNAME')
 db_senha = os.getenv('DB_PASSWORD')
@@ -22,6 +22,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
 migrate = Migrate(app, db)"""
+
+app = Flask(__name__)
 
 @app.route('/')
 def paginainicial():
