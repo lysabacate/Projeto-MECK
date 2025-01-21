@@ -3,17 +3,17 @@ from models.Respostas import Respostas
 from utils import db
 from flask import Blueprint
 
-bp_resposta = Blueprint("respostas", __name__, template_folder='templates')
+bp_respostas = Blueprint("respostas", __name__, template_folder='templates')
 
-@bp_resposta.route('/create', methods=['GET', 'POST'])
+@bp_respostas.route('/create', methods=['GET', 'POST'])
 def create():
 	if request.method=='GET':
 		return render_template('pagina-login.html')
 
 	if request.method=='POST':
-		resposta = request.form.get('resposta')
+		resposta = request.form.get('respostas')
 		id_atividade = request.form.get('id_atividade')
-		resposta = Respostas(resposta, id_atividade)
-		db.session.add(resposta)
+		respostas = Respostas(resposta, id_atividade)
+		db.session.add(respostas)
 		db.session.commit()
-		return 'Nível definido com sucesso!'
+		return 'Dados cadastrados com sucesso!'

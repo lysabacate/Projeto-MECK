@@ -1,5 +1,5 @@
 from flask import render_template, request, redirect, flash
-from models.Usuario import Usuario
+from models.usuario import Usuario
 from utils import db
 from flask import Blueprint
 
@@ -16,7 +16,7 @@ def create():
 		email = request.form.get('email')
 		senha = request.form.get('senha')
 		csenha = request.form.get('csenha')
-		usuario = Usuario(nome, email, senha)
+		usuario = Usuario(nome, email, senha, csenha)
 		db.session.add(usuario)
 		db.session.commit()
 		return 'Dados cadastrados com sucesso!'

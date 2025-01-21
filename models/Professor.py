@@ -4,7 +4,7 @@ from utils import db
 class Professor(db.Model):
 	__tablename__= "professor"
 	codigo = db.Column(db.Integer, primary_key = True)
-	usuario_matr = db.Column(db.Integer, db.ForeignKey('usuario.matricula'))
+	usuario_matr = db.Column(db.Integer, db.ForeignKey('usuario.matricula')
 
 	usuario = db.relationship('usuario', foreign_keys=usuario_matr)
 

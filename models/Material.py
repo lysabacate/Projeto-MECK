@@ -1,6 +1,5 @@
 from utils import db
 
-#Tabela usada no exemplo da prof:
 class Material(db.Model):
     __tablename__= "material"
 	id = db.Column (db.Integer, primary_key = True)
@@ -9,11 +8,10 @@ class Material(db.Model):
     nome = db.Column(db.String(100))
     tipo = db.Column(db.String(100))
 
-    def __init__(self, nome, email, senha):
     professor = db.relationship('professor', foreign_keys=codigo_prof)
     nivel = db.relationship('nivel', foreign_keys=numeracao_nv)
 
-def __init__(self, nome, email, senha):
+    def __init__(self, nome, email, senha):
         self.codigo_prof = codigo_prof
         self.numeracao_nv = numeracao_nv
         self.tipo = tipo
