@@ -1,4 +1,4 @@
-"""from utils import db
+from __init__ import db
 
 #Tabela usada no exemplo da prof:
 class Usuario(db.Model):
@@ -14,4 +14,4 @@ def __init__(self, nome, email, senha):
         self.senha = senha
     
 def __repr__(self):
-    return "<Usuario {}>".format(self.nome)"""
+    return "<Usuario {}>".format(self.nome)
