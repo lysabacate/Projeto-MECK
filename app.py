@@ -1,10 +1,11 @@
 from flask import Flask, render_template, request, flash, redirect, Blueprint
 from flask_sqlalchemy import SQLAlchemy
+from utils import db
+import os
 
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///dados.db"
-db = SQLAlchemy()
 db.init_app(app)
 
 
