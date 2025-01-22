@@ -1,4 +1,4 @@
-"""from flask import render_template, request, redirect, flash
+from flask import render_template, request, redirect, flash
 from models.usuario import Usuario
 from utils import db
 from flask import Blueprint
@@ -9,14 +9,20 @@ bp_usuarios = Blueprint("usuarios", __name__, template_folder='templates')
 @bp_usuarios.route('/create', methods=['GET', 'POST'])
 def create():
 	if request.method=='GET':
-		return render_template('pagina-login.html')
+		return render_template('usuarios_create.html')
 
 	if request.method=='POST':
+		matricula = request.form.get('matricula')
 		nome = request.form.get('nome')
 		email = request.form.get('email')
 		senha = request.form.get('senha')
 		csenha = request.form.get('csenha')
-		usuario = Usuario(nome, email, senha, csenha)
+		usuario = Usuario(matricula, nome, email, senha)
 		db.session.add(usuario)
 		db.session.commit()
-		return 'Dados cadastrados com sucesso!'"""
+		return 'Dados cadastrados com sucesso!'
+	
+@bp_usuarios.route('/recovery')
+def recovery():
+	usuarios = Usuario.query.all()
+	return render_template('usuarios_recovery.html', usuarios = usuarios)

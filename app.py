@@ -3,12 +3,15 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from utils import db
 import os
+from controllers.usuario import bp_usuarios
 
 app = Flask(__name__)
-db.init_app(app)
+
 
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///dados.db"
 app.config['SQLALCHEMY_TRACKMODIFICATIONS'] = False
+app.register_blueprint(bp_usuarios, url_prefix = '/usuarios')
+db.init_app(app)
 
 migrate = Migrate(app, db)
 
