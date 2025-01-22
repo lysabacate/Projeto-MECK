@@ -1,13 +1,16 @@
 from flask import Flask, render_template, request, flash, redirect, Blueprint
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 from utils import db
 import os
 
-
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///dados.db"
 db.init_app(app)
 
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///dados.db"
+app.config['SQLALCHEMY_TRACKMODIFICATIONS'] = False
+
+migrate = Migrate(app, db)
 
 @app.route('/')
 def paginainicial():
