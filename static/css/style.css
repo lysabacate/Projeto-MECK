@@ -98,6 +98,7 @@ html, body{
 .tudo-dashboard .opc-ingles h6, .tudo-dashboard .selecione-opc a{
     font-family: "Open Sans", sans-serif;
     color: #F1F1F1;
+    text-decoration: none;
 }
 
 .tudo-dashboard .opc-ingles h6{
@@ -229,7 +230,7 @@ html, body{
 }
 
 .opcah{
-    width: 584px;
+    max-width: 584px;
     height: 194px;
 }
 
@@ -244,6 +245,23 @@ html, body{
 
 .roxoesc.mat-add{
     border-radius: 10px;
+}
+
+.ffff{
+    z-index: 1050; /* Um valor alto para garantir que fique acima dos outros elementos */
+    position: absolute; /* Isso já está, mas é importante para o z-index funcionar corretamente */
+}
+
+.img-videos{
+    background-image: url(/static/img/imagem-videos.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.img-apostilas{
+    background-image: url(/static/img/imagem-apostilas.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /*dashboard atividades*/
@@ -356,6 +374,11 @@ html, body{
     }
     .lupa img{
         height: 24px!important;
+        position: relative;
+        top:-3px;
+    }
+    .opcah{
+        height: 120px;
     }
 }
 

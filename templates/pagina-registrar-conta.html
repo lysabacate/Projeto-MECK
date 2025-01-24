@@ -16,29 +16,35 @@
         <div class='blocoentrar roxobg col p-0 d-flex flex-column align-items-center justify-content-center'>
             <div class="div-login p-sm-5 p-4 py-5 me-sm-5 ms-sm-0 mx-5 bg-light">
                 <h1 class='fw-bold'>Registre-se</h1>
-                <form action="{{url_for('dashboard')}}" class='informacoes d-flex flex-column align-items-center gap-2'>
-                    <div class='w-100'>
-                    <label class='align-self-start' for="matricula">Matrícula</label>
-                    <input class='p-1 rounded w-100' type="text" name="matricula" placeholder="Ex.: 20221041110022">
+                <form action="{{ url_for('dashboard') }}" class="informacoes d-flex flex-column align-items-center gap-2">
+                    <div class="w-100">
+                        <label class="align-self-start" for="matricula">Matrícula</label>
+                        <input class="p-1 rounded w-100" type="text" id="matricula" name="matricula" placeholder="Ex.: 20221041110022">
                     </div>
-                    <div class='w-100'>
-                        <label class='align-self-start' for="nome">Nome</label>
-                        <input class='p-1 rounded w-100' type="text" name="nome" placeholder="Nome">
+                    <div class="w-100">
+                        <label class="align-self-start" for="nome">Nome</label>
+                        <input class="p-1 rounded w-100" type="text" id="nome" name="nome" placeholder="Nome">
                     </div>
-                    <div class='w-100'>
-                        <label class='align-self-start' for="e-mail">E-mail</label>
-                        <input class='p-1 rounded w-100' type="text" name="e-mail" placeholder="E-mail">
+                    <div class="w-100">
+                        <label class="align-self-start" for="email">E-mail</label>
+                        <input class="p-1 rounded w-100" type="email" id="email" name="email" placeholder="E-mail">
                     </div>
-                    <div class='w-100'>
-                        <label class='align-self-start' for="senha">Senha</label>
-                        <input class='p-1 rounded w-100' type="password" name="senha" placeholder="Senha">
+                    <div class="w-100">
+                        <label class="align-self-start" for="senha">Senha</label>
+                        <input class="p-1 rounded w-100" type="password" id="senha" name="senha" placeholder="Senha">
                     </div>
-                    <div class='w-100'>
-                        <label class='align-self-start' for="confirmar senha">Confirmar Senha</label>
-                        <input class='p-1 rounded w-100' type="password" name="confirmar Senha" placeholder="Confirmar Senha">
+                    <div class="w-100">
+                        <label class="align-self-start" for="confirmar_senha">Confirmar Senha</label>
+                        <input class="p-1 rounded w-100" type="password" id="confirmar_senha" name="confirmar_senha" placeholder="Confirmar Senha">
                     </div>
-                    <input class='fw-bold p-1 mt-3 btn w-100' type="submit" value="Registrar">
-                    <p class='align-self-start'>Já possui uma conta? <a href="{{url_for('entrar')}}">Entrar</a></p>
+                    <div class="d-flex justify-content-end gap-1 w-100">
+                        <input type="radio" id="aluno" name="perfil" value="aluno">
+                        <label for="aluno">Aluno</label>
+                        <input type="radio" id="professor" name="perfil" value="professor">
+                        <label for="professor">Professor</label>
+                    </div>
+                    <input class="fw-bold p-1 mt-3 btn w-100" type="submit" value="Registrar">
+                    <p class="align-self-start">Já possui uma conta? <a href="{{ url_for('entrar') }}">Entrar</a></p>
                 </form>
             </div>
         </div>
