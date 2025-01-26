@@ -1,17 +1,18 @@
 from flask import Flask, render_template, request, flash, redirect, Blueprint
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from utils import db
+from utils import db, lm
 import os
 from controllers.usuario import bp_usuarios
 
 app = Flask(__name__)
 
-
+app.config['SECRET_KEY'] = 'abuble'
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///dados.db"
 app.config['SQLALCHEMY_TRACKMODIFICATIONS'] = False
 app.register_blueprint(bp_usuarios, url_prefix = '/usuarios')
 db.init_app(app)
+lm.init_app(app)
 
 migrate = Migrate(app, db)
 
@@ -19,7 +20,7 @@ migrate = Migrate(app, db)
 def paginainicial():
     return render_template('pagina-inicial.html')
 
-@app.route('/registre-se')
+@app.route('/registrar')
 def registrar():
     return render_template('pagina-registrar-conta.html')
 
@@ -30,16 +31,6 @@ def redefinir_senha():
 @app.route('/entrar')
 def entrar():
     return render_template('pagina-login.html')
-
-@app.route('/autenticar', methods=['POST'])
-def autenticar():
-    matricula = request.form["matricula"]
-    senha = request.form["senha"]
-    if matricula != '123' or senha != 'senha123':
-        flash("Login ou senha incorretos")
-        return redirect("/entrar")
-    else:
-        return redirect('/dashboard')
 
 @app.route('/dashboard')
 def dashboard():
@@ -78,7 +69,5 @@ def listaatvs():
     return render_template('pagina-lista-atividades.html', habilidades = habilidades)
 
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all
         
     app.run(debug=True)

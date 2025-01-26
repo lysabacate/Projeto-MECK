@@ -16,7 +16,7 @@
         <div class='blocoentrar roxobg col p-0 d-flex flex-column align-items-center justify-content-center'>
             <div class="div-login p-sm-5 p-4 py-5 me-sm-5 ms-sm-0 mx-5 bg-light">
                 <h1 class='fw-bold'>Registre-se</h1>
-                <form action="{{ url_for('dashboard') }}" class="informacoes d-flex flex-column align-items-center gap-2">
+                <form method = 'post' action="{{url_for('usuarios.create')}}" class="informacoes d-flex flex-column align-items-center gap-2">
                     <div class="w-100">
                         <label class="align-self-start" for="matricula">Matrícula</label>
                         <input class="p-1 rounded w-100" type="text" id="matricula" name="matricula" placeholder="Ex.: 20221041110022">
@@ -35,7 +35,7 @@
                     </div>
                     <div class="w-100">
                         <label class="align-self-start" for="confirmar_senha">Confirmar Senha</label>
-                        <input class="p-1 rounded w-100" type="password" id="confirmar_senha" name="confirmar_senha" placeholder="Confirmar Senha">
+                        <input class="p-1 rounded w-100" type="password" id="csenha" name="csenha" placeholder="Confirmar Senha">
                     </div>
                     <div class="d-flex justify-content-end gap-1 w-100">
                         <input type="radio" id="aluno" name="perfil" value="aluno">
