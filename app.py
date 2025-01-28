@@ -4,6 +4,7 @@ from flask_migrate import Migrate
 from utils import db, lm
 import os
 from controllers.usuario import bp_usuarios
+from flask_login import login_user, logout_user, login_required
 
 app = Flask(__name__)
 
@@ -33,30 +34,37 @@ def entrar():
     return render_template('pagina-login.html')
 
 @app.route('/dashboard')
+@login_required
 def dashboard():
     return render_template('pagina-dashboard.html')
 
 @app.route('/atividades1')
+@login_required
 def atividades1():
     return render_template('pagina-dashboard-atividades-1.html')
 
 @app.route('/atividades2')
+@login_required
 def atividades2():
     return render_template('pagina-dashboard-atividades-2.html')
 
 @app.route('/materiais1')
+@login_required
 def materiais1():
     return render_template('pagina-dashboard-materiais-1.html')
 
 @app.route('/materiais2')
+@login_required
 def materiais2():
     return render_template('pagina-dashboard-materiais-2.html')
 
 @app.route('/materiais')
+@login_required
 def materiais():
     return render_template('pagina-materiais.html')
 
 @app.route('/listaatvs')
+@login_required
 def listaatvs():
     habilidades = [
         {'nome':'Nome_Atv', 'descricao':'Atividade complexa e bem feita'},

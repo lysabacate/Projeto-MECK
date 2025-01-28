@@ -19,5 +19,6 @@ class Usuario(db.Model, UserMixin):
 		self.senha = senha
 		self.perfil = perfil
     
+
 	def __repr__(self):
    		return "<Usuario {} - {}>".format(self.nome, self.perfil)
