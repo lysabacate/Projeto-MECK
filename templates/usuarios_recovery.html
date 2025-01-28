@@ -1,9 +1,17 @@
+{% extends 'pagina-dashboard.html' %}
+
+{% block conteudo %}
 <html>
     <body>
-        <ul>
+        <ul class = 'd-flex flex-column gap-2'>
             {% for u in usuarios %}
-            <li>Usuário - {{u.perfil}} - {{u.matricula}} - {{u.nome}}</li>
+            <li class='d-flex flex-row align-items-center gap-2'>
+                <div>Usuário - {{u.perfil}} - {{u.matricula}} - {{u.nome}}</div>
+                <a class="btn btn-primary" href='{{url_for("usuarios.teste_update")}}'>Update</a>
+                <a class="btn btn-danger" href='{{url_for("usuarios.teste_delete")}}'>Delete</a>
+            </li>
             {% endfor %}
         </ul>
     </body>
 </html>
+{% endblock %}
