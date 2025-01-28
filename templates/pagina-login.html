@@ -24,7 +24,7 @@
                 </div>
                 {% endif %}
                 <h1 class='fw-bold'>Entrar</h1>
-                <form action="{{url_for('autenticar')}}" method="post" class='informacoes d-flex flex-column align-items-center gap-2'>
+                <form action="{{url_for('usuarios.autenticar')}}" method="post" class='informacoes d-flex flex-column align-items-center gap-2'>
                     <div class='w-100'>
                         <label class='align-self-start' for="matricula">Matrícula</label>
                         <input class='p-1 rounded w-100' type="text" name="matricula" placeholder="Ex.: 20221041110022">
