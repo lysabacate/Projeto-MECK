@@ -2,7 +2,8 @@ from flask import render_template, request, redirect, flash
 from models.usuario import Usuario
 from utils import db, lm
 from flask import Blueprint
-from flask_login import login_user
+from flask_login import login_user, logout_user, login_required
+
 
 
 bp_usuarios = Blueprint("usuarios", __name__, template_folder='templates')
@@ -41,3 +42,8 @@ def autenticar():
 	else:
 		flash('Dados incorretos')
 		return redirect('/entrar')
+
+@bp_usuarios.route('/logoff')
+def logoff():
+	logout_user()
+	return redirect('/')
