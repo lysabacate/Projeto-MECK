@@ -3,7 +3,6 @@ from models.usuario import Usuario
 from utils import db, lm
 from flask import Blueprint
 from flask_login import login_user, logout_user, login_required
-, logout_user, login_required
 import hashlib
 
 
