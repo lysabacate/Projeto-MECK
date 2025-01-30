@@ -1,1 +1,2 @@
 # Projeto-MECK
+A sigla do nosso projeto significa "Making English a Complete Knowledge". Nosso objetivo é auxiliar o ensino do inglês nas salas de aula, uma vez que a carga horária da disciplina nas escola é reduzida e os professores não conseguem fornecer um atendimento mais individualizado para os alunos. Por isso, o MECK surge com o objetivo de ser uma plataforma complementar ao ensino do inglês no IFRN.
