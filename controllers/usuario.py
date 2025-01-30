@@ -3,6 +3,8 @@ from models.usuario import Usuario
 from utils import db, lm
 from flask import Blueprint
 from flask_login import login_user, logout_user, login_required
+, logout_user, login_required
+import hashlib
 
 
 
@@ -14,9 +16,10 @@ def create():
 	nome = request.form.get('nome')
 	email = request.form.get('email')
 	senha = request.form.get('senha')
+	senha_hash = hashlib.sha256(senha.encode())
 	csenha = request.form.get('csenha')
-	perfil = request.form.get('perfil')
-	usuario = Usuario(matricula, nome, email, senha, perfil)
+	admin = request.form.get('perfil')
+	usuario = Usuario(matricula, nome, email, senha_hash.hexdigest(), admin)
 	db.session.add(usuario)
 	db.session.commit()
 	return 'Dados cadastrados com sucesso!'
@@ -25,6 +28,21 @@ def create():
 def recovery():
 	usuarios = Usuario.query.all()
 	return render_template('usuarios_recovery.html', usuarios = usuarios)
+
+@bp_usuarios.route("/teste_delete")
+def teste_delete():		
+	u = Usuario.query.get(1)
+	db.session.delete(u)
+	db.session.commit()
+	return 'Dados excluídos com sucesso'
+
+@bp_usuarios.route("/teste_update")
+def teste_update():
+	u = Usuario.query.get(2)
+	u.nome = "Alba L."
+	db.session.add(u)
+	db.session.commit()
+	return 'Dados atualizados com sucesso'
 
 @lm.user_loader
 def load_user(id):

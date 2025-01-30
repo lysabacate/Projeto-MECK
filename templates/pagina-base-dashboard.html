@@ -30,28 +30,32 @@
         
         <section class="conteudo-dashboard col px-0 d-flex flex-column justify-content-center">
             <nav class="navbar navbar-expand-sm navbar-dark">
-                <div class="container-fluid justify-content-between">
+                <div class="container-fluid flex-sm-row-reverse flex-row ">
                     <!-- Botão de alternância (hamburger) para dispositivos móveis -->
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
                         <img src="/static/img/hamburguer.svg" alt="">
                     </button>
-                    <div class="busca-dashboard d-sm-flex d-none py-0 ps-5 gap-1">
-                        <input type="text" placeholder="Buscar " class="ps-1"/>
-                        <a href="#" class="lupa">
-                            <img class="w-100" src="static/img/imagem-lupa.svg" alt="">
-                        </a>
-                    </div>
+                    
+
                     <div class="pessoal-dashboard d-flex align-items-center gap-3">
                         <div class="notificacao-mensagem-dashboard d-flex gap-2">
                             <a href="#"><img src="static/img/imagem-notificacao.svg" alt=""></a>
                             <a href="#"><img src="static/img/imagem-mensagem.svg" alt=""></a>
                         </div>
-                        <a class="perfil-dashboard" href="#">
-                            <div class="d-flex align-items-center gap-1">
+
+                        <div class="d-flex flex-column">
+                          
+                            <div class=" d-flexgap-1" type="button" data-bs-toggle="collapse" data-bs-target="#jjj" aria-controls="jjj" aria-expanded="false" aria-label="Alternar navegação">
                                 <img src="static/img/imagem-usuario.svg" alt="">
                                 <p class="d-none d-sm-block perfil-texto-dashboard">Perfil</p>
-                            </div>            
-                        </a>
+                            </div>    
+
+                            <div>
+                                <a class="collapse btn btn-danger position-absolute" id="jjj" href="{{ url_for('usuarios.logoff') }}" role="button">logout</a>
+                            </div>
+                        </div>
+
+                    
                     </div>
                     
                     <!-- Itens da barra de navegação -->

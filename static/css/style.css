@@ -213,7 +213,9 @@ html, body{
 }
 /*final do dashboard*/
 
-
+.navbar{
+    height: 62px;
+}
 
 /*dashboard materiais e atvs*/
 .ingles-titulo{
@@ -344,6 +346,11 @@ html, body{
 }
 .ff{
     min-width: 185px;
+}
+
+#jjj{
+
+    right: 15px;
 }
 
 /*Responsividade*/
