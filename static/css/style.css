@@ -26,9 +26,8 @@ html, body{
     
 }
 
-.section2{
-    background-color: #EDE7E7;
-
+.section2 h1, .section2 h4, .section2 p{
+    color:  white;
 }
 
 .services img{
@@ -54,6 +53,8 @@ html, body{
 .roxoesc{
     background-color: rgba(77, 43, 128, 0.60) ;
 }
+
+
 
 .imglogin{
     width: 80%;
