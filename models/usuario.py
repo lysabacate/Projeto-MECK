@@ -20,4 +20,4 @@ class Usuario(db.Model, UserMixin):
 		self.admin = admin
 
 	def __repr__(self):
-   		return "<Usuario {} - {}>".format(self.nome, self.perfil)
+   		return "<Usuario {} - {}>".format(self.nome, self.admin)

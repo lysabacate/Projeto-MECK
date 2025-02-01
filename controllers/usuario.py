@@ -17,8 +17,8 @@ def create():
 	senha = request.form.get('senha')
 	senha_hash = hashlib.sha256(senha.encode())
 	csenha = request.form.get('csenha')
-	admin = request.form.get('perfil')
-	usuario = Usuario(matricula, nome, email, senha_hash.hexdigest(), admin)
+	admin = request.form.get('admin')
+	usuario = Usuario(matricula, nome, email, senha_hash.hexdigest(), eval(admin))
 	db.session.add(usuario)
 	db.session.commit()
 	return 'Dados cadastrados com sucesso!'
@@ -53,7 +53,7 @@ def autenticar():
 	matricula = request.form.get('matricula')
 	senha = request.form.get('senha')
 	usuario = Usuario.query.filter_by(matricula = matricula).first()
-	if usuario and (senha == usuario.senha):
+	if usuario and (hashlib.sha256(senha.encode()).hexdigest() == usuario.senha):
 		login_user(usuario)
 		return redirect('/dashboard')
 	else:

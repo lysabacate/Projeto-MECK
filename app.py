@@ -22,7 +22,7 @@ def paginainicial():
 	if current_user.is_authenticated:
 		return render_template('pagina-dashboard.html')
 	else:
-		return redirect('/pagina-inicial.html')
+		return render_template('pagina-inicial.html')
 
 @app.route('/registrar')
 def registrar():
