@@ -174,7 +174,7 @@ html, body{
     height: 24px;
 }
 
-.perfil-dashboard {
+.perfil-dashboard, .perfil-texto-dashboard {
     color: #7641C5;
     text-decoration: none;
 }
