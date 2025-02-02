@@ -46,20 +46,10 @@ def dashboard():
 def atividades1():
     return render_template('pagina-dashboard-atividades-1.html')
 
-@app.route('/atividades2')
-@login_required
-def atividades2():
-    return render_template('pagina-dashboard-atividades-2.html')
-
 @app.route('/materiais1')
 @login_required
 def materiais1():
-    return render_template('pagina-dashboard-materiais-1.html')
-
-@app.route('/materiais2')
-@login_required
-def materiais2():
-    return render_template('pagina-dashboard-materiais-2.html')
+    return render_template('pagina-dashboard-materiais.html')
 
 @app.route('/materiais')
 @login_required
