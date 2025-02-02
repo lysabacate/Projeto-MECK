@@ -107,9 +107,9 @@ html, body{
     margin: 0;
 }
 
-.materiais img, .atividades img, .turmas img{
-    width: 22px;
-    height: 30px;
+.materiais img, .atividades img, .turmas img, .links img , .gg {
+    width: 15px!important;
+    height: 15px!important;
 }
 
 .tudo-dashboard .opc-ingles a{
@@ -181,7 +181,6 @@ html, body{
 }
 
 .perfil-dashboard, .perfil-texto-dashboard {
-    color: #7641C5;
     text-decoration: none;
 }
 
@@ -193,7 +192,7 @@ html, body{
 
 .perfil-dashboard:hover{
     cursor: pointer;
-    color: #7641C5;
+    color: #e0e0e0;
 }
 
 .capivara-ops .ops-texto{
@@ -355,8 +354,7 @@ html, body{
 }
 
 #jjj{
-
-    right: 15px;
+    right: 60px;
 }
 
 /*Responsividade*/

@@ -12,89 +12,58 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Odor+Mean+Chey&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="tudo-dashboard h-100 row">
-        
-        
-        <nav class="ff pe-0 roxobg d-sm-flex d-none flex-column col-2 gap-3">
-            
-            <div class="w-100 px-4 opc-ingles d-flex flex-column gap-3">
-                <div class="logo-meck border-bottom w-100 py-2 d-flex justify-content-center gap-1 align-items-center">
-                    <img src="static/img/capybara-branca.svg" alt="" class="capybara-logo-dashboard">
-                    <h2 class="texto-logo dashboard">MECK</h2>
-                </div>
+    <section class=" tudo-dashboard h-100">
+        <nav class="text-light roxobg">
+            <div class="container d-flex justify-content-between">
 
-                {%block opcao %}
-                {% endblock %}
-            </div>
-        </nav>
-        
-        <section class="conteudo-dashboard col px-0 d-flex flex-column justify-content-center">
-            <nav class="navbar navbar-expand-sm navbar-dark">
-                <div class="container-fluid flex-sm-row-reverse flex-row ">
-                    <!-- Botão de alternância (hamburger) para dispositivos móveis -->
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegação">
-                        <img src="/static/img/hamburguer.svg" alt="">
-                    </button>
-                    
-
+                    <div class="logo-meck py-2 d-flex gap-1  align-items-end">
+                        <img src="static/img/capybara-branca.svg" alt="" class="capybara-logo-dashboard">
+                        <h2 class="texto-logo dashboard">MECK</h2>
+                    </div>
+    
+                    <div class="d-flex gap-4 align-items-center">
+                        <div class="nav-item active">
+                            <a class="materiais d-flex align-items-center  gap-1" href="#">
+                                <img src="static/img/imagem-material.svg" alt="">
+                                <h6 class="text-light text-center fs-6 my-0" >Materiais</h6>
+                            </a>
+                        </div>
+                        <div class="nav-item">
+                            <a class=" atividades d-flex align-items-center gap-1" href="#">
+                                <img src="static/img/imagem-atvs.svg" alt="">
+                                <h6 class="text-light fs-6 my-0" >Atividades</h6>
+                            </a>
+                        </div>
+                        <div class="nav-item">
+                            <a class="links d-flex align-items-center gap-1" href="#">
+                                <img src="/static/img/grampinho.svg" alt="">
+                                <h6 class="text-light fs-6 my-0" >Links</h6>
+                            </a>
+                        </div>
+                    </div>
+                  
                     <div class="pessoal-dashboard d-flex align-items-center gap-3">
                         <div class="notificacao-mensagem-dashboard d-flex gap-2">
-                            <a href="#"><img src="static/img/imagem-notificacao.svg" alt=""></a>
-                            <a href="#"><img src="static/img/imagem-mensagem.svg" alt=""></a>
+                            <a href="#"><img src="static/img/notificacaobranca.svg" alt=""></a>
+                            <a href="#"><img src="static/img/mensagembranca.svg" alt=""></a>
                         </div>
-
                         <div class="d-flex flex-column">
                           
-                            <div class=" d-flex gap-1 align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#jjj" aria-controls="jjj" aria-expanded="false" aria-label="Alternar navegação">
-                                <img src="static/img/imagem-usuario.svg" alt="">
-                                <p class="d-none d-sm-block perfil-texto-dashboard">Perfil</p>
-                            </div>    
-
-                            <div>
+                            <div class=" d-flex gap-2 align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#jjj" aria-controls="jjj" aria-expanded="false" aria-label="Alternar navegação">
+                                <img src="static/img/perfilbranco.svg" alt="">
+                                <img class="gg" src="/static/img/setinhaa.svg" alt="">
                                 <a class="collapse btn btn-danger position-absolute" id="jjj" href="{{ url_for('usuarios.logoff') }}" role="button">logout</a>
                             </div>
                         </div>
 
-                    
                     </div>
                     
-                    <!-- Itens da barra de navegação -->
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        
-                        <div class="ffff d-block d-sm-none roxobg position-absolute p-3 rounded"> 
-                            
-                            <div class=" opc-materiais d-flex flex-column gap-1">
-                                <div class="materiais d-flex align-items-center gap-1">
-                                    <img src="static/img/imagem-material.svg" alt="">
-                                    <h6 class="text-light fs-5 my-0" >Materiais</h6>
-                                </div>
-                                <div class="selecione-opc d-flex flex-column ps-4 gap-1">
-                                    <a href="/materiais1" class="eng1 ps-2 rounded">
-                                        Inglês I
-                                    </a>
-                                    <a href="/materiais2" class="eng2 ps-2 rounded">
-                                        Inglês II
-                                    </a>
-                                </div> 
-                            </div>
-                            <div class="opc-atividades d-flex flex-column gap-1">
-                                <div class="atividades d-flex align-items-center gap-1">
-                                    <img src="static/img/imagem-atvs.svg" alt="">
-                                    <h6 class="text-light fs-5 my-0" >Atividades</h6>
-                                </div>
-                                <div class="selecione-opc d-flex flex-column ps-4  gap-1">
-                                    <a href="/atividades1" class='eng1 ps-2 rounded'>
-                                        Inglês I
-                                    </a>
-                                    <a href="/atividades2" class='eng2 ps-2 rounded'>
-                                        Inglês II
-                                    </a>
-                                </div> 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
+               
+            </div>
+        </nav>
+
+             
+        
             <div class="conteudo-dashboard-cinza d-flex align-items-center justify-content-center">
                 {% block conteudo %}
                 {% endblock %}
