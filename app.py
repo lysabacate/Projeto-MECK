@@ -43,7 +43,7 @@ def dashboard():
 
 @app.route('/atividades')
 @login_required
-def atividades1():
+def atividades():
     return render_template('pagina-dashboard-atividades.html')
 
 @app.route('/materiais')
