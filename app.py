@@ -41,12 +41,12 @@ def entrar():
 def dashboard():
     return render_template('pagina-dashboard.html')
 
-@app.route('/atividades1')
+@app.route('/atividades')
 @login_required
 def atividades1():
-    return render_template('pagina-dashboard-atividades-1.html')
+    return render_template('pagina-dashboard-atividades.html')
 
-@app.route('/materiais1')
+@app.route('/materiais')
 @login_required
 def materiais1():
     return render_template('pagina-dashboard-materiais.html')
