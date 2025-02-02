@@ -51,11 +51,6 @@ def atividades1():
 def materiais1():
     return render_template('pagina-dashboard-materiais.html')
 
-@app.route('/materiais')
-@login_required
-def materiais():
-    return render_template('pagina-materiais.html')
-
 @app.route('/listaatvs')
 @login_required
 def listaatvs():
