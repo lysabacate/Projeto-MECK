@@ -5,8 +5,6 @@ from flask import Blueprint
 from flask_login import login_user, logout_user, login_required
 import hashlib
 
-
-
 bp_usuarios = Blueprint("usuarios", __name__, template_folder='templates')
 
 @bp_usuarios.route('/create', methods=['POST'])

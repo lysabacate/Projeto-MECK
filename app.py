@@ -43,12 +43,12 @@ def dashboard():
 
 @app.route('/atividades')
 @login_required
-def atividades1():
+def atividades():
     return render_template('pagina-dashboard-atividades.html')
 
 @app.route('/materiais')
 @login_required
-def materiais1():
+def materiais():
     return render_template('pagina-dashboard-materiais.html')
 
 @app.route('/listaatvs')
