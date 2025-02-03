@@ -59,10 +59,32 @@ def atividades():
 def materiais():
     return render_template('pagina-dashboard-materiais.html')
 
+
 @app.route('/materiais_videos')
 @login_required
 def materiais_videos():
-    return render_template('pagina-materiais-videos.html')
+    videos = [
+        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material'},
+        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material2'},
+        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material3'},
+        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material4'},
+        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material5'},
+        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material6'}
+    ]
+    return render_template('pagina-materiais-videos.html', videos = videos)
+
+@app.route('/materiais_apostilas')
+@login_required
+def materiais_apostilas():
+    apostilas = [
+        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material'},
+        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material2'},
+        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material3'},
+        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material4'},
+        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material5'},
+        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material6'}
+    ]
+    return render_template('pagina-materiais-apostilas.html', apostilas = apostilas)
 
 @app.route('/listaatvs')
 @login_required
@@ -76,6 +98,20 @@ def listaatvs():
         {'nome':'Nome_Atv6', 'descricao':'Atividade complexa e bem feita legal'}
     ]
     return render_template('pagina-lista-atividades.html', habilidades = habilidades)
+
+@app.route('/material_adicional')
+@login_required
+def materiais_adicional():
+    adicional = [
+        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material'},
+        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material2'},
+        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material3'},
+        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material4'},
+        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material5'},
+        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material6'}
+    ]
+    return render_template('pagina-material-adicional.html', adicional = adicional)
+
 
 if __name__ == '__main__':
         
