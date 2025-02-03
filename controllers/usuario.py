@@ -61,4 +61,4 @@ def autenticar():
 @bp_usuarios.route('/logoff')
 def logoff():
 	logout_user()
-	return redi,ect('/')
+	return redirect('/')
