@@ -19,14 +19,10 @@ migrate = Migrate(app, db)
 
 @app.route('/')
 def paginainicial():
-    if current_user.is_authenticated and current_user.admin:
-        return render_template('pagina-dashboard-prof.html')
-    
-    elif current_user.is_authenticated and not current_user.admin:
-        return render_template('pagina-dashboard-aluno.html')
-    
-    else:
-        return render_template('pagina-inicial.html')
+	if current_user.is_authenticated:
+		return render_template('pagina-dashboard.html')
+	else:
+		return render_template('pagina-inicial.html')
 
 @app.route('/registrar')
 def registrar():
@@ -43,11 +39,7 @@ def entrar():
 @app.route('/dashboard')
 @login_required
 def dashboard():
-    if current_user.is_authenticated and current_user.admin:
-        return render_template('pagina-dashboard-prof.html')
-    
-    elif current_user.is_authenticated and not current_user.admin:
-        return render_template('pagina-dashboard-aluno.html')
+    return render_template('pagina-dashboard.html')
 
 @app.route('/atividades')
 @login_required
