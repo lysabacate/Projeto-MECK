@@ -329,7 +329,7 @@ html, body{
 }
 
 .itematv, .item-material-tipo{
-    width: 22%;
+    width: 25%;
 }
 
 .itematv .card-body, .item-material-tipo .card-body{
@@ -355,6 +355,24 @@ html, body{
 
 #jjj{
     right: 60px;
+}
+
+.criaratividade{
+    border-radius: 14px;
+}
+
+.criaratividade img{
+    width: 60px;
+}
+
+.criaratividade:hover img{
+    transform: scale(1.2);
+    transition: .3s;
+}
+
+.criaratividade:hover p{
+    transform: scale(1.2);
+    transition: .3s;
 }
 
 /*Responsividade*/
