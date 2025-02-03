@@ -9,7 +9,7 @@
     <h1 class="ingles-titulo d-flex align-self-start">Materiais - vídeos</h1>
     <ul class='d-flex list-unstyled flex-wrap'>
 		{% for i in videos %}
-			<a href="#" class='item-material-tipo pb-2 pe-2 text-decoration-none'>  
+			<a href="#" class='item-material-tipo pb-3 pe-3 text-decoration-none'>  
                 <div class="card h-100">
                     <div class="card-body p-0 d-flex flex-column justify-content-between">
                         <div class="opca position-relative rounded">
@@ -21,6 +21,14 @@
                 </div>
             <a>
 		{% endfor %}
+        {% if current_user.admin %}
+      <li class="itematv pb-3 pe-3">
+        <a href=# class="criaratividade roxobg d-flex flex-column justify-content-center align-items-center h-100 text-decoration-none">
+          <img src="static/img/svg8.svg" alt="">
+          <p class="text-light fs-5 fw-bold m-0">Novo material</p>
+        </a>
+      </li>
+    {% endif %}
 	</ul>
 </div>
 {% endblock %}

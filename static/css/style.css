@@ -332,11 +332,7 @@ html, body{
     width: 25%;
 }
 
-.itematv .card-body, .item-material-tipo .card-body{
-    height: 20%;
-}
-
-.itematv .card-text, .item-material-tipo .card-body{
+.itematv .card-text, .itematv .card-body, .item-material-tipo .card-body{
     height: 20%;
 }
 
