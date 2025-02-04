@@ -1,0 +1,16 @@
+{% extends 'pagina-base-dashboard.html' %}
+
+
+{% block conteudo %}
+<form action="" class="d-flex flex-column">
+    <div class="add-img-e-codigo d-flex flex-column bg-light rounded p-3 justify-content-center">
+        <label for="imagem-turma" class="imagem-turma d-flex flex-column align-items-center">
+            <p>Adicionar imagem</p>
+        </label>
+        <div class="input-imagem-turma d-flex align-items-center gap-2">
+            <img src="/static/img/adicionar-arquivo-roxo.svg" alt="">
+            <input type="file" name="foto-turma" id="imagem-turma">
+        </div>
+    </div>
+</form>
+{%endblock%}

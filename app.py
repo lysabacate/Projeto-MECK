@@ -117,6 +117,12 @@ def materiais_adicional():
 def turma_aluno():
     return render_template('pagina-turma-aluno.html')
 
+
+@app.route('/criar_turma')
+@login_required
+def criar_turma():
+    return render_template('pagina-criar-turma.html')
+
 if __name__ == '__main__':
         
     app.run(debug=True)
