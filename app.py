@@ -112,6 +112,10 @@ def materiais_adicional():
     ]
     return render_template('pagina-material-adicional.html', adicional = adicional)
 
+@app.route('/turma_aluno')
+@login_required
+def turma_aluno():
+    return render_template('pagina-turma-aluno.html')
 
 if __name__ == '__main__':
         

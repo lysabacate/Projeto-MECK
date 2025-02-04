@@ -1,0 +1,59 @@
+{% extends 'pagina-base-dashboard.html' %}
+
+{% block dashboard %}
+<div class="d-flex gap-4 align-items-center">                  
+    {% if current_user.admin %}
+    <div class="nav-item">
+        <a class="turmas d-flex align-items-center gap-1 text-decoration-none" href="#">
+            <img src="/static/img/imagem-turmas.svg" alt="">
+            <h6 class="text-light fs-6 my-0" >Turmas</h6>
+        </a>
+    </div>
+    {% endif %}
+    <div class="nav-item active">
+        <a class="materiais d-flex align-items-center gap-1 text-decoration-none" href="/materiais">
+            <img src="static/img/imagem-material.svg" alt="">
+            <h6 class="text-light text-center fs-6 my-0" >Materiais</h6>
+        </a>
+    </div>
+    <div class="nav-item">
+        <a class=" atividades d-flex align-items-center gap-1 text-decoration-none" href="/atividades">
+            <img src="static/img/imagem-atvs.svg" alt="">
+            <h6 class="text-light fs-6 my-0" >Atividades</h6>
+        </a>
+    </div>
+    <div class="nav-item">
+        <a class="links d-flex align-items-center gap-1 text-decoration-none" href="#">
+            <img src="/static/img/grampinho.svg" alt="">
+            <h6 class="text-light fs-6 my-0" >Links</h6>
+        </a>
+    </div>
+</div>
+{% endblock %}
+
+{% block titulo %}
+    Turma
+{% endblock %}
+
+{% block conteudo %}
+<div class="conteudo-turmas d-flex flex-column">
+    <h1 class="ingles-titulo d-flex align-self-start pb-2">Nome da turma</h1>
+    <div class="opcoes-acesso-turma d-flex gap-4 w-100 h-100">
+        <a href="/materiais" class="position-relative w-100 h-100">
+            <img class="w-100 h-100 rounded" src="/static/img/imagem-writing.svg" alt="">
+            <div class="position-relative d-flex align-items-center justify-content-center">
+                <p class="position-absolute">Materiais</p>
+            </div>
+            <div class='position-absolute rounded z-1 top-0 area-atv roxoesc bg-opacity-50 w-100 h-100 d-flex align-items-center justify-content-end p-3'></div>
+        </a>
+        <a href="/atividades" class="position-relative w-100 h-100">
+            <img class="w-100 h-100 rounded" src="/static/img/imagem-writing.svg" alt="">
+            <div class='position-absolute rounded z-1 top-0 area-atv roxoesc bg-opacity-50 w-100 h-100 d-flex align-items-center justify-content-end p-3'></div>
+        </a>
+        <a href="#" class="position-relative w-100 h-100">
+            <img class="w-100 h-100 rounded" src="/static/img/imagem-writing.svg" alt="">
+            <div class='position-absolute rounded z-1 top-0 area-atv roxoesc bg-opacity-50 w-100 h-100 d-flex align-items-center justify-content-end p-3'></div>
+        </a>
+    </div>
+</div>
+{% endblock %}
