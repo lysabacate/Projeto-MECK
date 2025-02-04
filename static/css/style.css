@@ -421,3 +421,13 @@ html, body{
 .conteudo-turmas{
     width: 1000px;
 }
+
+.imagem-turma-conteudo{
+    width: 320px;
+    height: 216px;
+    background-image: url(/static/img/Group\ 84.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+

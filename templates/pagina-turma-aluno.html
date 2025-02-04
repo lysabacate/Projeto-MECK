@@ -38,22 +38,27 @@
 {% block conteudo %}
 <div class="conteudo-turmas d-flex flex-column">
     <h1 class="ingles-titulo d-flex align-self-start pb-2">Nome da turma</h1>
-    <div class="opcoes-acesso-turma d-flex gap-4 w-100 h-100">
-        <a href="/materiais" class="position-relative w-100 h-100">
-            <img class="w-100 h-100 rounded" src="/static/img/imagem-writing.svg" alt="">
-            <div class="position-relative d-flex align-items-center justify-content-center">
-                <p class="position-absolute">Materiais</p>
-            </div>
-            <div class='position-absolute rounded z-1 top-0 area-atv roxoesc bg-opacity-50 w-100 h-100 d-flex align-items-center justify-content-end p-3'></div>
+    <div class="d-flex justify-content-between">
+        <a href="/materiais" class="imagem-turma-conteudo d-flex align-items-center text-decoration-none justify-content-center">
+            <p class=" z-1 text-light fw-bold m-0 fs-2">Materiais</p>
         </a>
-        <a href="/atividades" class="position-relative w-100 h-100">
-            <img class="w-100 h-100 rounded" src="/static/img/imagem-writing.svg" alt="">
-            <div class='position-absolute rounded z-1 top-0 area-atv roxoesc bg-opacity-50 w-100 h-100 d-flex align-items-center justify-content-end p-3'></div>
+        <a href="/atividades" class="imagem-turma-conteudo d-flex align-items-center text-decoration-none justify-content-center">
+            <p class=" z-1 text-light fw-bold m-0 fs-2">Atividades</p>
         </a>
-        <a href="#" class="position-relative w-100 h-100">
-            <img class="w-100 h-100 rounded" src="/static/img/imagem-writing.svg" alt="">
-            <div class='position-absolute rounded z-1 top-0 area-atv roxoesc bg-opacity-50 w-100 h-100 d-flex align-items-center justify-content-end p-3'></div>
+        <a href="#" class="imagem-turma-conteudo d-flex align-items-center text-decoration-none justify-content-center">
+            <p class=" z-1 text-light fw-bold m-0 fs-2">Links</p>
         </a>
     </div>
 </div>
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
+<div class='position-absolute area-atv roxoesc bg-opacity-50'></div>
