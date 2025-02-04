@@ -16,9 +16,9 @@
         <nav class="navbar navbar-expand-sm text-light roxobg fixed-top">
             <div class="container">
                 <!-- Logo -->
-                <div class="d-flex align-items-end gap-2 d-none d-sm-block">
+                <div class="d-flex align-items-center justify-content-center gap-2 d-none d-sm-flex">
                     <img src="static/img/capybara-branca.svg" class="capybara-logo-dashboard">
-                    <h2 class="texto-logo dashboard">MECK</h2>
+                    <h2 class="pt-1 texto-logo dashboard">MECK</h2>
                 </div>
 
                 <div class="dropdown d-block d-sm-none">
@@ -59,7 +59,7 @@
                         <a class="nav-link" href="#"><img src="static/img/notificacaobranca.svg" alt=""></a>
                         <a class="nav-link" href="#"><img src="static/img/mensagembranca.svg" alt=""></a>
                     </div>
-                    <li class="nav-item dropdown">
+                    <div class="nav-item dropdown">
                         <a class="nav-link" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="static/img/perfilbranco.svg" alt="">
                             <img class="gg" src="static/img/setinhaa.svg" alt="">
@@ -67,7 +67,7 @@
                         <ul class="dropdown-menu bg-danger dropdown-menu-end" aria-labelledby="userDropdown">
                             <li><a class="dropdown-item bg-danger text-center text-light" href="{{url_for('usuarios.logoff')}}">Logout</a></li>
                         </ul>
-                    </li>
+                    </div>
                 </div>
                 
               
