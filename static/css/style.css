@@ -3,7 +3,8 @@
     padding: 0;
 }
 body {
-     overflow-x: hidden; 
+
+    overflow-x: hidden; 
     }
 html, body{
     width: 100%;
@@ -110,6 +111,9 @@ html, body{
 .materiais img, .atividades img, .turmas img, .links img , .gg {
     width: 15px!important;
     height: 15px!important;
+}
+.tudo-dashboard{
+    padding-top: 60px;
 }
 
 .tudo-dashboard .opc-ingles a{

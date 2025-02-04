@@ -13,32 +13,64 @@
 </head>
 <body>
     <section class=" tudo-dashboard h-100">
-        <nav class="text-light roxobg">
-            <div class="container d-flex justify-content-between">
+        <nav class="navbar navbar-expand-sm text-light roxobg fixed-top">
+            <div class="container">
+                <!-- Logo -->
+                <div class="d-flex align-items-end gap-2 d-none d-sm-block">
+                    <img src="static/img/capybara-branca.svg" class="capybara-logo-dashboard">
+                    <h2 class="texto-logo dashboard">MECK</h2>
+                </div>
 
-                    <div class="logo-meck py-2 d-flex gap-1 align-items-center">
-                        <img src="static/img/capybara-branca.svg" alt="" class="capybara-logo-dashboard">
-                        <h2 class="texto-logo dashboard">MECK</h2>
-                    </div>
-                    {% block dashboard %}
-                    {% endblock %}
-                
-                    <div class="pessoal-dashboard d-flex align-items-center gap-3">
-                        <div class="notificacao-mensagem-dashboard d-flex gap-2">
-                            <a href="#"><img src="static/img/notificacaobranca.svg" alt=""></a>
-                            <a href="#"><img src="static/img/mensagembranca.svg" alt=""></a>
-                        </div>
-                        <div class="d-flex flex-column">
-                          
-                            <div class=" d-flex gap-2 align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#jjj" aria-controls="jjj" aria-expanded="false" aria-label="Alternar navegação">
-                                <img src="static/img/perfilbranco.svg" alt="">
-                                <img class="gg" src="/static/img/setinhaa.svg" alt="">
-                                <a class="collapse btn btn-danger position-absolute" id="jjj" href="{{url_for('usuarios.logoff')}}" role="button">logout</a>
-                            </div>
-                        </div>
+                <div class="dropdown d-block d-sm-none">
+                    <a class="" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="/static/img/hamburguer.svg" alt="">
+                    </a>
+                  
+                    <div class="dropdown-menu roxobg" aria-labelledby="dropdownMenuLink">
+                        
+                        <a class="dropdown-item materiais d-flex align-items-center gap-1 text-decoration-none" href="/materiais">
+                            <img src="/static/img/imagem-material.svg" alt="">
+                            <h6 class="text-light text-center fs-6 my-0" >Materiais</h6>
+                        </a>
+                        <a class="dropdown-item materiais d-flex align-items-center gap-1 text-decoration-none" href="/atividades">
+                            <img src="/static/img/imagem-atvs.svg" alt="">
+                            <h6 class="text-light text-center fs-6 my-0" >Atividades</h6>
+                        </a>
+                        <a class="dropdown-item materiais d-flex align-items-center gap-1 text-decoration-none" href="/materiais">
+                            <img src="/static/img/grampinho.svg" alt="">
+                            <h6 class="text-light text-center fs-6 my-0" >Links</h6>
+                        </a>
+                        
                     </div>
                     
-               
+                </div>
+
+                
+                <!-- Itens da Navbar -->
+                <div class="d-none d-sm-block">
+                        {% block dashboard %}
+                        {% endblock %}
+                </div>
+    
+
+
+                <div class="d-flex">
+                    <div class="d-flex">
+                        <a class="nav-link" href="#"><img src="static/img/notificacaobranca.svg" alt=""></a>
+                        <a class="nav-link" href="#"><img src="static/img/mensagembranca.svg" alt=""></a>
+                    </div>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="static/img/perfilbranco.svg" alt="">
+                            <img class="gg" src="static/img/setinhaa.svg" alt="">
+                        </a>
+                        <ul class="dropdown-menu bg-danger dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item bg-danger text-center text-light" href="{{url_for('usuarios.logoff')}}">Logout</a></li>
+                        </ul>
+                    </li>
+                </div>
+                
+              
             </div>
         </nav>
             <div class="conteudo-dashboard-cinza d-flex align-items-center justify-content-center">
