@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, flash
+"""from flask import render_template, request, redirect, flash
 from models.usuario import Usuario
 from utils import db, lm
 from flask import Blueprint
@@ -9,7 +9,6 @@ bp_usuarios = Blueprint("turmas", __name__, template_folder='templates')
 
 @bp_usuarios.route('/create', methods=['POST'])
 def create():
-    imagem_url = request.form.get('imagem')
     codigo = request.form.get('codigo_turma')
 	nome = request.form.get('nome_turma')
 	nivel = request.form.get('nivel_turma')
@@ -19,7 +18,7 @@ def create():
 	db.session.commit()
 	#flash ('Turma criada com sucesso')
     #return render_template('')
-    return 'Turma criada com sucesso'
+    return 'Turma criada com sucesso'"""
 
 
 
