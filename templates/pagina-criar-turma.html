@@ -2,41 +2,45 @@
 
 
 {% block conteudo %}
-<form action="" class="d-flex forms-criar-turma gap-5">
-    <div class="add-cod-turma bg-white rounded p-4 gap-2 d-flex flex-column h-100">
-        <label for="cod_turma" class="cod_turma m-0 titulo-input d-flex flex-column align-items-center">Código da turma</label>
-        <input class="border-0 input-roxo input-roxo-codigo" type="text" name="codigo_turma" id="cod_turma">
-    </div>
-    <div class="d-flex flex-column gap-4">
-        <div class="add-nome-desc-turma bg-white rounded p-4 gap-2 d-flex flex-column w-100">
-            <label for="nome_turma" class="nome_turma m-0 titulo-input d-flex flex-column">Nome</label>
-            <input class="border-0 input-roxo" type="text" name="nome_turma" id="nome_turma">
-    
-            <div class="nivel-ingles-turma gap-2">
-                <p class="titulo-input m-0">Nível do inglês</p>
-                <div class='d-flex gap-3'>
-                    <label for="ingles1" class="d-flex align-items-center gap-2">
-                        <input type="radio" id="ingles1" value="ingles1" name="nivel_turma">
-                        <div class="custom-radio">
-                            <span></span>
-                        </div>
-                        Inglês 1
-                    </label>
-                    <label for="ingles2" class="d-flex align-items-center gap-2">
-                        <input type="radio" id="ingles2" value="ingles2" name="nivel_turma">
-                        <div class="custom-radio">
-                            <span></span>
-                        </div>
-                        Inglês 2
-                    </label>
-                </div>
-            </div>
-            <label for="descricao" class="descricao m-0 titulo-input">Descrição</label>
-            <input class="border-0 input-roxo input-descricao" type="text" name="descricao" id="descricao">
+<form method = 'post' action="{{url_for('turmas.create')}}" class="d-flex flex-column forms-criar-turma gap-5">
+    <div class="d-flex gap-3">
+        <div class="add-cod-turma bg-white rounded p-4 gap-2 d-flex flex-column h-100">
+            <label for="cod_turma" class="cod_turma m-0 titulo-input d-flex flex-column align-items-center">Código da turma</label>
+            <input class="border-0 input-roxo input-roxo-codigo" type="text" name="codigo_turma" id="cod_turma">
         </div>
+        <div class="d-flex flex-column gap-4">
+        <div class="add-nome-desc-turma bg-white rounded p-4 gap-2 d-flex flex-column w-100">
+                <label for="nome_turma" class="nome_turma m-0 titulo-input d-flex flex-column">Nome</label>
+                <input class="border-0 input-roxo" type="text" name="nome_turma" id="nome_turma">
+        
+                <div class="nivel-ingles-turma gap-2">
+                    <p class="titulo-input m-0">Nível do inglês</p>
+                    <div class='d-flex gap-3'>
+                        <label for="ingles1" class="d-flex align-items-center gap-2">
+                            <input type="radio" id="ingles1" value="ingles1" name="nivel_turma">
+                            <div class="custom-radio">
+                                <span></span>
+                            </div>
+                            Inglês 1
+                        </label>
+                        <label for="ingles2" class="d-flex align-items-center gap-2">
+                            <input type="radio" id="ingles2" value="ingles2" name="nivel_turma">
+                            <div class="custom-radio">
+                                <span></span>
+                            </div>
+                            Inglês 2
+                        </label>
+                    </div>
+                </div>
+                <label for="descricao" class="descricao m-0 titulo-input">Descrição</label>
+                <input class="border-0 input-roxo input-descricao" type="text" name="descricao" id="descricao">
+            </div>
         <div class="d-flex justify-content-end">
             <input type="submit" value="Criar" class="botao-criar-turma rounded border-0">
         </div>
     </div>
+    </div>
+    
+    <input type="submit" value="Criar Turma">
 </form>
 {%endblock%}
