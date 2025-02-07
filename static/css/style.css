@@ -452,8 +452,14 @@ html, body{
 .forms-criar-turma .input-roxo{
     border-radius: 4px;
     background: #ADA9A961;
-    width: 300px;
+    width: 400px;
     height: 30px;
+}
+
+
+
+.forms-criar-turma .input-roxo-codigo{
+    width: 200px;
 }
 
 .forms-criar-turma .input-roxo:focus{
@@ -488,4 +494,14 @@ html, body{
 .forms-criar-turma .nivel-ingles-turma input[type = 'radio']:checked + .custom-radio span {
     transition: 0.5s;
     background: #FFF;
+}
+
+.forms-criar-turma .botao-criar-turma {
+    background-color: #6335A7;
+    width: 200px;
+    height: 30px;
+    color: #FFF;
+    font-family: "Open Sans";
+    font-size: 20px;
+    font-weight: 700;
 }
