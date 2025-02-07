@@ -4,6 +4,7 @@ from flask_migrate import Migrate
 from utils import db, lm
 import os
 from controllers.usuario import bp_usuarios
+from controllers.turma import bp_turmas
 from flask_login import login_user, logout_user, login_required, current_user
 
 app = Flask(__name__)
@@ -12,10 +13,12 @@ app.config['SECRET_KEY'] = 'abuble'
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///dados.db"
 app.config['SQLALCHEMY_TRACKMODIFICATIONS'] = False
 app.register_blueprint(bp_usuarios, url_prefix = '/usuarios')
+app.register_blueprint(bp_turmas, url_prefix = '/turmas')
 db.init_app(app)
 lm.init_app(app)
 
 migrate = Migrate(app, db)
+
 
 @app.route('/')
 def paginainicial():

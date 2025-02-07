@@ -1,8 +1,6 @@
 from utils import db
 from flask_login import UserMixin
 
-
-#Tabela usada no exemplo da prof:
 class Usuario(db.Model, UserMixin):
 	__tablename__= "usuario"
 	id = db.Column(db.Integer, primary_key = True)
