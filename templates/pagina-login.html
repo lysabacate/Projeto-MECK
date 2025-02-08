@@ -29,9 +29,12 @@
                         <label class='align-self-start' for="matricula">Matrícula</label>
                         <input class='p-1 rounded w-100' type="text" name="matricula" placeholder="Ex.: 20221041110022">
                     </div>
-                    <div class='w-100'>
+                    <div class='w-100 d-flex flex-column'>
                         <label class='align-self-start' for="senha">Senha</label>
-                        <input class='p-1 rounded w-100' type="password" name="senha" placeholder="Senha">
+                        <div class="d-flex justify-content-end">
+                            <input id="password" class='position-absolute p-1 rounded' type="password" name="senha" placeholder="Senha">
+                            <div class="position-relative" id="icon" onclick="showHide()"></div>
+                        </div>
                     </div>
                     <a class='align-self-start' href="{{url_for('redefinir_senha')}}">Esqueci a senha?</a>
                     <input class='fw-bold bentrar btn w-100 p-1' type="submit" value="Entrar">
@@ -40,5 +43,6 @@
             </div>
         </div>
     </section>
+    <script src="/static/js/script.js"></script>
 </body>
 </html>

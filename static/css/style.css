@@ -73,6 +73,26 @@ html, body{
     width: 60%;
 }
 
+#password {
+    width: 270px;
+}
+
+#icon{
+    transform: translateY(-50%);
+    background: url(/static/img/eye_show_regular_icon_203603.svg);
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 15px;
+    right: 5px;
+}
+
+#icon.hide{
+    background: url(/static/img/eye_hide_regular_icon_203604.svg);
+    background-size: cover; 
+}
 
 .informacoes .rounded{
     background: rgba(201, 196, 210, 0.35);
