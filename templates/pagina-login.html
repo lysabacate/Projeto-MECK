@@ -19,8 +19,10 @@
             <div class="div-login p-sm-5 p-4 py-5 me-sm-5 ms-sm-0 mx-5 rounded-5 bg-light">
                 {% set mensagens = get_flashed_messages() %} 
                 {% if mensagens %}     
-                <div class='alert alert-danger d-flex justify-content-center w-100' role="alert">
-                Matrícula ou senha incorretos
+                <div class='alert alertbg text-light d-flex justify-content-center w-100' role="alert">
+                    {% for msg in mensagens %}
+                        {{ msg }}
+                    {% endfor %}
                 </div>
                 {% endif %}
                 <h1 class='fw-bold'>Entrar</h1>

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash, redirect, Blueprint
+from flask import Flask, render_template, request, flash, redirect, Blueprint, session
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from utils import db, lm
@@ -6,6 +6,7 @@ import os
 from controllers.usuario import bp_usuarios
 from controllers.turma import bp_turmas
 from flask_login import login_user, logout_user, login_required, current_user
+from models.turma import Turma
 
 app = Flask(__name__)
 
@@ -129,7 +130,9 @@ def criar_turma():
 @app.route('/listar_turmas')
 @login_required
 def listar_turma():
-    return render_template('pagina-listar-turmas.html')
+    turma_ids = session.get('turmas_ids', [])
+    turmas = Turma.query.filter(Turma.id.in_(turma_ids)).all()
+    return render_template('pagina-listar-turmas.html', turmas = turmas)
 
 if __name__ == '__main__':
         

@@ -35,40 +35,37 @@
 {% endblock %}
 
 {% block conteudo %}
+
 <div class="conteudo-listar-turmas d-flex flex-column gap-2">
-    <h1 class="ingles-titulo d-flex align-self-start m-0">Turma</h1>
-    <div class="lista-turmas d-flex gap-4">
-        <a href="/turma_aluno" class="p-3 text-decoration-none gap-2 d-flex flex-column justify-content-center">
-            <div class="h-100">
-                <div class="d-flex justify-content-end align-items-start">
-                    <img src="/static/img/imagem-engrenagem.svg" alt="">
-                </div>
-                <h6 class="m-0">Infoweb 3M</h6>
-                <p class="m-0">Inglês I</p>
-                <p class="fw-light m-0">Descrição caso e prof queira</p>
-            </div>
-        </a>
-        <a href="/turma_aluno" class="p-3 text-decoration-none gap-2 d-flex flex-column justify-content-center">
-            <div class="h-100">
-                <div class="d-flex justify-content-end align-items-start">
-                    <img src="/static/img/imagem-engrenagem.svg" alt="">
-                </div>
-                <h6 class="m-0">Eletro 3M</h6>
-                <p class="m-0">Inglês I</p>
-                <p class="fw-light m-0">Descrição caso e prof queira</p>
-            </div>
-        </a>
-        <a href="/turma_aluno" class="p-3 text-decoration-none gap-2 d-flex flex-column justify-content-center">
-            <div class="h-100">
-                <div class="d-flex justify-content-end align-items-start">
-                    <img src="/static/img/imagem-engrenagem.svg" alt="">
-                </div>
-                <h6 class="m-0">Infoweb 4V</h6>
-                <p class="m-0">Inglês II</p>
-                <p class="fw-light m-0">Descrição caso e prof queira</p>
-            </div>
-        </a>
+    {% set mensagens = get_flashed_messages() %} 
+    {% if mensagens %} 
+    <div class="d-flex justify-content-center">
+        <div class='alert alertbg text-light d-flex justify-content-center w-50 m-0' role="alert">
+            Turma criada com sucesso
+        </div>
     </div>
+    {% endif %}
+    <h1 class="ingles-titulo d-flex align-self-start m-0">Turmas</h1>
+    <ul class="lista-turmas d-flex gap-3 list-unstyled flex-wrap">
+        {% if turmas %}
+            {% for t in turmas %}
+            <li>
+                <a href="/turma_aluno" class="p-3 text-decoration-none gap-2 d-flex flex-column justify-content-center">
+                    <div class="h-100">
+                        <div class="d-flex justify-content-end align-items-start">
+                            <img src="/static/img/imagem-engrenagem.svg" alt="">
+                        </div>
+                        <h6 class="m-0">{{t.nome}}</h6>
+                        <p class="m-0">{{t.nivel}}</p>
+                        <p class="fw-light m-0">{{t.descricao}}</p>
+                    </div>
+                </a>
+            </li>
+            {% endfor %}
+        {% else %}
+            <p>Nenhuma turma encontrada.</p>
+        {% endif %}
+    </ul>
 </div> 
 {% endblock %}
 
