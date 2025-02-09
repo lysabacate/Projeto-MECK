@@ -126,6 +126,11 @@ def turma_aluno():
 def criar_turma():
     return render_template('pagina-criar-turma.html')
 
+@app.route('/listar_turmas')
+@login_required
+def listar_turma():
+    return render_template('pagina-listar-turmas.html')
+
 if __name__ == '__main__':
         
     app.run(debug=True)
