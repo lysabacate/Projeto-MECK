@@ -19,7 +19,8 @@ def create():
 	usuario = Usuario(matricula, nome, email, senha_hash.hexdigest(), eval(admin))
 	db.session.add(usuario)
 	db.session.commit()
-	return 'Dados cadastrados com sucesso!'
+	flash ('Dados cadastrados com sucesso')
+	return redirect('/entrar')
 	
 @bp_usuarios.route('/recovery')
 def recovery():

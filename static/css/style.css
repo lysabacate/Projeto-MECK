@@ -49,11 +49,13 @@ html, body{
     background-color: #7641C5 !important;
 }
 
+.alertbg{
+    background-color: #AD7FF0;
+}
+
 .roxoesc{
     background-color: rgba(77, 43, 128, 0.60) ;
 }
-
-
 
 .imglogin{
     width: 80%;

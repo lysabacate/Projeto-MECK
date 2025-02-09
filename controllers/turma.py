@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, flash
+from flask import render_template, request, redirect, flash, session
 from models.turma import Turma
 from utils import db, lm
 from flask import Blueprint
@@ -16,9 +16,14 @@ def create():
 	turma = Turma(codigo, nome, nivel, descricao)
 	db.session.add(turma)
 	db.session.commit()
-	#flash ('Turma criada com sucesso')
-	#return render_template('')
-	return 'Turma criada com sucesso'
+	flash ('Turma criada com sucesso')
+	return redirect('/turmas/recovery')
 
+
+@bp_turmas.route('/recovery')
+def recovery():
+	turmas = Turma.query.all()
+	session['turmas_ids'] = [turma.id for turma in turmas]
+	return redirect('/listar_turmas')
 
 
