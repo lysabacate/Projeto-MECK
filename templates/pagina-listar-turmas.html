@@ -49,17 +49,14 @@
     <ul class="lista-turmas d-flex gap-3 list-unstyled flex-wrap">
         {% if turmas %}
             {% for t in turmas %}
-            <li>
-                <a href="/turma_aluno" class="p-3 text-decoration-none gap-2 d-flex flex-column justify-content-center">
-                    <div class="h-100">
-                        <div class="d-flex justify-content-end align-items-start">
-                            <img src="/static/img/imagem-engrenagem.svg" alt="">
-                        </div>
-                        <h6 class="m-0">{{t.nome}}</h6>
-                        <p class="m-0">{{t.nivel}}</p>
-                        <p class="fw-light m-0">{{t.descricao}}</p>
-                    </div>
-                </a>
+            <li class="p-3 text-decoration-none gap-2 d-flex flex-column justify-content-center"> 
+                <div class="h-100">
+                    <a href="#" class="d-flex justify-content-end align-items-start">
+                        <img src="/static/img/imagem-engrenagem.svg" alt="">
+                    </a>
+                    <a href="/turma_aluno" class="m-0 text-decoration-none">{{t.nome}}</a>
+                    <p class="m-0">{{t.nivel}}</p>
+                </div>
             </li>
             {% endfor %}
         {% else %}

@@ -508,7 +508,7 @@ html, body{
 
 /*página listar turmas*/
 
-.conteudo-listar-turmas .lista-turmas a{
+.conteudo-listar-turmas .lista-turmas li{
     width: 320px;
     height: 156px;
     background-image: url(/static/img/imagem-turma.svg);
@@ -516,24 +516,19 @@ html, body{
     background-size: contain;
 }
 
-.conteudo-listar-turmas .lista-turmas a h6{
+.conteudo-listar-turmas .lista-turmas li a {
     color: #FFF;
-    font-size: 26px;
+    font-size: 30px;
     font-weight: 700;
 }
 
-.conteudo-listar-turmas .lista-turmas a img {
+.conteudo-listar-turmas .lista-turmas li img {
     width: 25px;
     height: 25px;
 }
 
-.conteudo-listar-turmas .lista-turmas a div :nth-child(3){
+.conteudo-listar-turmas .lista-turmas li div :nth-child(3){
     color: #FFF;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
-}
-
-.conteudo-listar-turmas .lista-turmas a div :nth-child(4){
-    color: #FFF;
-    font-size: 16px;
 }

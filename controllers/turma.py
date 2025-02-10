@@ -25,5 +25,3 @@ def recovery():
 	turmas = Turma.query.all()
 	session['turmas_ids'] = [turma.id for turma in turmas]
 	return redirect('/listar_turmas')
-
-
