@@ -14,7 +14,15 @@
             <img class='imglogin' src="/static/img/imagemlogin.png" alt="">
         </div>
         <div class='blocoentrar roxobg col p-0 d-flex flex-column align-items-center justify-content-center'>
-            <div class="div-login p-sm-5 p-4 py-5 me-sm-5 ms-sm-0 mx-5 bg-light">
+            <div class="div-login p-sm-5 me-sm-5 ms-sm-0 mx-5 bg-light">
+                {% set mensagens = get_flashed_messages() %} 
+                {% if mensagens %}     
+                    <div class='alert alertbg text-light d-flex justify-content-center w-100' role="alert">
+                        {% for msg in mensagens %}
+                            {{ msg }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
                 <h1 class='fw-bold'>Registre-se</h1>
                 <form method = 'post' action="{{url_for('usuarios.create')}}" class="informacoes d-flex flex-column align-items-center gap-2">
                     <div class="w-100">
@@ -25,17 +33,19 @@
                         <label class="align-self-start" for="nome">Nome</label>
                         <input class="p-1 rounded w-100" type="text" id="nome" name="nome" placeholder="Nome">
                     </div>
-                    <div class="w-100">
-                        <label class="align-self-start" for="email">E-mail</label>
-                        <input class="p-1 rounded w-100" type="email" id="email" name="email" placeholder="E-mail">
-                    </div>
-                    <div class="w-100">
+                    <div class="w-100 d-flex flex-column">
                         <label class="align-self-start" for="senha">Senha</label>
-                        <input class="p-1 rounded w-100" type="password" id="senha" name="senha" placeholder="Senha">
+                        <div class="d-flex justify-content-end position-relative">
+                            <input class="p-1 rounded w-100" type="password" id="password" name="senha" placeholder="Senha">
+                            <div class="position-absolute" id="icon" onclick="showHide()"></div>
+                        </div>
                     </div>
-                    <div class="w-100">
+                    <div class="w-100 d-flex flex-column">
                         <label class="align-self-start" for="confirmar_senha">Confirmar Senha</label>
-                        <input class="p-1 rounded w-100" type="password" id="csenha" name="csenha" placeholder="Confirmar Senha">
+                        <div class="d-flex justify-content-end position-relative">
+                            <input class="p-1 rounded w-100" type="password" id="confirm_password" name="csenha" placeholder="Confirmar Senha">
+                            <div class="position-absolute" id="icon_confirm_password" onclick="showHide2()"></div>
+                        </div>
                     </div>
                     <div class="w-100">
                         <select name="admin">
@@ -49,5 +59,6 @@
             </div>
         </div>
     </section>
+    <script src="/static/js/script.js"></script>
 </body>
 </html>

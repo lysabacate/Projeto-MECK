@@ -73,7 +73,7 @@ html, body{
     width: 60%;
 }
 
-#icon{
+#icon, #icon_confirm_password{
     transform: translateY(-50%);
     background: url(/static/img/eye_show_regular_icon_203603.svg);
     width: 30px;
@@ -84,7 +84,7 @@ html, body{
     right: 5px;
 }
 
-#icon.hide{
+#icon.hide, #icon_confirm_password.hide{
     background: url(/static/img/eye_hide_regular_icon_203604.svg);
     background-size: cover; 
 }
