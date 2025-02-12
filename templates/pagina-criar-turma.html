@@ -1,5 +1,8 @@
 {% extends 'pagina-base-dashboard.html' %}
 
+{% block titulo %}
+    Criação de turmas
+{% endblock %}
 
 {% block conteudo %}
 <form method = 'post' action="{{url_for('turmas.create')}}" class="d-flex flex-column forms-criar-turma gap-5">

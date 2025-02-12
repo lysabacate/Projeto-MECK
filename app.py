@@ -8,7 +8,7 @@ from controllers.turma import bp_turmas
 from flask_login import login_user, logout_user, login_required, current_user
 from models.turma import Turma
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', static_url_path='/static')
 
 app.config['SECRET_KEY'] = 'abuble'
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///dados.db"
@@ -116,10 +116,11 @@ def materiais_adicional():
     ]
     return render_template('pagina-material-adicional.html', adicional = adicional)
 
-@app.route('/turma_aluno')
+@app.route('/turma_aluno/<int:id>')
 @login_required
-def turma_aluno():
-    return render_template('pagina-turma-aluno.html')
+def turma_aluno(id):
+    turma = Turma.query.get(id)
+    return render_template('pagina-turma-aluno.html', turma=turma)
 
 
 @app.route('/criar_turma')

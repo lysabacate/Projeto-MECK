@@ -442,6 +442,12 @@ html, body{
     background-size: contain;
 }
 
+.codigoturma{
+    color: #4D2B80;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+}
+
 /*tela de criar turmas*/
 
 .forms-criar-turma .titulo-input {
