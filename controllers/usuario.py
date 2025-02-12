@@ -11,16 +11,19 @@ bp_usuarios = Blueprint("usuarios", __name__, template_folder='templates')
 def create():
 	matricula = request.form.get('matricula')
 	nome = request.form.get('nome')
-	email = request.form.get('email')
 	senha = request.form.get('senha')
 	senha_hash = hashlib.sha256(senha.encode())
 	csenha = request.form.get('csenha')
 	admin = request.form.get('admin')
-	usuario = Usuario(matricula, nome, email, senha_hash.hexdigest(), eval(admin))
-	db.session.add(usuario)
-	db.session.commit()
-	flash ('Dados cadastrados com sucesso')
-	return redirect('/entrar')
+	if senha == csenha:
+		usuario = Usuario(matricula, nome, senha_hash.hexdigest(), eval(admin))
+		db.session.add(usuario)
+		db.session.commit()
+		flash ('Dados cadastrados com sucesso')
+		return redirect('/entrar')
+	else:
+		flash ('Erro. Senhas não correspondentes')
+		return redirect('/registrar')
 	
 @bp_usuarios.route('/recovery')
 def recovery():

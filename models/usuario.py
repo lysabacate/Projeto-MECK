@@ -6,14 +6,12 @@ class Usuario(db.Model, UserMixin):
 	id = db.Column(db.Integer, primary_key = True)
 	matricula = db.Column(db.Integer)
 	nome = db.Column(db.String(100))
-	email = db.Column(db.String(100))
 	senha = db.Column(db.String(100))
 	admin = db.Column(db.Boolean)
 
-	def __init__(self, matricula, nome, email, senha, admin):
+	def __init__(self, matricula, nome, senha, admin):
 		self.matricula = matricula
 		self.nome = nome
-		self.email = email
 		self.senha = senha
 		self.admin = admin
 
