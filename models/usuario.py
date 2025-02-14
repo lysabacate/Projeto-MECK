@@ -8,12 +8,16 @@ class Usuario(db.Model, UserMixin):
 	nome = db.Column(db.String(100))
 	senha = db.Column(db.String(100))
 	admin = db.Column(db.Boolean)
+	turma_id = db.Column(db.Integer, db.ForeignKey('turma.id'), nullable=True)
 
-	def __init__(self, matricula, nome, senha, admin):
+	turma = db.relationship('Turma', back_populates='alunos')
+
+	def __init__(self, matricula, nome, senha, admin, turma_id):
 		self.matricula = matricula
 		self.nome = nome
 		self.senha = senha
 		self.admin = admin
+		self.turma_id = turma_id
 
 	def __repr__(self):
    		return "<Usuario: {} - {}>".format(self.nome, self.admin)

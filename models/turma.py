@@ -8,6 +8,8 @@ class Turma(db.Model):
 	nivel = db.Column(db.Integer)
 	descricao = db.Column(db.String(300))
 
+	alunos = db.relationship('Usuario', back_populates='turma', lazy=True)
+
 	def __init__(self, codigo, nome, nivel, descricao):
 		self.codigo = codigo
 		self.nome = nome

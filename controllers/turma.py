@@ -1,8 +1,9 @@
 from flask import render_template, request, redirect, flash, session
 from models.turma import Turma
+from models.usuario import Usuario
 from utils import db, lm
 from flask import Blueprint
-from flask_login import login_user, logout_user, login_required
+from flask_login import login_user, logout_user, login_required, current_user
 import hashlib
 
 bp_turmas = Blueprint("turmas", __name__, template_folder='templates')
@@ -10,6 +11,7 @@ bp_turmas = Blueprint("turmas", __name__, template_folder='templates')
 @bp_turmas.route('/create', methods=['POST'])
 def create():
 	codigo = request.form.get('codigo_turma')
+	session['codigo_turma'] = request.form.get('codigo')
 	nome = request.form.get('nome_turma')
 	nivel = request.form.get('nivel_turma')
 	descricao= request.form.get('descricao')
@@ -25,3 +27,22 @@ def recovery():
 	turmas = Turma.query.all()
 	session['turmas_ids'] = [turma.id for turma in turmas]
 	return redirect('/listar_turmas')
+
+'''@bp_turmas.route('/ingressar-turma')
+def ingressar_turma():
+	codigo_turma = session.get('codigo_turma')
+	turma = Turma.query.filter_by(codigo=codigo_turma).first()
+
+	if not turma:
+		flash('Código de turma inexistente. Tente novemente', 'error')
+		return redirect('/dashboard')
+	
+	aluno = Usuario.query.get(current_user.id)
+	if aluno.turma_id:
+		flash("Você já está em uma turma, saia antes de ingressar em outra")
+		return redirect('/dashboard')
+
+	aluno.turma_id = turma.id
+	db.session.commit()
+	flash('Você entrou na turma {{turma.nome}}')
+	return redirect('/turma_aluno/{{turma.id}}')'''
