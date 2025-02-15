@@ -9,7 +9,9 @@
     {% if mensagens %} 
     <div class="d-flex justify-content-center">
         <div class='alert alertbg text-light d-flex justify-content-center w-50 m-0' role="alert">
-            Turma criada com sucesso
+            {% for msg in mensagens %}
+                {{ msg }}
+            {% endfor %}
         </div>
     </div>
     {% endif %}

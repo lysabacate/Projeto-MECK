@@ -12,7 +12,7 @@ class Usuario(db.Model, UserMixin):
 
 	turma = db.relationship('Turma', back_populates='alunos')
 
-	def __init__(self, matricula, nome, senha, admin, turma_id):
+	def __init__(self, matricula, nome, senha, admin, turma_id = None):
 		self.matricula = matricula
 		self.nome = nome
 		self.senha = senha

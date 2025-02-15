@@ -4,11 +4,38 @@
     Dashboard
 {% endblock %}
 
+{% block plus %}
+    <a id="openModal" class="nav-link"><img src="{{url_for('static', filename='img/simbolo-add.svg')}}" alt="" class="imagem-add"></a>
+{% endblock %}
 
 {% block conteudo %}
+<div class="d-flex flex-column">
+    {% set mensagens = get_flashed_messages() %} 
+    {% if mensagens %}     
+        <div class='alert alertbg text-light d-flex justify-content-center w-100' role="alert">
+            {% for msg in mensagens %}
+                {{ msg }}
+            {% endfor %}
+        </div>
+    {% endif %}
+    <div id="overlay" class="overlay"></div>
+    <div id="popap" class="popap">
+        <div class="popap-content d-flex align-items-center justify-content-center h-100">
+            <form method = 'post' action="{{url_for('turmas.ingressar_turma')}}" class="d-flex flex-column align-items-center gap-1">
+                <label for="codigo" class="text-center fw-bold fs-4 txtroxo">Código da turma</label>
+                <div class="d-flex align-items-center">
+                    <input type="text" id="codigo" name="codigo" class="m-0" placeholder="Digite o código">
+                    <input type="submit" id="confirmButton" class="text-center" value="✔">
+                </div>
+            </form>
+        </div>
+    </div>
     <div class="capivara-ops d-flex flex-column text-center align-items-center justify-content-center">
         <img src="static/img/capybara-comendo.svg" alt="" class="capivara-comendo">
         <h5 class="ops-texto mx-5">Ops... Você ainda não está em uma turma</h5>
-        <a href="/turma_aluno" class="btn text-light roxobg text-align-center fw-bold">Participar da turma</a>
+        <a id="participarturma" class="btn text-light roxobg text-align-center fw-bold">Participar da turma</a>
     </div>
+</div>
+
+<script src="/static/js/script.js"></script>
 {% endblock %}

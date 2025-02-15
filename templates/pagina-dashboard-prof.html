@@ -4,6 +4,10 @@
     Dashboard
 {% endblock %}
 
+{% block plus %}
+    <a class="nav-link" href="/criar_turma"><img src="{{url_for('static', filename='img/simbolo-add.svg')}}" alt="" class="imagem-add"></a>
+{% endblock %}
+
 {% block conteudo %}
     <div class="capivara-ops d-flex flex-column text-center align-items-center justify-content-center">
         <img src="static/img/capybara-comendo.svg" alt="" class="capivara-comendo">

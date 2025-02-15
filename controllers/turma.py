@@ -11,11 +11,9 @@ bp_turmas = Blueprint("turmas", __name__, template_folder='templates')
 @bp_turmas.route('/create', methods=['POST'])
 def create():
 	codigo = request.form.get('codigo_turma')
-	session['codigo_turma'] = request.form.get('codigo')
 	nome = request.form.get('nome_turma')
 	nivel = request.form.get('nivel_turma')
-	descricao= request.form.get('descricao')
-	turma = Turma(codigo, nome, nivel, descricao)
+	turma = Turma(codigo, nome, nivel)
 	db.session.add(turma)
 	db.session.commit()
 	flash ('Turma criada com sucesso')
@@ -28,9 +26,9 @@ def recovery():
 	session['turmas_ids'] = [turma.id for turma in turmas]
 	return redirect('/listar_turmas')
 
-'''@bp_turmas.route('/ingressar-turma')
+@bp_turmas.route('/ingressar-turma', methods=['POST'])
 def ingressar_turma():
-	codigo_turma = session.get('codigo_turma')
+	codigo_turma = request.form.get('codigo')
 	turma = Turma.query.filter_by(codigo=codigo_turma).first()
 
 	if not turma:
@@ -44,5 +42,5 @@ def ingressar_turma():
 
 	aluno.turma_id = turma.id
 	db.session.commit()
-	flash('Você entrou na turma {{turma.nome}}')
-	return redirect('/turma_aluno/{{turma.id}}')'''
+	flash(f'Você entrou na turma {turma.nome}')
+	return redirect(f'/turma_aluno/{turma.id}')

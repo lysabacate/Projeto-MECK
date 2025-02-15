@@ -26,3 +26,27 @@ function showHide2(){
     }
 }
 
+
+
+/*pop up entrar em turma*/
+document.addEventListener("DOMContentLoaded", function() {
+    const openModal = document.getElementById("openModal");
+    const modal = document.getElementById("popap");
+    const overlay = document.getElementById("overlay");
+    const openModal2 = document.getElementById("participarturma")
+
+    openModal.addEventListener("click", function() {
+        modal.style.display = "block";
+        overlay.style.display = "block";
+    });
+
+    openModal2.addEventListener("click", function() {
+        modal.style.display = "block";
+        overlay.style.display = "block";
+    });
+
+    overlay.addEventListener("click", function() {
+        modal.style.display = "none";
+        overlay.style.display = "none";
+    });
+});

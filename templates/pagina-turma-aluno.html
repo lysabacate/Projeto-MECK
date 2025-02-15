@@ -37,6 +37,15 @@
 
 {% block conteudo %}
 <div class="conteudo-turmas d-flex flex-column gap-2">
+    {% if mensagens %} 
+    <div class="d-flex justify-content-center">
+        <div class='alert alertbg text-light d-flex justify-content-center w-50 m-0' role="alert">
+            {% for msg in mensagens %}
+                {{ msg }}
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
     <div class="d-flex justify-content-between align-items-center w-100">
         <h1 class="ingles-titulo m-0">Nome da turma</h1>
         {% if current_user.admin %}<h2 class="codigoturma m-0">Código da turma: {{turma.codigo}}</h2>{% endif %}
