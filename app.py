@@ -144,6 +144,10 @@ def listar_turma():
     turmas = Turma.query.filter(Turma.id.in_(turma_ids)).all()
     return render_template('pagina-listar-turmas.html', turmas = turmas)
 
+@app.route('/add_material')
+@login_required
+def add_material():
+    return render_template('pagina-add-material.html')
+
 if __name__ == '__main__':
-        
     app.run(debug=True)
