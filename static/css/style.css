@@ -509,15 +509,15 @@ a{
     font-size: 20px;
 }
 
-/*tela de criar turmas*/
+/*tela de criar turmas e adicionar materiais*/
 
-.forms-criar-turma .titulo-input {
+.forms-criar-turma .titulo-input, .forms-add-material .titulo-input {
     color: #7641C5;
     font-size: 16px;
     font-weight: 700;
 }
 
-.forms-criar-turma .input-roxo{
+.forms-criar-turma .input-roxo, .forms-add-material .input-roxo{
     border-radius: 4px;
     background: #ADA9A961;
     width: 400px;
@@ -530,7 +530,7 @@ a{
     width: 200px;
 }
 
-.forms-criar-turma .input-roxo:focus{
+.forms-criar-turma .input-roxo:focus, .forms-add-material .input-roxo:focus{
     outline: 2px solid #7641C5;
     border-radius: 2px;
 }
@@ -564,13 +564,17 @@ a{
     background: #FFF;
 }
 
-.forms-criar-turma .botao-criar-turma {
+.forms-criar-turma .botao-criar-turma, .forms-add-material .botao-postar-material {
     background-color: #6335A7;
     width: 200px;
     height: 30px;
     color: #FFF;
     font-size: 20px;
     font-weight: 700;
+}
+
+.forms-add-material .desc-add-material{
+    height: 104px;
 }
 
 /*página listar turmas*/
