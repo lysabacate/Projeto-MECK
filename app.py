@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash, redirect, Blueprint, session
+from flask import Flask, render_template, request, flash, redirect, Blueprint, session, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from utils import db, lm
@@ -23,12 +23,21 @@ migrate = Migrate(app, db)
 
 @app.route('/')
 def paginainicial():
-    if current_user.is_authenticated and current_user.admin:
-        return render_template('pagina-dashboard-prof.html')
+    existe_turma = db.session.query(Turma.id).first() is not None
     
-    elif current_user.is_authenticated and not current_user.admin:
-        return render_template('pagina-dashboard-aluno.html')
-    
+    if current_user.is_authenticated:
+
+        if current_user.admin and existe_turma == True:
+            return redirect('/listar_turmas')
+        
+
+        elif current_user.turma_id is not None:
+            turma = Turma.query.get(current_user.turma_id)
+            if turma:  
+                return redirect(f'/turma_aluno/{turma.id}')
+        
+        return redirect('/dashboard')
+            
     else:
         return render_template('pagina-inicial.html')
 
