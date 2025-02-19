@@ -9,7 +9,7 @@ class Turma(db.Model):
 
 	alunos = db.relationship('Usuario', back_populates='turma', lazy=True)
 
-	def __init__(self, codigo, nome, nivel,):
+	def __init__(self, codigo, nome, nivel):
 		self.codigo = codigo
 		self.nome = nome
 		self.nivel = nivel

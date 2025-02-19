@@ -57,7 +57,7 @@ def autenticar():
 	usuario = Usuario.query.filter_by(matricula = matricula).first()
 	if usuario and (hashlib.sha256(senha.encode()).hexdigest() == usuario.senha):
 		login_user(usuario)
-		return redirect('/dashboard')
+		return redirect('/')
 	else:
 		flash('Dados incorretos')
 		return redirect('/entrar')

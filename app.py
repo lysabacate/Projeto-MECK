@@ -5,8 +5,10 @@ from utils import db, lm
 import os
 from controllers.usuario import bp_usuarios
 from controllers.turma import bp_turmas
+from controllers.material import bp_materiais
 from flask_login import login_user, logout_user, login_required, current_user
 from models.turma import Turma
+from models.material import Material
 
 app = Flask(__name__, static_folder='static', static_url_path='/static')
 
@@ -15,6 +17,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///dados.db"
 app.config['SQLALCHEMY_TRACKMODIFICATIONS'] = False
 app.register_blueprint(bp_usuarios, url_prefix = '/usuarios')
 app.register_blueprint(bp_turmas, url_prefix = '/turmas')
+app.register_blueprint(bp_materiais, url_prefix = '/materiais')
 db.init_app(app)
 lm.init_app(app)
 
@@ -144,10 +147,20 @@ def listar_turma():
     turmas = Turma.query.filter(Turma.id.in_(turma_ids)).all()
     return render_template('pagina-listar-turmas.html', turmas = turmas)
 
-@app.route('/add_material')
+@app.route('/add_material/<tipo>')
 @login_required
-def add_material():
-    return render_template('pagina-add-material.html')
+def add_material(tipo):
+    return render_template('pagina-add-material.html', tipo = tipo)
+
+@app.route('/listar_materiais/<tipo>')
+def listar_materiais(tipo):
+    materiais = Material.query.filter_by(tipo=tipo).all()
+    
+    if not materiais:
+        flash(f'Nenhum material encontrado para {tipo}', )
+
+    return render_template('listar_materiais.html', tipo=tipo, materiais=materiais)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
