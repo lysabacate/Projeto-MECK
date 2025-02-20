@@ -143,8 +143,7 @@ def criar_turma():
 @app.route('/listar_turmas')
 @login_required
 def listar_turma():
-    turma_ids = session.get('turmas_ids', [])
-    turmas = Turma.query.filter_by(Turma.id.in_(turma_ids)).all()
+    turmas = Turma.query.all()
     return render_template('pagina-listar-turmas.html', turmas = turmas)
 
 @app.route('/add_material/<tipo>')

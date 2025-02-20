@@ -6,9 +6,7 @@ class Turma(db.Model):
 	codigo = db.Column(db.String(100))
 	nome = db.Column(db.String(100))
 	nivel = db.Column(db.Integer)
-	professor_id = db.Column(db.Integer, db.ForeignKey('usuario.id'))
 
-	professor = db.relationship('Usuario', back_populates='turma')
 	alunos = db.relationship('Usuario', back_populates='turma', lazy=True)
 
 	def __init__(self, codigo, nome, nivel):
