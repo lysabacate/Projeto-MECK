@@ -6,13 +6,16 @@ class Turma(db.Model):
 	codigo = db.Column(db.String(100))
 	nome = db.Column(db.String(100))
 	nivel = db.Column(db.Integer)
+	professor_id = db.Column(db.Integer, db.ForeignKey('usuario.id'), nullable=False)
 
-	alunos = db.relationship('Usuario', back_populates='turma', lazy=True)
+	professor = db.relationship('Usuario', back_populates='turma')
+	alunos = db.relationship('Aluno', back_populates='turma')
 
-	def __init__(self, codigo, nome, nivel):
+	def __init__(self, codigo, nome, nivel, professor_id):
 		self.codigo = codigo
 		self.nome = nome
 		self.nivel = nivel
+		self.professor_id = professor_id
 
 	def __repr__(self):
    		return "<Turma: {} - {}>".format(self.nome, self.nivel)

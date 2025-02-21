@@ -37,6 +37,7 @@
 
 {% block conteudo %}
 <div class="conteudo-turmas d-flex flex-column gap-2">
+    {% set mensagens = get_flashed_messages() %} 
     {% if mensagens %} 
     <div class="d-flex justify-content-center">
         <div class='alert alertbg text-light d-flex justify-content-center w-50 m-0' role="alert">

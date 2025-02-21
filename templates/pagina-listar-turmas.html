@@ -17,31 +17,27 @@
     {% endif %}
     <h1 class="ingles-titulo d-flex align-self-start m-0">Turmas</h1>
     <ul class="lista-turmas d-flex gap-3 list-unstyled flex-wrap">
-        {% if turmas %}
-            {% for t in turmas %}
-            <li class="p-3 text-decoration-none gap-2 d-flex flex-column justify-content-center"> 
-                <div class="h-100">
+        {% for t in turmas %}
+        <li class="p-3 text-decoration-none gap-2 d-flex flex-column justify-content-center"> 
+            <div class="h-100">
 
-                    <div class="dropdown d-flex justify-content-end">
-                        <a href="#" class="d-flex justify-content-end mm" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="/static/img/imagem-engrenagem.svg" alt="">
-                        </a>
-                        <ul class="dropdown-menu p-2 bg-white dropdown-menu-end" aria-labelledby="userDropdown">
-                            <p class=" opc-turmas fw-bold fs-4 m-0 text-center">Opções</p>
-                            <a class="dropdown-item opc-turmas fw-normal border-bottom fs-4 " href="/usuarios/ExcluirTurma">Excluir Turma</a>
-                            <a class="dropdown-item opc-turmas fw-normal fs-4" href="/usuarios/EditarTurma">Editar Turma</a>
-                        </ul>
-                    </div>
-
-        
-                    <a href="/turma_aluno/{{t.id}}" class="m-0 text-decoration-none">{{t.nome}}</a>
-                    <p class="m-0">{{t.nivel}}</p>
+                <div class="dropdown d-flex justify-content-end">
+                    <a href="#" class="d-flex justify-content-end mm" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="/static/img/imagem-engrenagem.svg" alt="">
+                    </a>
+                    <ul class="dropdown-menu p-2 bg-white dropdown-menu-end" aria-labelledby="userDropdown">
+                        <p class=" opc-turmas fw-bold fs-4 m-0 text-center">Opções</p>
+                        <a class="dropdown-item opc-turmas fw-normal border-bottom fs-4 " href="/usuarios/ExcluirTurma">Excluir Turma</a>
+                        <a class="dropdown-item opc-turmas fw-normal fs-4" href="/usuarios/EditarTurma">Editar Turma</a>
+                    </ul>
                 </div>
-            </li>
-            {% endfor %}
-        {% else %}
-            <p>Nenhuma turma encontrada.</p>
-        {% endif %}
+
+    
+                <a href="/turma_aluno/{{t.id}}" class="m-0 text-decoration-none">{{t.nome}}</a>
+                <p class="m-0">{{t.nivel}}</p>
+            </div>
+        </li>
+        {% endfor %}
     </ul>
 </div> 
 {% endblock %}

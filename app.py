@@ -6,9 +6,11 @@ import os
 from controllers.usuario import bp_usuarios
 from controllers.turma import bp_turmas
 from controllers.material import bp_materiais
+from controllers.alunos_turma import bp_alunos
 from flask_login import login_user, logout_user, login_required, current_user
 from models.turma import Turma
 from models.material import Material
+from models.alunos_turma import Aluno
 
 app = Flask(__name__, static_folder='static', static_url_path='/static')
 
@@ -18,6 +20,7 @@ app.config['SQLALCHEMY_TRACKMODIFICATIONS'] = False
 app.register_blueprint(bp_usuarios, url_prefix = '/usuarios')
 app.register_blueprint(bp_turmas, url_prefix = '/turmas')
 app.register_blueprint(bp_materiais, url_prefix = '/materiais')
+app.register_blueprint(bp_alunos, url_prefix = '/alunos')
 db.init_app(app)
 lm.init_app(app)
 
@@ -27,22 +30,20 @@ migrate = Migrate(app, db)
 @app.route('/')
 def paginainicial():
     existe_turma = db.session.query(Turma.id).first() is not None
-    
+    alunos = {aluno.aluno_id: aluno.turma_id for aluno in Aluno.query.with_entities(Aluno.aluno_id, Aluno.turma_id).all()}
+
     if current_user.is_authenticated:
-
-        if current_user.admin and existe_turma == True:
+        if current_user.admin and existe_turma:
             return redirect('/listar_turmas')
-        
 
-        elif current_user.turma_id is not None:
-            turma = Turma.query.get(current_user.turma_id)
-            if turma:  
-                return redirect(f'/turma_aluno/{turma.id}')
-        
+        if current_user.id in alunos:
+            turma_id = alunos[current_user.id]  
+            if turma_id:
+                return redirect(f'/turma_aluno/{turma_id}')
+
         return redirect('/dashboard')
-            
-    else:
-        return render_template('pagina-inicial.html')
+
+    return render_template('pagina-inicial.html')
 
 @app.route('/registrar')
 def registrar():
@@ -76,32 +77,6 @@ def materiais():
     return render_template('pagina-dashboard-materiais.html')
 
 
-@app.route('/materiais_videos')
-@login_required
-def materiais_videos():
-    videos = [
-        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material'},
-        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material2'},
-        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material3'},
-        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material4'},
-        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material5'},
-        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material6'}
-    ]
-    return render_template('pagina-materiais-videos.html', videos = videos)
-
-@app.route('/materiais_apostilas')
-@login_required
-def materiais_apostilas():
-    apostilas = [
-        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material'},
-        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material2'},
-        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material3'},
-        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material4'},
-        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material5'},
-        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material6'}
-    ]
-    return render_template('pagina-materiais-apostilas.html', apostilas = apostilas)
-
 @app.route('/listaatvs')
 @login_required
 def listaatvs():
@@ -115,18 +90,6 @@ def listaatvs():
     ]
     return render_template('pagina-lista-atividades.html', habilidades = habilidades)
 
-@app.route('/material_adicional')
-@login_required
-def materiais_adicional():
-    adicional = [
-        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material'},
-        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material2'},
-        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material3'},
-        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material4'},
-        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material5'},
-        {'imagem': 'static/img/imagem-listening.svg','nome':'Nome_Material6'}
-    ]
-    return render_template('pagina-material-adicional.html', adicional = adicional)
 
 @app.route('/turma_aluno/<int:id>')
 @login_required

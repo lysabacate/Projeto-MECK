@@ -38,6 +38,15 @@
 
 {% block conteudo %}
 <div class='bloco-lista-tipo-material d-flex flex-column'>
+    {% set mensagens = get_flashed_messages() %} 
+    {% if mensagens %} 
+    <div class="d-flex justify-content-center">
+        <div class='alert alertbg text-light d-flex justify-content-center w-50 m-0' role="alert">
+            {% for msg in mensagens %}
+                {{ msg }}
+            {% endfor %}
+        </div>
+    </div>
     <h1 class="ingles-titulo d-flex align-self-start">Materiais - vídeos</h1>
     <ul class='d-flex list-unstyled flex-wrap'>
 		{% for m in materiais %}
@@ -56,13 +65,13 @@
             </li>	
 		{% endfor %}
         {% if current_user.admin %}
-      <li class="item-material-tipo pb-3 pe-3">
-        <a href="/add_material/video" class="criaratividade roxobg d-flex flex-column justify-content-center align-items-center h-100 text-decoration-none">
-          <img src="{{url_for('static', filename = 'img/svg8.svg')}}" alt="">
-          <p class="text-light fs-5 fw-bold m-0">Novo material</p>
-        </a>
-      </li>
-    {% endif %}
+            <li class="item-material-tipo pb-3 pe-3">
+            <a href="/add_material/video" class="criaratividade roxobg d-flex flex-column justify-content-center align-items-center h-100 text-decoration-none">
+                <img src="{{url_for('static', filename = 'img/svg8.svg')}}" alt="">
+                <p class="text-light fs-5 fw-bold m-0">Novo material</p>
+            </a>
+            </li>
+        {% endif %}
 	</ul>
 </div>
 {% endblock %}

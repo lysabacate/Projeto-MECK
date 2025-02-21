@@ -13,7 +13,9 @@ def create():
 	codigo = request.form.get('codigo_turma')
 	nome = request.form.get('nome_turma')
 	nivel = request.form.get('nivel_turma')
-	turma = Turma(codigo, nome, nivel)
+	professor_id = current_user.id
+	print(f"Professor ID: {professor_id}")
+	turma = Turma(codigo, nome, nivel, professor_id = professor_id)
 	db.session.add(turma)
 	db.session.commit()
 	flash ('Turma criada com sucesso')
@@ -24,7 +26,7 @@ def create():
 def recovery():
 	return redirect('/listar_turmas')
 
-@bp_turmas.route('/ingressar-turma', methods=['POST'])
+'''@bp_turmas.route('/ingressar-turma', methods=['POST'])
 def ingressar_turma():
 	codigo_turma = request.form.get('codigo')
 	turma = Turma.query.filter_by(codigo=codigo_turma).first()
@@ -41,4 +43,4 @@ def ingressar_turma():
 	aluno.turma_id = turma.id
 	db.session.commit()
 	flash(f'Você entrou na turma {turma.nome}')
-	return redirect(f'/turma_aluno/{turma.id}')
+	return redirect(f'/turma_aluno/{turma.id}')'''

@@ -22,8 +22,7 @@ def create(tipo):
 @bp_materiais.route('/<tipo>')
 def recovery(tipo):
     materiais = Material.query.filter_by(tipo=tipo).all()
-    print(f'Materiais carregados para {tipo}:', materiais)
-
+    
     if tipo == "apostila":
         template = "pagina-materiais-apostilas.html"
     elif tipo == "video":

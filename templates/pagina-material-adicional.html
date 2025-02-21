@@ -36,26 +36,34 @@
 </div>
 {% endblock %}
 
-{% block titulo %}
-    Materiais - Vídeos
-{% endblock %}
 
 {% block conteudo %}
 <div class='bloco-lista-tipo-material d-flex flex-column'>
+    {% set mensagens = get_flashed_messages() %} 
+    {% if mensagens %} 
+    <div class="d-flex justify-content-center">
+        <div class='alert alertbg text-light d-flex justify-content-center w-50 m-0' role="alert">
+            {% for msg in mensagens %}
+                {{ msg }}
+            {% endfor %}
+        </div>
+    </div>
     <h1 class="ingles-titulo d-flex align-self-start">Materiais adicionais</h1>
     <ul class='d-flex list-unstyled flex-wrap'>
-		{% for i in adicional%}
-			<a href="#" class='item-material-tipo pb-3 pe-3 text-decoration-none'>  
-                <div class="card h-100">
-                    <div class="card-body p-0 d-flex flex-column justify-content-between">
-                        <div class="opca position-relative rounded">
-                            <img class="card-img-top" src="/static/img/imagem-listening.svg" alt="">
-                            <div class='position-absolute z-1 top-0 area-atv roxoesc bg-opacity-50  w-100 h-100 d-flex align-items-center justify-content-end p-3'></div>
+		{% for m in materiais %}
+            <li class='item-material-tipo pb-3 pe-3'>
+                <a class="text-decoration-none"  href="#"> 
+                    <div class="card h-100">
+                        <div class="card-body p-0 d-flex flex-column justify-content-between">
+                            <div class="opca position-relative rounded">
+                                <img class="card-img-top" src="/static/img/imagem-listening.svg" alt="">
+                                <div class='position-absolute z-1 top-0 area-atv roxoesc bg-opacity-50  w-100 h-100 d-flex align-items-center justify-content-end p-3'></div>
+                            </div>
+                            <h6 class="card-text d-flex align-items-center justify-content-center">{{m.titulo}}</h6>
                         </div>
-                        <h6 class="card-text d-flex align-items-center justify-content-center">{{i.nome}}</h6>
                     </div>
-                </div>
-            <a>
+                </a>
+            </li>	
 		{% endfor %}
         {% if current_user.admin %}
       <li class="itematv pb-3 pe-3">
