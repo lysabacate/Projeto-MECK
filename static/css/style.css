@@ -298,7 +298,14 @@ a{
 .navbar{
     height: 62px;
 }
+.opc-turmas{
+    color: #4D2B80!important;
+    
+}
 
+.mm{
+    width: 25px;
+}
 /*dashboard materiais e atvs*/
 .ingles-titulo{
     color: #4D2B80;
