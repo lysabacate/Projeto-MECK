@@ -17,13 +17,13 @@
     {% endif %}
     <div class="nav-item active">
         <a class="materiais d-flex align-items-center gap-1 text-decoration-none" href="/materiais">
-            <img src="static/img/imagem-material.svg" alt="">
+            <img src="{{url_for('static', filename = 'img/imagem-material.svg')}}" alt="">
             <h6 class="text-light text-center fs-6 my-0" >Materiais</h6>
         </a>
     </div>
     <div class="nav-item">
         <a class=" atividades d-flex align-items-center gap-1 text-decoration-none" href="/atividades">
-            <img src="static/img/imagem-atvs.svg" alt="">
+            <img src="{{url_for('static', filename = 'img/imagem-atvs.svg')}}" alt="">
             <h6 class="text-light fs-6 my-0" >Atividades</h6>
         </a>
     </div>
@@ -40,23 +40,25 @@
 <div class='bloco-lista-tipo-material d-flex flex-column'>
     <h1 class="ingles-titulo d-flex align-self-start">Materiais - vídeos</h1>
     <ul class='d-flex list-unstyled flex-wrap'>
-		{% for i in videos %}
-			<a href="#" class='item-material-tipo pb-3 pe-3 text-decoration-none'>  
-                <div class="card h-100">
-                    <div class="card-body p-0 d-flex flex-column justify-content-between">
-                        <div class="opca position-relative rounded">
-                            <img class="card-img-top" src="{{i.imagem}}" alt="">
-                            <div class='position-absolute z-1 top-0 area-atv roxoesc bg-opacity-50  w-100 h-100 d-flex align-items-center justify-content-end p-3'></div>
+		{% for m in materiais %}
+            <li class='item-material-tipo pb-3 pe-3'>
+                <a class="text-decoration-none"  href="#"> 
+                    <div class="card h-100">
+                        <div class="card-body p-0 d-flex flex-column justify-content-between">
+                            <div class="opca position-relative rounded">
+                                <img class="card-img-top" src="/static/img/imagem-listening.svg" alt="">
+                                <div class='position-absolute z-1 top-0 area-atv roxoesc bg-opacity-50  w-100 h-100 d-flex align-items-center justify-content-end p-3'></div>
+                            </div>
+                            <h6 class="card-text d-flex align-items-center justify-content-center">{{m.titulo}}</h6>
                         </div>
-                        <h6 class="card-text d-flex align-items-center justify-content-center">{{i.nome}}</h6>
                     </div>
-                </div>
-            <a>
+                </a>
+            </li>	
 		{% endfor %}
         {% if current_user.admin %}
-      <li class="itematv pb-3 pe-3">
-        <a href=# class="criaratividade roxobg d-flex flex-column justify-content-center align-items-center h-100 text-decoration-none">
-          <img src="static/img/svg8.svg" alt="">
+      <li class="item-material-tipo pb-3 pe-3">
+        <a href="/add_material/video" class="criaratividade roxobg d-flex flex-column justify-content-center align-items-center h-100 text-decoration-none">
+          <img src="{{url_for('static', filename = 'img/svg8.svg')}}" alt="">
           <p class="text-light fs-5 fw-bold m-0">Novo material</p>
         </a>
       </li>

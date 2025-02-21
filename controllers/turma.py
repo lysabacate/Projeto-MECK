@@ -1,10 +1,10 @@
-from flask import render_template, request, redirect, flash, session
+from flask import request, redirect, flash, session
 from models.turma import Turma
 from models.usuario import Usuario
-from utils import db, lm
+from utils import db
 from flask import Blueprint
-from flask_login import login_user, logout_user, login_required, current_user
-import hashlib
+from flask_login import current_user
+
 
 bp_turmas = Blueprint("turmas", __name__, template_folder='templates')
 
@@ -22,8 +22,6 @@ def create():
 
 @bp_turmas.route('/recovery')
 def recovery():
-	turmas = Turma.query.all()
-	session['turmas_ids'] = [turma.id for turma in turmas]
 	return redirect('/listar_turmas')
 
 @bp_turmas.route('/ingressar-turma', methods=['POST'])

@@ -1,12 +1,14 @@
-from flask import Flask, render_template, request, flash, redirect, Blueprint, session
+from flask import Flask, render_template, request, flash, redirect, Blueprint, session, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from utils import db, lm
 import os
 from controllers.usuario import bp_usuarios
 from controllers.turma import bp_turmas
+from controllers.material import bp_materiais
 from flask_login import login_user, logout_user, login_required, current_user
 from models.turma import Turma
+from models.material import Material
 
 app = Flask(__name__, static_folder='static', static_url_path='/static')
 
@@ -15,6 +17,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///dados.db"
 app.config['SQLALCHEMY_TRACKMODIFICATIONS'] = False
 app.register_blueprint(bp_usuarios, url_prefix = '/usuarios')
 app.register_blueprint(bp_turmas, url_prefix = '/turmas')
+app.register_blueprint(bp_materiais, url_prefix = '/materiais')
 db.init_app(app)
 lm.init_app(app)
 
@@ -23,12 +26,21 @@ migrate = Migrate(app, db)
 
 @app.route('/')
 def paginainicial():
-    if current_user.is_authenticated and current_user.admin:
-        return render_template('pagina-dashboard-prof.html')
+    existe_turma = db.session.query(Turma.id).first() is not None
     
-    elif current_user.is_authenticated and not current_user.admin:
-        return render_template('pagina-dashboard-aluno.html')
-    
+    if current_user.is_authenticated:
+
+        if current_user.admin and existe_turma == True:
+            return redirect('/listar_turmas')
+        
+
+        elif current_user.turma_id is not None:
+            turma = Turma.query.get(current_user.turma_id)
+            if turma:  
+                return redirect(f'/turma_aluno/{turma.id}')
+        
+        return redirect('/dashboard')
+            
     else:
         return render_template('pagina-inicial.html')
 
@@ -131,10 +143,23 @@ def criar_turma():
 @app.route('/listar_turmas')
 @login_required
 def listar_turma():
-    turma_ids = session.get('turmas_ids', [])
-    turmas = Turma.query.filter(Turma.id.in_(turma_ids)).all()
+    turmas = Turma.query.all()
     return render_template('pagina-listar-turmas.html', turmas = turmas)
 
+@app.route('/add_material/<tipo>')
+@login_required
+def add_material(tipo):
+    return render_template('pagina-add-material.html', tipo = tipo)
+
+@app.route('/listar_materiais/<tipo>')
+def listar_materiais(tipo):
+    materiais = Material.query.filter_by(tipo=tipo).all()
+    
+    if not materiais:
+        flash(f'Nenhum material encontrado para {tipo}', )
+
+    return render_template('listar_materiais.html', tipo=tipo, materiais=materiais)
+
+
 if __name__ == '__main__':
-        
     app.run(debug=True)

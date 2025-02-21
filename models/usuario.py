@@ -10,7 +10,7 @@ class Usuario(db.Model, UserMixin):
 	admin = db.Column(db.Boolean)
 	turma_id = db.Column(db.Integer, db.ForeignKey('turma.id'), nullable=True)
 
-	turma = db.relationship('Turma', back_populates='alunos')
+	turma = db.relationship('Turma', back_populates='alunos', foreign_keys=[turma_id])
 
 	def __init__(self, matricula, nome, senha, admin, turma_id = None):
 		self.matricula = matricula
