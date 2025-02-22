@@ -26,6 +26,19 @@ def create():
 def recovery():
 	return redirect('/listar_turmas')
 
+@bp_turmas.route('/delete/<int:id>', methods=['POST'])
+def delete(id):
+	turma = Turma.query.get(id)
+	if turma is None:
+		flash('Turma não encontrada', 'error')
+		return redirect('/listar_turmas')
+
+	db.session.delete(turma)
+	db.session.commit()
+
+	flash('Turma excluída com sucesso', 'success')
+	return redirect('/listar_turmas')
+    
 '''@bp_turmas.route('/ingressar-turma', methods=['POST'])
 def ingressar_turma():
 	codigo_turma = request.form.get('codigo')

@@ -27,8 +27,14 @@
                     </a>
                     <ul class="dropdown-menu p-2 bg-white dropdown-menu-end" aria-labelledby="userDropdown">
                         <p class=" opc-turmas fw-bold fs-4 m-0 text-center">Opções</p>
-                        <a class="dropdown-item opc-turmas fw-normal border-bottom fs-4 " href="/usuarios/ExcluirTurma">Excluir Turma</a>
-                        <a class="dropdown-item opc-turmas fw-normal fs-4" href="/usuarios/EditarTurma">Editar Turma</a>
+
+                        <form action="/turmas/delete/{{t.id}}" method="POST" onsubmit="console.log('Enviando formulário...'); return confirm('Tem certeza que deseja excluir esta turma?');">
+                            <button type="submit" class="dropdown-item opc-turmas fw-normal border-bottom fs-4 align-items-center">
+                                Excluir Turma
+                            </button>
+                        </form>
+
+                        <a class="dropdown-item opc-turmas fw-normal fs-4" href="/turmas/EditarTurma">Editar Turma</a>
                     </ul>
                 </div>
 
