@@ -50,3 +50,14 @@ document.addEventListener("DOMContentLoaded", function() {
         overlay.style.display = "none";
     });
 });
+
+/* gerar codigo */
+function gerarCodigo() {
+    let caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
+    let codigo = "";
+    for (let i = 0; i < 6; i++) { 
+        let randomIndex = Math.floor(Math.random() * caracteres.length);
+        codigo += caracteres[randomIndex];
+    }
+    document.getElementById("cod_turma").value = codigo;
+}

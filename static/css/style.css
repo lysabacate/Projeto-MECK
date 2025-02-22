@@ -572,7 +572,7 @@ a{
     background: #FFF;
 }
 
-.forms-criar-turma .botao-criar-turma, .forms-add-material .botao-postar-material {
+.forms-criar-turma .botao-criar-turma, .forms-add-material .botao-postar-material, .botao-gerar-codigo {
     background-color: #6335A7;
     width: 200px;
     height: 30px;
