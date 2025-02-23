@@ -57,6 +57,7 @@ def redefinir_senha():
 def entrar():
     return render_template('pagina-login.html')
 
+
 @app.route('/dashboard')
 @login_required
 def dashboard():
@@ -76,6 +77,10 @@ def atividades():
 def materiais():
     return render_template('pagina-dashboard-materiais.html')
 
+@app.route('/links')
+@login_required
+def links():
+    return render_template('pagina-links.html')
 
 @app.route('/listaatvs')
 @login_required
