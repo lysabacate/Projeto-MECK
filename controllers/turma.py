@@ -39,7 +39,7 @@ def delete(id):
 	flash('Turma excluída com sucesso', 'success')
 	return redirect('/listar_turmas')
 
-bp_turmas.route('/update/<int:id>', methods=['POST'])
+
 @bp_turmas.route('/update/<int:id>', methods=['POST'])
 def update(id):
     turma = Turma.query.get(id)
