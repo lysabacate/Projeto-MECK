@@ -109,6 +109,12 @@ def listar_turma():
     turmas = Turma.query.all()
     return render_template('pagina-listar-turmas.html', turmas = turmas)
 
+@app.route('/editar_turma/<int:id>')
+@login_required
+def editar_turma(id):
+    turma = Turma.query.get(id)
+    return render_template('pagina-editar-turmas.html', turma = turma)
+
 @app.route('/add_material/<tipo>')
 @login_required
 def add_material(tipo):

@@ -38,6 +38,25 @@ def delete(id):
 
 	flash('Turma excluída com sucesso', 'success')
 	return redirect('/listar_turmas')
+
+bp_turmas.route('/update/<int:id>', methods=['POST'])
+@bp_turmas.route('/update/<int:id>', methods=['POST'])
+def update(id):
+    turma = Turma.query.get(id)
+
+    if turma:
+        turma.codigo = request.form.get('codigo_turma')
+        turma.nome = request.form.get('nome_turma')
+        turma.nivel = request.form.get('nivel_turma')
+
+        db.session.commit()
+
+        flash('Turma atualizada com sucesso', 'success')
+    else:
+        flash('Turma não encontrada', 'error')
+
+    return redirect('/listar_turmas')
+
     
 '''@bp_turmas.route('/ingressar-turma', methods=['POST'])
 def ingressar_turma():
