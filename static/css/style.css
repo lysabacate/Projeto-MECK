@@ -2,6 +2,8 @@
     margin: 0; 
     padding: 0;
     font-family: "Open Sans", sans-serif;
+    scrollbar-width: thin; 
+    scrollbar-color: #7641C5 #CECECE; 
 }
 
 body {
@@ -302,6 +304,43 @@ a{
     color: #4D2B80!important;
     
 }
+
+.scroll-container {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.site-box h5{
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.397); /* Sombra atrás do nome */
+    z-index: 200;
+    font-weight: 600;
+}
+.site-box {
+    flex: 0 0 auto;
+    width: 300px;
+    height: 170px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: start;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.site-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(77, 43, 128, 0.4); 
+    z-index: 1;
+    border-radius: 10px;
+}
+
+
 
 .mm{
     width: 25px;
