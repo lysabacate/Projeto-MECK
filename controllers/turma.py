@@ -1,6 +1,7 @@
-from flask import request, redirect, flash, session
+from flask import render_template, request, redirect, flash, session
 from models.turma import Turma
 from models.usuario import Usuario
+from models.material import Material
 from utils import db
 from flask import Blueprint
 from flask_login import current_user
@@ -57,6 +58,46 @@ def update(id):
 
     return redirect('/listar_turmas')
 
+@bp_turmas.route('/<int:id>/materiais')
+def materiais_opcoes(id):
+    turma = Turma.query.get(id)
+    return render_template('pagina-dashboard-materiais.html', turma=turma)
+
+@bp_turmas.route('/<int:id>/materiais/<tipo>')
+def recovery_materiais(id, tipo):
+    turma = Turma.query.get(id)
+    materiais = Material.query.filter_by(turma_id = id, tipo=tipo).all()
+    
+    if tipo == "apostila":
+        template = "pagina-materiais-apostilas.html"
+    elif tipo == "video":
+        template = "pagina-materiais-videos.html"
+    elif tipo == "adicional":
+        template = "pagina-material-adicional.html"
+    else:
+        flash("Tipo de material inválido!", "error")
+        return redirect('/dashboard')
+
+    return render_template(template, tipo=tipo, materiais=materiais, turma_id = id, turma = turma)
+
+@bp_turmas.route('/<int:id>/materiais/<tipo>/novo')
+def novo_material(id, tipo):
+    turma = Turma.query.get(id)
+    return render_template('pagina-add-material.html', id = id, tipo = tipo, turma = turma)
+
+@bp_turmas.route('/<int:id>/materiais/<tipo>/create', methods=['POST'])
+def create_material(tipo, id):
+    turma = Turma.query.get(id)
+
+    titulo = request.form.get('titulo_material')
+    descricao = request.form.get('descricao_material')
+
+    material = Material(tipo, titulo, descricao, turma_id = id)
+    db.session.add(material)
+    db.session.commit()
+
+    flash (f'Material {tipo} adicionado com sucesso na turma {turma.nome}')
+    return redirect(f'/turmas/{id}/materiais/{tipo}')
     
 '''@bp_turmas.route('/ingressar-turma', methods=['POST'])
 def ingressar_turma():

@@ -10,6 +10,7 @@ class Turma(db.Model):
 
 	professor = db.relationship('Usuario', back_populates='turma')
 	alunos = db.relationship('Aluno', back_populates='turma', cascade="all, delete-orphan")
+	materiais = db.relationship('Material', backref='turma',  cascade="all, delete-orphan")
 
 	def __init__(self, codigo, nome, nivel, professor_id):
 		self.codigo = codigo

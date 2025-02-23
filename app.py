@@ -72,11 +72,6 @@ def dashboard():
 def atividades():
     return render_template('pagina-dashboard-atividades.html')
 
-@app.route('/materiais')
-@login_required
-def materiais():
-    return render_template('pagina-dashboard-materiais.html')
-
 @app.route('/links')
 @login_required
 def links():
@@ -119,11 +114,6 @@ def listar_turma():
 def editar_turma(id):
     turma = Turma.query.get(id)
     return render_template('pagina-editar-turmas.html', turma = turma)
-
-@app.route('/add_material/<tipo>')
-@login_required
-def add_material(tipo):
-    return render_template('pagina-add-material.html', tipo = tipo)
 
 @app.route('/listar_materiais/<tipo>')
 def listar_materiais(tipo):
