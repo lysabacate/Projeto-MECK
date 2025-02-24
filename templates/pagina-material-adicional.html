@@ -68,13 +68,13 @@
                                 <ul class="dropdown-menu p-2 bg-white dropdown-menu-end" aria-labelledby="userDropdown">
                                     <p class=" opc-turmas fw-bold fs-4 m-0 text-center">Opções</p>
             
-                                    <form action="" method="POST">
+                                    <form action="{{ url_for('turmas.delete_material', id=turma.id, tipo = tipo, mat_id = m.id) }}" method="POST">
                                         <button type="submit" class="dropdown-item opc-turmas fw-normal border-bottom fs-4 align-items-center">
                                             Excluir Material
                                         </button>
                                     </form>
         
-                                    <a class="dropdown-item opc-turmas fw-normal fs-4" href="#">Editar Material</a>
+                                    <a class="dropdown-item opc-turmas fw-normal fs-4" href="{{ url_for('turmas.editar_material', id=turma.id, tipo = tipo, mat_id = m.id) }}">Editar Material</a>
                                 </ul>
                             </div>
                         </div>

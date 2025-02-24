@@ -1,0 +1,22 @@
+{% extends 'pagina-base-dashboard.html' %}
+
+{% block titulo %}
+    Novo Material
+{% endblock %}
+
+{% block conteudo %}
+<form method = 'post' action="{{ url_for('turmas.update_material', id=turma.id, tipo=tipo, mat_id = material.id) }}" class="forms-add-material d-flex flex-column gap-4">
+    <div class="d-flex flex-column gap-2 bg-light p-4 rounded">
+        <label for="titulo_material" class="titulo_material m-0 titulo-input d-flex flex-column">Título</label>
+        <input class="border-0 input-roxo p-2" type="text" name="titulo_material" id="titulo_material" value = "{{material.titulo}}">
+
+        <label for="descricao_material" class="descricao_material m-0 titulo-input d-flex flex-column">Descrição</label>
+        <textarea class="form-control border-0 input-roxo p-2 desc-add-material" name="descricao_material" id="descricao_material" rows="3" value = "{{material.descricao}}"></textarea>
+    </div>
+
+    <div class="d-flex justify-content-end">
+        <input type="submit" value="Confirmar" class="botao-postar-material rounded border-0">
+    </div>
+</form>
+
+{%endblock%}

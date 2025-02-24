@@ -118,11 +118,7 @@ def editar_turma(id):
 @app.route('/listar_materiais/<tipo>')
 def listar_materiais(tipo):
     materiais = Material.query.filter_by(tipo=tipo).all()
-    
-    if not materiais:
-        flash(f'Nenhum material encontrado para {tipo}', )
 
-    return render_template('listar_materiais.html', tipo=tipo, materiais=materiais)
 
 
 if __name__ == '__main__':
