@@ -48,11 +48,17 @@
                         </div>
                     </div>
                     <div class="w-100">
-                        <select name="admin">
-                            <option value="True">Professor</option>
-                            <option value="False">Aluno</option>
-                          </select><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="admin" id="professor" value="True">
+                            <label class="form-check-label fw-semibold" for="professor">Professor</label>
+                        </div>
+                    
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="admin" id="aluno" value="False">
+                            <label class="form-check-label fw-semibold" for="aluno">Aluno</label>
+                        </div>
                     </div>
+                    
                     <input class="fw-bold p-1 mt-3 btn w-100" type="submit" value="Registrar">
                     <p class="align-self-start">Já possui uma conta? <a href="{{ url_for('entrar') }}">Entrar</a></p>
                 </form>
