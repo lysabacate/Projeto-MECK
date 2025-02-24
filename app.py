@@ -107,6 +107,10 @@ def criar_turma():
 @login_required
 def listar_turma():
     turmas = Turma.query.all()
+
+    if not turmas:
+        return redirect('/')
+    
     return render_template('pagina-listar-turmas.html', turmas = turmas)
 
 @app.route('/editar_turma/<int:id>')

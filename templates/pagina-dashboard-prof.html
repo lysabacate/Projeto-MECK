@@ -10,8 +10,19 @@
 
 {% block conteudo %}
     <div class="capivara-ops d-flex flex-column text-center align-items-center justify-content-center">
+        {% set mensagens = get_flashed_messages() %} 
+        {% if mensagens %} 
+        <div class="d-flex justify-content-center">
+            <div id = "flash-message" class='alert alertbg text-light d-flex justify-content-center m-0' role="alert">
+                {% for msg in mensagens %}
+                    {{ msg }}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
         <img src="static/img/capybara-comendo.svg" alt="" class="capivara-comendo">
         <h5 class="ops-texto mx-5">Ops... Você ainda não criou nenhuma turma</h5>
         <a href="/criar_turma" class="btn text-light roxobg text-align-center fw-bold">Criar turma</a>
     </div>
+    <script src="/static/js/script.js"></script>
 {% endblock %}

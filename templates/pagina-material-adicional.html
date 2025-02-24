@@ -42,7 +42,7 @@
     {% set mensagens = get_flashed_messages() %} 
     {% if mensagens %} 
     <div class="d-flex justify-content-center">
-        <div class='alert alertbg text-light d-flex justify-content-center w-50 m-0' role="alert">
+        <div id = "flash-message" class='alert alertbg text-light d-flex justify-content-center w-50 m-0' role="alert">
             {% for msg in mensagens %}
                 {{ msg }}
             {% endfor %}
@@ -92,4 +92,5 @@
     {% endif %}
 	</ul>
 </div>
+<script src="/static/js/script.js"></script>
 {% endblock %}
