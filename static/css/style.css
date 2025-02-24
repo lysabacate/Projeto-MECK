@@ -6,6 +6,11 @@
     scrollbar-color: #7641C5 #CECECE; 
 }
 
+.texto-justificado {
+    text-align: justify;
+    font-size: 14px;
+}
+
 body {
 
     overflow-x: hidden; 
@@ -19,6 +24,14 @@ html, body{
 a{
     cursor: pointer;
 }
+
+.tamanho-insano{
+    width: 300px;
+}
+
+.tamanho-insano-2 {
+    width: 450px;
+} 
 
 .bg-roxo-claro{
     background-color: #6335A7;
