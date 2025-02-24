@@ -1,7 +1,38 @@
 {% extends 'pagina-base-dashboard.html' %}
 
 {% block titulo %}
-    Criação de turmas
+   Criação de turmas
+{% endblock %}
+
+{% block dashboard %}
+<div class="d-flex gap-4 align-items-center">                  
+    {% if current_user.admin %}
+    <div class="nav-item">
+        <a class="turmas d-flex align-items-center gap-1 text-decoration-none" href="/listar_turmas">
+            <img src="{{url_for('static', filename='img/imagem-turmas.svg')}}" alt="">
+            <h6 class="text-light fs-6 my-0">Turmas</h6>
+        </a>
+    </div>
+    {% endif %}
+    <div class="nav-item active">
+        <a class="materiais d-flex align-items-center gap-1 text-decoration-none" href="/materiais">
+            <img src="{{url_for('static', filename='img/imagem-material.svg')}}" alt="">
+            <h6 class="text-light text-center fs-6 my-0" >Materiais</h6>
+        </a>
+    </div>
+    <div class="nav-item">
+        <a class=" atividades d-flex align-items-center gap-1 text-decoration-none" href="/atividades">
+            <img src="{{url_for('static', filename='img/imagem-atvs.svg')}}" alt="">
+            <h6 class="text-light fs-6 my-0" >Atividades</h6>
+        </a>
+    </div>
+    <div class="nav-item">
+        <a class="links d-flex align-items-center gap-1 text-decoration-none" href="/links">
+            <img src="{{url_for('static', filename='img/grampinho.svg')}}" alt="">
+            <h6 class="text-light fs-6 my-0" >Links</h6>
+        </a>
+    </div>
+</div>
 {% endblock %}
 
 {% block conteudo %}

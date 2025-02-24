@@ -2,6 +2,10 @@
 
 {%block titulo %} Lista de Turmas {% endblock %} 
 
+{% block plus %}
+    <a href="/criar_turma" class="nav-link"><img src="{{url_for('static', filename='img/simbolo-add.svg')}}" alt="" class="imagem-add"></a>
+{% endblock %}
+
 {% block conteudo %}
 
 <div class="conteudo-listar-turmas d-flex flex-column gap-2">
