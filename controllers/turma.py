@@ -98,6 +98,44 @@ def create_material(tipo, id):
 
     flash (f'Material {tipo} adicionado com sucesso na turma {turma.nome}')
     return redirect(f'/turmas/{id}/materiais/{tipo}')
+
+@bp_turmas.route('/<int:id>/materiais/<tipo>/<int:mat_id>/delete', methods=['POST'])
+def delete_material(id, tipo, mat_id):
+    material = Material.query.get(mat_id)
+
+    if material is None:
+        flash('Material não encontrado', 'error')
+        return redirect('/turmas/<int:id>/materiais/<tipo>')
+
+    db.session.delete(material)
+    db.session.commit()
+
+    flash('Material excluído com sucesso', 'success')
+    return redirect(f'/turmas/{id}/materiais/{tipo}')
+
+@bp_turmas.route('/<int:id>/mateirais/<tipo>/<int:mat_id>/editar_material')
+def editar_material(id, tipo, mat_id):
+     turma = Turma.query.get(id)
+     material = Material.query.get(mat_id)
+     return render_template('pagina-editar-material.html', tipo = tipo, material = material, turma = turma)
+
+
+@bp_turmas.route('/<int:id>/mateirais/<tipo>/<int:mat_id>/update', methods=['POST'])
+def update_material(id, tipo, mat_id):
+    material = Material.query.get(mat_id)
+
+    if material:
+        material.titulo = request.form.get('titulo_material')
+        material.descricao = request.form.get('descricao_material')
+
+        db.session.commit()
+
+        flash('Material atualizado com sucesso', 'success')
+    else:
+        flash('Material não encontrado', 'error')
+
+    return redirect(f'/turmas/{id}/materiais/{tipo}')
+
     
 '''@bp_turmas.route('/ingressar-turma', methods=['POST'])
 def ingressar_turma():
