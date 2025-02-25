@@ -60,9 +60,11 @@
                             </div>
                             <div class="d-flex flex-wrap align-content-center justify-content-between p-2">
                                 <h6 class="card-text d-flex align-items-center">{{m.titulo}}</h6>
+                                {% if current_user.admin %}
                                 <a href="#" class="d-flex mm" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <img class="engrenagem-roxa" src="/static/img/configuracao-roxa.svg" alt="">
                                 </a>
+                                
                                 <ul class="dropdown-menu p-2 bg-white dropdown-menu-end" aria-labelledby="userDropdown">
                                     <p class=" opc-turmas fw-bold fs-4 m-0 text-center">Opções</p>
             
@@ -74,6 +76,7 @@
         
                                     <a class="dropdown-item opc-turmas fw-normal fs-4" href="{{ url_for('turmas.editar_material', id=turma.id, tipo = tipo, mat_id = m.id) }}">Editar Material</a>
                                 </ul>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
