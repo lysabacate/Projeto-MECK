@@ -65,4 +65,4 @@ def autenticar():
 @bp_usuarios.route('/logoff')
 def logoff():
 	logout_user()
-	return redirect('/')
+	return render_template('pagina-inicial.html')
