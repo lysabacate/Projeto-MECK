@@ -110,6 +110,11 @@ a{
     right: 5px;
 }
 
+.entrarinicial{
+    border: 1px solid #4D2B80;
+}
+
+
 #icon.hide, #icon_confirm_password.hide{
     background: url(/static/img/eye_hide_regular_icon_203604.svg);
     background-size: cover; 
