@@ -36,38 +36,92 @@
 {% endblock %}
 
 {% block conteudo %}
-<div class='blocomateriais ms-3  d-flex flex-column gap-2'>
-    <h1 class='ingles-titulo text-start'>Materiais</h1>
-    <div class='d-flex gap-4'>
-        <div class='d-flex gap-3 flex-column justify-content-between'>
-            <a href='/turmas/{{turma.id}}/materiais/video' class='opcah position-relative'>
-                <img src="/static/img/imagem-videos.svg" alt="" class="w-100 img-fluid h-100">
-            
-                <div class='position-absolute z-1 top-0 roxoesc videos bg-opacity-50 w-100 h-100 d-flex align-items-center justify-content-end p-3'>
-                    <h2 class='position-absolute top-3 opacity'>Vídeos</h2>
+<div class='container'>
+    <div class="d-flex flex-row justify-content-between align-items-center my-4 ">
+        <div class="d-flex flex-column justify-content-between align-items-start">
+            <h1 class='ingles-titulo text-start'>Materiais</h1>
+            <form action="">
+                <div >
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="admin" id="Videos" value="True">
+                        <label class="form-check-label fw-semibold text-light" for="Videos">Videos</label>
+                    </div>
+                        
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input text-light" type="radio" name="admin" id="Apostilas" value="False">
+                        <label class="form-check-label fw-semibold text-light" for="Apostilas">Apostilas</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input text-light" type="radio" name="admin" id="Complementos" value="False">
+                        <label class="form-check-label fw-semibold text-light" for="Complementos">Complementos</label>
+                    </div>
                 </div>
-            </a>
-            <a href='/turmas/{{turma.id}}/materiais/apostila' class='opcah position-relative'>
-                <div class="img-apostilas h-100 w-100"></div>
-                <div class='position-absolute z-1 top-0 roxoesc apostilas bg-opacity-50 w-100 h-100 d-flex align-items-center justify-content-start p-3'>
-                    <h2 class='position-absolute top-3 opacity'>Apostilas</h2>
-                </div>
-            </a>
-            <a href="/turmas/{{turma.id}}/materiais/adicional" class='opcah d-sm-none d-block position-relative'>
-                <img  src="/static/img/imagem-ola-casada.svg" alt="" class="w-100 h-100">
-                <div class='position-absolute z-1 top-0 roxoesc mat-add bg-opacity-50 w-100 h-100 d-flex align-items-center justify-content-center p-3 text-center'>
-                    <h2 class='position-absolute top-3 opacity h3'>Material Adicional</h2>
-                </div>
-            </a>
+            </form>
         </div>
-        <div class='d-flex'>
-            <a href="/turmas/{{turma.id}}/materiais/adicional" class='opcav d-sm-block d-none position-relative'>
-                <img src="/static/img/imagem-ola-casada.svg" alt="" class="w-100 h-100">
-                <div class='position-absolute z-1 top-0 roxoesc mat-add bg-opacity-50 w-100 h-100 d-flex align-items-center justify-content-center p-3 text-center'>
-                    <h2 class='position-absolute top-3 opacity h3'>Material Adicional</h2>
-                </div>
-            </a>
-        </div>
+        <a href="#" class="text-decoration-none text-light fs-5">Novo Material</a>
+    </div>
+    <div class="materiais-adicionados">
+        <h6 class="border-bottom border-2 text-light my-3">Videos</h6>
+    
+        <a href="#" class="d-flex fs-6 flex-row justify-content-between ">
+            <div>
+                <p class="my-2 ms-1">Título do vídeo 1</p>
+            </div>
+            <div>
+                <p class="my-2">Data de upload: 01/01/2024</p>
+            </div>
+        </a>
+        <a href="#" class="d-flex fs-6 flex-row justify-content-between ">
+            <div>
+                <p class="my-2 ms-1">Título do vídeo 1</p>
+            </div>
+            <div>
+                <p class="my-2">Data de upload: 01/01/2024</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="materiais-adicionados">
+        <h6 class="border-bottom border-2 text-light my-3">Apostilas</h6>
+    
+        <a href="#" class="d-flex fs-6 flex-row justify-content-between ">
+            <div>
+                <p class="my-2 ms-1">Título da apostila 1</p>
+            </div>
+            <div>
+                <p class="my-2">Data de upload: 01/01/2024</p>
+            </div>
+        </a>
+        <a href="#" class="d-flex fs-6 flex-row justify-content-between ">
+            <div>
+                <p class="my-2 ms-1">Título da apostila 2</p>
+            </div>
+            <div>
+                <p class="my-2">Data de upload: 01/01/2024</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="materiais-adicionados">
+        <h6 class="border-bottom border-2 text-light my-3">Complementos</h6>
+    
+        <a href="#" class="d-flex fs-6 flex-row justify-content-between ">
+            <div>
+                <p class="my-2 ms-1">Título do complemento 1</p>
+            </div>
+            <div>
+                <p class="my-2">Data de upload: 01/01/2024</p>
+            </div>
+        </a>
+        <a href="#" class="d-flex fs-6 flex-row justify-content-between ">
+            <div>
+                <p class="my-2 ms-1">Título do complemento 2</p>
+            </div>
+            <div>
+                <p class="my-2">Data de upload: 01/01/2024</p>
+            </div>
+        </a>
     </div>
 </div>
 {% endblock %}

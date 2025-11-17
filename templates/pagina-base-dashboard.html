@@ -13,12 +13,12 @@
 </head>
 <body>
     <section class="tudo-dashboard h-100">
-        <nav class="navbar navbar-expand-sm text-light roxobg shadow fixed-top">
+        <nav class="navbar navbar-expand-sm text-light shadow fixed-top">
             <div class="container">
                 <!-- Logo -->
                 <div class="d-flex align-items-center justify-content-center gap-2 d-none d-sm-flex">
                     <img src="{{url_for('static', filename='img/capybara-branca.svg')}}" class="capybara-logo-dashboard">
-                    <h2 class="pt-1 texto-logo dashboard">MECK</h2>
+                    <h2 class="pt-1 texto-logo dashboard">CapyLearn</h2>
                 </div>
 
                 <div class="dropdown d-block d-sm-none">
@@ -75,7 +75,7 @@
               
             </div>
         </nav>
-            <div class="conteudo-dashboard-cinza d-flex align-items-center justify-content-center">
+            <div class="conteudo-dashboard-cinza d-flex justify-content-center">
                 {% block conteudo %}
                 {% endblock %}
             </div> 

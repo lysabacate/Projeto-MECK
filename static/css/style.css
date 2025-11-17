@@ -43,6 +43,9 @@ a{
 .bg-roxo{
     background-color: #4D2B80;
 }
+.bg-escuro{
+    background-color: #171717;
+}
 
 .txtroxo{
     color: #7641C5;
@@ -87,7 +90,11 @@ a{
     width: 80%;
     height: 95%
 }
-
+.hg{
+    width: 40px;
+    height: 40px;
+    
+}
 .texto-logo{
     color: var(--branco, #F1F1F1);
     font-family: "Odor Mean Chey";
@@ -131,7 +138,7 @@ a{
 }
 
 .informacoes .btn{
-    background-color: #7641C5;
+    background-color: #662FC8;
     color: #F1F1F1;
 }
 
@@ -173,6 +180,11 @@ a{
 
 .nav-roxo{
     min-width: 180px;
+}
+
+.navbar{
+    background: #662FC8;
+    background: linear-gradient(90deg, rgba(102, 47, 200, 1) 15%, rgba(68, 33, 134, 1) 63%);
 }
 
 .selecione-opc a{
@@ -263,7 +275,7 @@ a{
 
 
 .conteudo-dashboard-cinza{
-    background: #E3E3E3;
+    background: #171717;
     height: 100%;
     box-shadow: inset -1px 75px 14px -65px rgba(0,0,0,0.02);
 }
@@ -314,9 +326,7 @@ a{
     height: 100%;
     width: 33px;
 }
-.div-login{
-    border-radius: 20px;
-}
+
 /*final do dashboard*/
 
 .navbar{
@@ -370,14 +380,24 @@ a{
     border-radius: 10px;
 }
 
-
-
+.materiais-adicionados h6{
+    color: #F1F1F1;
+    border-bottom: 2px solid #A450DB!important;
+}
+.materiais-adicionados a{
+    color: #F1F1F1;
+    text-decoration: none;
+    border-bottom: 1px solid #4C4A4A!important;
+}
+.materiais-adicionados a::-webkit-input-placeholder{
+    color: #ADA9A9;
+}
 .mm, .mm .engrenagem-roxa{
     width: 25px;
 }
 /*dashboard materiais e atvs*/
 .ingles-titulo{
-    color: #4D2B80;
+    color: #A450DB;
     text-align: center;
     font-family: "Montserrat", sans-serif;
     font-size: 34px;
@@ -624,7 +644,9 @@ a{
     place-content: center;
     border-radius: 50%;
 }
-
+.div-login{
+    min-width: 340px;
+}
 .custom-radio, .forms-criar-turma span {
     transition: 0.5s ease;
 }
