@@ -311,7 +311,7 @@ a{
 .capivara-ops .ops-texto{
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    color: #4D2B80;
+    color: #F1F1F1;
 }
 
 .capivara-ops .capivara-comendo {
@@ -380,7 +380,7 @@ a{
     border-radius: 10px;
 }
 
-.materiais-adicionados h6{
+.materiais-adicionados h5{
     color: #F1F1F1;
     border-bottom: 2px solid #A450DB!important;
 }

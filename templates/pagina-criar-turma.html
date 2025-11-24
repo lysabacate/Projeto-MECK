@@ -7,27 +7,24 @@
 {% block conteudo %}
 <form method = 'post' action="{{url_for('turmas.create')}}" class="d-flex flex-column forms-criar-turma gap-5">
     <div class="d-flex gap-3">
-        <div class="add-cod-turma bg-white rounded p-4 gap-2 d-flex flex-column h-100">
-            <label for="cod_turma" class="cod_turma m-0 titulo-input d-flex flex-column align-items-center">Código da turma</label>
-            <input class="border-0 input-roxo input-roxo-codigo ps-2" type="text" name="codigo_turma" id="cod_turma" readonly>
-            <button type="button" class="botao-gerar-codigo rounded border-0 fs-6" onclick="gerarCodigo()">Gerar Código</button>
-        </div>
+    
         <div class="d-flex flex-column gap-4">
-            <div class="add-nome-desc-turma bg-white rounded p-4 gap-2 d-flex flex-column w-100">
-                <label for="nome_turma" class="nome_turma m-0 titulo-input d-flex flex-column">Nome</label>
+            <div class="add-nome-desc-turma bg-dark rounded p-4 gap-1 d-flex flex-column w-100">
+                <h4 class="text-light">Nova Turma</h4>
+                <label for="nome_turma" class="fs-5 fw-semibold m-0 text-light d-flex flex-column">Nome</label>
                 <input class="border-0 input-roxo" type="text" name="nome_turma" id="nome_turma">
         
                 <div class="nivel-ingles-turma gap-2">
-                    <p class="titulo-input m-0">Nível do inglês</p>
+                    <p class="text-light fs-5 fw-semibold m-0">Nível</p>
                     <div class='d-flex gap-3'>
-                        <label for="ingles1" class="d-flex align-items-center gap-2">
+                        <label for="ingles1" class="d-flex text-light align-items-center gap-2">
                             <input type="radio" id="ingles1" value="Ingles I" name="nivel_turma">
                             <div class="custom-radio">
                                 <span></span>
                             </div>
                             Inglês 1
                         </label>
-                        <label for="ingles2" class="d-flex align-items-center gap-2">
+                        <label for="ingles2" class="d-flex fs-6 text-light align-items-center gap-2">
                             <input type="radio" id="ingles2" value="Ingles II" name="nivel_turma">
                             <div class="custom-radio">
                                 <span></span>
@@ -36,10 +33,12 @@
                         </label>
                     </div>
                 </div>
+                <div class="d-flex gap-2 justify-content-end">
+                    <input type="submit" value="Cancelar" class=" ">
+                    <input type="submit" value="Confirmar" class="">
+                </div>
             </div>
-            <div class="d-flex justify-content-end">
-                <input type="submit" value="Criar" class="botao-criar-turma rounded border-0">
-            </div>
+            
         </div>
     </div>
 </form>

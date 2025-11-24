@@ -5,80 +5,98 @@
 {% endblock %}
 
 {% block dashboard %}
-<div class="d-flex gap-4 align-items-center">                  
-    {% if current_user.admin %}
-    <div class="nav-item">
-        <a class="turmas d-flex align-items-center gap-1 text-decoration-none" href="/listar_turmas">
-            <img src="{{url_for('static', filename='img/imagem-turmas.svg')}}" alt="">
-            <h6 class="text-light fs-6 my-0">Turmas</h6>
-        </a>
-    </div>
-    {% endif %}
-    <div class="nav-item active">
-        <a class="materiais d-flex align-items-center gap-1 text-decoration-none" href="/materiais">
-            <img src="{{url_for('static', filename='img/imagem-material.svg')}}" alt="">
-            <h6 class="text-light text-center fs-6 my-0" >Materiais</h6>
-        </a>
-    </div>
-    <div class="nav-item">
-        <a class=" atividades d-flex align-items-center gap-1 text-decoration-none" href="/atividades">
-            <img src="{{url_for('static', filename='img/imagem-atvs.svg')}}" alt="">
-            <h6 class="text-light fs-6 my-0" >Atividades</h6>
-        </a>
-    </div>
-    <div class="nav-item">
-        <a class="links d-flex align-items-center gap-1 text-decoration-none" href="/links">
-            <img src="{{url_for('static', filename='img/grampinho.svg')}}" alt="">
-            <h6 class="text-light fs-6 my-0" >Links</h6>
-        </a>
-    </div>
-</div>
-{% endblock %}
 
+<div class='container'>
+    <div class="d-flex flex-row justify-content-between align-items-center my-4 ">
+        <div class="d-flex flex-column justify-content-between align-items-start">
+            <h1 class='ingles-titulo text-start'>Writing</h1>
+            <form action="">
+                <div >
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="admin" id="Videos" value="True">
+                        <label class="form-check-label fw-semibold text-light" for="Videos">Videos</label>
+                    </div>
+                        
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input text-light" type="radio" name="admin" id="Apostilas" value="False">
+                        <label class="form-check-label fw-semibold text-light" for="Apostilas">Apostilas</label>
+                    </div>
 
-{% block conteudo %}
-<div class="mx-sm-5 mx-4 conteudo-atividades ingles-1 d-flex flex-column">
-    <h1 class="ingles-titulo d-flex align-self-start">Atividades</h1>
-    <div class="cards d-flex flex-sm-row flex-column gap-5">
-        <div class="card">
-            <div class="opca position-relative rounded">
-                <img class="card-img-top" src="static/img/imagem-listening.svg" alt="">
-                <div class='position-absolute z-1 top-0 area-atv roxoesc bg-opacity-50  w-100 h-100 d-flex align-items-center justify-content-end p-3'></div>
-            </div>
-            <div class="card-body d-flex flex-column gap-2">
-                <p class="card-text">Tia dolores perdeu tiodos os seu anéis, por isso, prar novos tia dolores</p>
-                <a href="/listaatvs" class="btn d-flex justify-content-between">
-                    Listening
-                    <img src="static/img/setinha.svg" alt="" class="setinha-card">
-                </a>
-            </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input text-light" type="radio" name="admin" id="Complementos" value="False">
+                        <label class="form-check-label fw-semibold text-light" for="Complementos">Complementos</label>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="card">
-            <div class="opca position-relative rounded">
-                <img class="card-img-top" src="static/img/imagem-reading.svg" alt="">
-                <div class='position-absolute z-1 top-0 area-atv roxoesc bg-opacity-50  w-100 h-100 d-flex align-items-center justify-content-end p-3'></div>
+        <a href="#" class="d-flex flex-row gap-1 text-decoration-none align-items-center">
+            <img src="/static/img/simbolo-add.svg" alt="">
+            <p class="m-0 text-light fs-5 fw-semibold">Novo Material</p>
+            
+
+        </a>
+    </div>
+    <div class="materiais-adicionados">
+        <h5 class="border-bottom border-2 text-light my-3 fw-bold">Videos</h5>
+    
+        <a href="#" class="d-flex flex-row justify-content-between ">
+            <div>
+                <p class="my-2 ms-1 fs-6">Título do vídeo 1</p>
             </div>
-            <div class="card-body d-flex flex-column gap-2">
-                <p class="card-text">Tia dolores perdeu tiodos os seu anéis, por isso, prar novos tia dolores</p>
-                <a href="/listaatvs" class="btn d-flex justify-content-between">
-                    Reading
-                    <img src="static/img/setinha.svg" alt="" class="setinha-card">
-                </a>
+            <div>
+                <p class="my-2 fs-6">Data de upload: 01/01/2024</p>
             </div>
-        </div>
-        <div class="card">
-            <div class="opca position-relative rounded">
-                <img class="card-img-top" src="static/img/imagem-writing.svg" alt="">
-                <div class='position-absolute z-1 top-0 area-atv roxoesc bg-opacity-50  w-100 h-100 d-flex align-items-center justify-content-end p-3'></div>
+        </a>
+        <a href="#" class="d-flex flex-row justify-content-between ">
+            <div>
+                <p class="my-2 ms-1 fs-6">Título do vídeo 1</p>
             </div>
-            <div class="card-body d-flex flex-column gap-2">
-                <p class="card-text">Tia dolores perdeu tiodos os seu anéis, por isso, prar novos tia dolores</p>
-                <a href="/listaatvs" class="btn d-flex justify-content-between">
-                    Writing
-                    <img src="static/img/setinha.svg" alt="" class="setinha-card">
-                </a>
+            <div>
+                <p class="my-2 fs-6">Data de upload: 01/01/2024</p>
             </div>
-        </div>
+        </a>
+    </div>
+
+    <div class="materiais-adicionados">
+        <h5 class="border-bottom border-2 text-light my-3 fw-bold">Apostilas</h5>
+    
+        <a href="#" class="d-flex flex-row justify-content-between ">
+            <div>
+                <p class="my-2 ms-1 fs-6">Título da apostila 1</p>
+            </div>
+            <div>
+                <p class="my-2 fs-6">Data de upload: 01/01/2024</p>
+            </div>
+        </a>
+        <a href="#" class="d-flex flex-row justify-content-between ">
+            <div>
+                <p class="my-2 ms-1 fs-6">Título da apostila 2</p>
+            </div>
+            <div>
+                <p class="my-2 fs-6">Data de upload: 01/01/2024</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="materiais-adicionados">
+        <h5 class="border-bottom border-2 text-light my-3 fw-bold">Complementos</h5>
+    
+        <a href="#" class="d-flex flex-row justify-content-between ">
+            <div>
+                <p class="my-2 ms-1 fs-6">Título do complemento 1</p>
+            </div>
+            <div>
+                <p class="my-2 fs-6">Data de upload: 01/01/2024</p>
+            </div>
+        </a>
+        <a href="#" class="d-flex flex-row justify-content-between ">
+            <div>
+                <p class="my-2 ms-1 fs-6">Título do complemento 2</p>
+            </div>
+            <div>
+                <p class="my-2 fs-6">Data de upload: 01/01/2024</p>
+            </div>
+        </a>
     </div>
 </div>
 {% endblock %}

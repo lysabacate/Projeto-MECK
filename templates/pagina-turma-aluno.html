@@ -52,15 +52,15 @@
         {% if current_user.admin %}<h2 class="codigoturma m-0">Código da turma: {{turma.codigo}}</h2>{% endif %}
     </div>
     
-    <div class="d-flex justify-content-between">
-        <a href="/turmas/{{turma.id}}/materiais" class="imagem-turma-conteudo d-flex align-items-center text-decoration-none justify-content-center">
-            <p class="text-light fw-bold m-0 fs-2">Materiais</p>
+    <div class="d-flex flex-column">
+        <a href="/turmas/{{turma.id}}/materiais">
+            <p class="text-light fw-bold m-0 fs-5">Materiais</p>
         </a>
-        <a href="/atividades" class="imagem-turma-conteudo d-flex align-items-center text-decoration-none justify-content-center">
-            <p class="text-light fw-bold m-0 fs-2">Atividades</p>
+        <a href="/atividades">
+            <p class="text-light fw-bold m-0 fs-5">Atividades</p>
         </a>
-        <a href="/links" class="imagem-turma-conteudo d-flex align-items-center text-decoration-none justify-content-center">
-            <p class="text-light fw-bold m-0 fs-2">Links</p>
+        <a href="/links">
+            <p class="text-light fw-bold m-0 fs-5">Links</p>
         </a>
     </div>
     <script src="/static/js/script.js"></script>
