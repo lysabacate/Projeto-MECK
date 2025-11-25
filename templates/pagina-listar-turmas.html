@@ -3,12 +3,12 @@
 {%block titulo %} Lista de Turmas {% endblock %} 
 
 {% block plus %}
-    <a href="/criar_turma" class="nav-link"><img src="{{url_for('static', filename='img/simbolo-add.svg')}}" alt="" class="imagem-add"></a>
+    <a id="openModal" class="nav-link"><img src="{{url_for('static', filename='img/simbolo-add.svg')}}" alt="" class="imagem-add"></a>
 {% endblock %}
 
 {% block conteudo %}
 
-<div class="conteudo-listar-turmas d-flex flex-column gap-2">
+<div class="conteudo-listar-turmas pt-4 container d-flex flex-column gap-2">
     {% set mensagens = get_flashed_messages() %} 
     {% if mensagens %} 
     <div class="d-flex justify-content-center">
@@ -19,7 +19,15 @@
         </div>
     </div>
     {% endif %}
-    <h1 class="ingles-titulo d-flex align-self-start m-0">Turmas</h1>
+    <div class="d-flex justify-content-between align-items-center">
+        <h1 class="ingles-titulo d-flex row align-self-start m-0">Turmas</h1>
+        <form class="d-flex ">
+            <input class="pesquisa" type="search" placeholder="Pesquisar..." aria-label="Search">
+            <button class="enviar" type="submit">
+                <img class="luparoxa" src="/static/img/luparoxa.svg" alt="">
+            </button>
+        </form>
+    </div>
     <ul class="lista-turmas d-flex gap-3 list-unstyled flex-wrap">
         {% for t in turmas %}
         <li class="p-3 text-decoration-none gap-2 d-flex flex-column justify-content-center"> 
@@ -49,6 +57,38 @@
         </li>
         {% endfor %}
     </ul>
+        <div id="overlay" class="overlay"></div>
+            <div id="popap" class="popap">
+                <div class="add-nome-desc-turma rounded p-4 gap-1 d-flex flex-column w-100">
+                    <h4 class="text-light">Nova Turma</h4>
+                    <label for="nome_turma" class="fs-5 fw-semibold m-0 text-light d-flex flex-column">Nome</label>
+                    <input class="border-0 input-roxo" type="text" name="nome_turma" id="nome_turma">
+            
+                    <div class="nivel-ingles-turma gap-2">
+                        <p class="text-light fs-5 fw-semibold m-0">Nível</p>
+                        <div class='d-flex gap-3'>
+                            <label for="ingles1" class="d-flex text-light align-items-center gap-2">
+                                <input type="radio" id="ingles1" value="Ingles I" name="nivel_turma">
+                                <div class="custom-radio">
+                                    <span></span>
+                                </div>
+                                Inglês 1
+                            </label>
+                            <label for="ingles2" class="d-flex fs-6 text-light align-items-center gap-2">
+                                <input type="radio" id="ingles2" value="Ingles II" name="nivel_turma">
+                                <div class="custom-radio">
+                                    <span></span>
+                                </div>
+                                Inglês 2
+                            </label>
+                        </div>
+                    </div>
+                    <div class="criar-turmas d-flex gap-2 align-items-center justify-content-end">
+                        <input type="submit" id="cancelButton" class="text-center fw-bolder" value="Cancelar">
+                        <input type="submit" id="confirmButton" class="text-center fw-bolder" value="Confirmar">
+                    </div>
+                </div>
+            </div>
 </div> 
 <script src="/static/js/script.js"></script>
 {% endblock %}

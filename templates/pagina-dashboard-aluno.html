@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block conteudo %}
-<div class="d-flex flex-column">
+<div class="d-flex flex-column align-items-center justify-content-center h-100">
     {% set mensagens = get_flashed_messages() %} 
     {% if mensagens %}     
         <div class='alert alertbg text-light d-flex justify-content-center w-100' role="alert">
@@ -21,11 +21,14 @@
     <div id="overlay" class="overlay"></div>
     <div id="popap" class="popap">
         <div class="popap-content d-flex align-items-center justify-content-center h-100">
-            <form method = 'post' action="{{url_for('alunos.create')}}" class="d-flex flex-column align-items-center gap-1">
-                <label for="codigo" class="text-center fw-bold fs-4 txtroxo">Código da turma</label>
-                <div class="d-flex align-items-center">
+            <form method = 'post' action="{{url_for('alunos.create')}}" class="d-flex flex-column align-items-center gap-2">
+                <label for="codigo" class="text-center fw-bold fs-5">Código da turma</label>
+                <div class="d-flex flex-column gap-2">
                     <input type="text" id="codigo" name="codigo" class="m-0" placeholder="Digite o código">
-                    <input type="submit" id="confirmButton" class="text-center" value="✔">
+                    <div class="d-flex gap-2 align-items-center justify-content-end">
+                        <input type="submit" id="cancelButton" class="text-center fw-bolder" value="Cancelar">
+                        <input type="submit" id="confirmButton" class="text-center fw-bolder" value="Confirmar">
+                    </div>
                 </div>
             </form>
         </div>

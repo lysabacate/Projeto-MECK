@@ -6,25 +6,59 @@
 
 {% block dashboard %}
 
+<div class="d-flex gap-4 align-items-center">                  
+    {% if current_user.admin %}
+    <div class="nav-item">
+        <a class="turmas d-flex align-items-center gap-1 text-decoration-none" >
+            <img src="{{url_for('static', filename='img/imagem-turmas.svg')}}" alt="">
+            <h6 class="text-light fs-6 my-0">Turmas</h6>
+        </a>
+    </div>
+    {% endif %}
+    <div class="nav-item active">
+        <a class="materiais d-flex align-items-center gap-1 text-decoration-none">
+            <img src="{{url_for('static', filename='img/imagem-material.svg')}}" alt="">
+            <h6 class="text-light text-center fs-6 my-0" >Materiais</h6>
+        </a>
+    </div>
+    <div class="nav-item">
+        <a class=" atividades d-flex align-items-center gap-1 text-decoration-none" href="/atividades">
+            <img src="{{url_for('static', filename='img/imagem-atvs.svg')}}" alt="">
+            <h6 class="text-light fs-6 my-0" >Atividades</h6>
+        </a>
+    </div>
+    <div class="nav-item">
+        <a class="links d-flex align-items-center gap-1 text-decoration-none" href="/links">
+            <img src="{{url_for('static', filename='img/grampinho.svg')}}" alt="">
+            <h6 class="text-light fs-6 my-0" >Links</h6>
+        </a>
+    </div>
+</div>
+{% endblock %}
+
+{% block conteudo %}
 <div class='container'>
+
+
+<div class='container '>
     <div class="d-flex flex-row justify-content-between align-items-center my-4 ">
         <div class="d-flex flex-column justify-content-between align-items-start">
-            <h1 class='ingles-titulo text-start'>Writing</h1>
+            <h1 class='ingles-titulo text-start'>Atividades</h1>
             <form action="">
                 <div >
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="admin" id="Videos" value="True">
-                        <label class="form-check-label fw-semibold text-light" for="Videos">Videos</label>
+                        <input class="form-check-input" type="radio" name="admin" id="Writing" value="True">
+                        <label class="form-check-label fw-semibold text-light" for="Writing">Writing</label>
                     </div>
                         
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input text-light" type="radio" name="admin" id="Apostilas" value="False">
-                        <label class="form-check-label fw-semibold text-light" for="Apostilas">Apostilas</label>
+                        <input class="form-check-input text-light" type="radio" name="admin" id="Listening" value="False">
+                        <label class="form-check-label fw-semibold text-light" for="Listening">Listening</label>
                     </div>
 
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input text-light" type="radio" name="admin" id="Complementos" value="False">
-                        <label class="form-check-label fw-semibold text-light" for="Complementos">Complementos</label>
+                        <input class="form-check-input text-light" type="radio" name="admin" id="Reading" value="False">
+                        <label class="form-check-label fw-semibold text-light" for="Reading">Reading</label>
                     </div>
                 </div>
             </form>
@@ -37,19 +71,11 @@
         </a>
     </div>
     <div class="materiais-adicionados">
-        <h5 class="border-bottom border-2 text-light my-3 fw-bold">Videos</h5>
+        <h5 class="border-bottom border-2 text-light my-3 fw-bold">Writing</h5>
     
         <a href="#" class="d-flex flex-row justify-content-between ">
             <div>
-                <p class="my-2 ms-1 fs-6">Título do vídeo 1</p>
-            </div>
-            <div>
-                <p class="my-2 fs-6">Data de upload: 01/01/2024</p>
-            </div>
-        </a>
-        <a href="#" class="d-flex flex-row justify-content-between ">
-            <div>
-                <p class="my-2 ms-1 fs-6">Título do vídeo 1</p>
+                <p class="my-2 ms-1 fs-6">Título do sdasdda 1</p>
             </div>
             <div>
                 <p class="my-2 fs-6">Data de upload: 01/01/2024</p>
@@ -58,11 +84,11 @@
     </div>
 
     <div class="materiais-adicionados">
-        <h5 class="border-bottom border-2 text-light my-3 fw-bold">Apostilas</h5>
+        <h5 class="border-bottom border-2 text-light my-3 fw-bold">Listening</h5>
     
         <a href="#" class="d-flex flex-row justify-content-between ">
             <div>
-                <p class="my-2 ms-1 fs-6">Título da apostila 1</p>
+                <p class="my-2 ms-1 fs-6">Título da listening 1</p>
             </div>
             <div>
                 <p class="my-2 fs-6">Data de upload: 01/01/2024</p>
@@ -70,7 +96,7 @@
         </a>
         <a href="#" class="d-flex flex-row justify-content-between ">
             <div>
-                <p class="my-2 ms-1 fs-6">Título da apostila 2</p>
+                <p class="my-2 ms-1 fs-6">Título da listening 2</p>
             </div>
             <div>
                 <p class="my-2 fs-6">Data de upload: 01/01/2024</p>
@@ -79,11 +105,11 @@
     </div>
 
     <div class="materiais-adicionados">
-        <h5 class="border-bottom border-2 text-light my-3 fw-bold">Complementos</h5>
+        <h5 class="border-bottom border-2 text-light my-3 fw-bold">Reading</h5>
     
         <a href="#" class="d-flex flex-row justify-content-between ">
             <div>
-                <p class="my-2 ms-1 fs-6">Título do complemento 1</p>
+                <p class="my-2 ms-1 fs-6">Título do reading 1</p>
             </div>
             <div>
                 <p class="my-2 fs-6">Data de upload: 01/01/2024</p>
@@ -91,7 +117,7 @@
         </a>
         <a href="#" class="d-flex flex-row justify-content-between ">
             <div>
-                <p class="my-2 ms-1 fs-6">Título do complemento 2</p>
+                <p class="my-2 ms-1 fs-6">Título do reading 2</p>
             </div>
             <div>
                 <p class="my-2 fs-6">Data de upload: 01/01/2024</p>

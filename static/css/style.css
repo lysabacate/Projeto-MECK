@@ -210,42 +210,53 @@ a{
 }
 
 .popap{
+    color: #F1F1F1;
     display: none;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: white;
-    padding: 20px;
+    background: #171717;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     z-index: 1000;
-    width: 300px ;
-    height: 180px;
+    padding:20px;
 }
 
-.popap #codigo{
-    width: 200px;
+.pesquisa{
+    background-color: #302F2F!important;
+    border-radius: 5px 0px 0px 5px!important;
+}
+.enviar{
+    background-color: #302F2F!important;
+    border-radius: 0px 5px 5px 0px!important;
+}
+.luparoxa{
+    position: relative;
+    bottom: 3px;
+}
+.popap #codigo, .pesquisa, .enviar{
+    color: #F1F1F1;
     padding: 10px;
     margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px 0 0 5px;
+    border-radius: 5px;
     height: 40px;
+    background:#010101;
+    border: none;
 }
 
 .popap #codigo:focus{
     outline: none;
-    border: 2px solid #7641C5
+    color: white;
 }
 
-.popap #confirmButton{
-    background-color: #7641C5;
-    color: white;
+.popap #confirmButton, .popap #cancelButton, .criar-turmas #confirmButton, .criar-turmas #cancelButton{
+    font-size: 16px;
+    color: #A450DB;
     border: none;
-    border-radius: 0 5px 5px 0;
+    background-color: #17171700;
+    border-radius: 5px;
     cursor: pointer;
-    width: 40px;
-    height: 40px;
 }
 
 /* fim do popup */
@@ -275,6 +286,7 @@ a{
 
 
 .conteudo-dashboard-cinza{
+    padding: 20px;
     background: #171717;
     height: 100%;
     box-shadow: inset -1px 75px 14px -65px rgba(0,0,0,0.02);
@@ -501,8 +513,9 @@ a{
 .itematv, .item-material-tipo{
     width: 25%;
 }
-
-
+.add-nome-desc-turma{
+    background-color: #171717;
+}
 
 .atividade{
     width: 100%;
@@ -589,7 +602,7 @@ a{
 
 /*tela das turmas*/
 .conteudo-turmas, .conteudo-listar-turmas{
-    width: 1000px;
+  
 }
 
 .imagem-turma-conteudo{
@@ -616,7 +629,7 @@ a{
 
 .forms-criar-turma .input-roxo, .forms-add-material .input-roxo{
     border-radius: 4px;
-    background: #ADA9A961;
+    background: #010101;
     width: 400px;
     height: 30px;
 }
