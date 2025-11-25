@@ -36,33 +36,59 @@
 {% endblock %}
 
 {% block conteudo %}
-<div class="conteudo-turmas d-flex flex-column gap-2">
-    {% set mensagens = get_flashed_messages() %} 
-    {% if mensagens %} 
-    <div class="d-flex justify-content-center">
-        <div class='alert alertbg text-light d-flex justify-content-center w-50 m-0' role="alert">
-            {% for msg in mensagens %}
-                {{ msg }}
-            {% endfor %}
+
+<div class='container '>
+    <div class="d-flex flex-row justify-content-between align-items-center my-4 ">
+        <div class="d-flex flex-column justify-content-between align-items-start">
+            <h1 class='ingles-titulo text-start'>Nome da turma</h1>
         </div>
-    </div>
-    {% endif %}
-    <div class="d-flex justify-content-between align-items-center w-100">
-        <h1 class="ingles-titulo m-0">Nome da turma</h1>
-        {% if current_user.admin %}<h2 class="codigoturma m-0">Código da turma: {{turma.codigo}}</h2>{% endif %}
+
     </div>
     
-    <div class="d-flex flex-column">
-        <a href="/turmas/{{turma.id}}/materiais">
-            <p class="text-light fw-bold m-0 fs-5">Materiais</p>
+    
+    <div class="materiais-adicionados">
+        <h5 class="border-bottom border-2 text-light my-3 fw-bold">Postagens</h5>
+    
+        <a href="#" class="d-flex flex-row justify-content-between ">
+            <div>
+                <p class="my-2 ms-1 fs-6">Título do reading 1</p>
+            </div>
+            <div class="d-flex gap-5">
+                <div>
+                    <p class="my-2 fs-6 me-5">Material</p>
+                </div>
+                <div>
+                    <p class="my-2 fs-6">Data de upload: 01/01/2024</p>
+                </div>
+            </div>
         </a>
-        <a href="/atividades">
-            <p class="text-light fw-bold m-0 fs-5">Atividades</p>
+        <a href="#" class="d-flex flex-row justify-content-between ">
+            <div>
+                <p class="my-2 ms-1 fs-6">Título do reading 1</p>
+            </div>
+            <div class="d-flex gap-5">
+                <div>
+                    <p class="my-2 fs-6 me-5">Material</p>
+                </div>
+                <div>
+                    <p class="my-2 fs-6">Data de upload: 01/01/2024</p>
+                </div>
+            </div>
         </a>
-        <a href="/links">
-            <p class="text-light fw-bold m-0 fs-5">Links</p>
+        <a href="#" class="d-flex flex-row justify-content-between ">
+            <div>
+                <p class="my-2 ms-1 fs-6">Título do reading 1</p>
+            </div>
+            <div class="d-flex gap-5">
+                <div>
+                    <p class="my-2 fs-6 me-5">Material</p>
+                </div>
+                <div>
+                    <p class="my-2 fs-6">Data de upload: 01/01/2024</p>
+                </div>
+            </div>
         </a>
     </div>
-    <script src="/static/js/script.js"></script>
 </div>
+
 {% endblock %}

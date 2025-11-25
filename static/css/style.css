@@ -36,6 +36,9 @@ a{
 .nosso-nome{
     color: #7641C5;
 }
+.text-roxo{
+    color: #A450DB;
+}
 
 .bg-roxo-claro{
     background-color: #6335A7;
@@ -250,7 +253,7 @@ a{
     color: white;
 }
 
-.popap #confirmButton, .popap #cancelButton, .criar-turmas #confirmButton, .criar-turmas #cancelButton{
+#confirmButton, #cancelButton{
     font-size: 16px;
     color: #A450DB;
     border: none;
@@ -513,10 +516,19 @@ a{
 .itematv, .item-material-tipo{
     width: 25%;
 }
+
+.popap{
+        box-shadow: 0px 0px 50px 700px rgba(0,0,0,0.31)!important;
+
+}
 .add-nome-desc-turma{
     background-color: #171717;
+    width: 400px;
 }
-
+.add-nome-desc-turma #nome_turma{
+    background-color: #000;
+    color: #F1F1F1;
+}
 .atividade{
     width: 100%;
 }
@@ -622,7 +634,7 @@ a{
 /*tela de criar turmas e adicionar materiais*/
 
 .forms-criar-turma .titulo-input, .forms-add-material .titulo-input {
-    color: #7641C5;
+    color: #F1F1F1;
     font-size: 16px;
     font-weight: 700;
 }
