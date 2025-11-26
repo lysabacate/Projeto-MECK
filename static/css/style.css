@@ -349,7 +349,8 @@ a{
 }
 
 .caixa-turma{
-    background-color: #302F2F!important;
+    border:#7641C5 2px solid!important;
+    background-color: #171717!important;
 }
 
 .caixa-turma a:hover , .caixa-turma button:hover{
