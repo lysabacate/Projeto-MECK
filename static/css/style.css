@@ -400,9 +400,14 @@ a{
     border-bottom: 2px solid #A450DB!important;
 }
 .materiais-adicionados a{
-    color: #F1F1F1;
+    color: #F1F1F1!important;
+    transition: color .2s ease!important;
     text-decoration: none;
     border-bottom: 1px solid #4C4A4A!important;
+}
+   
+.materiais-adicionados a:hover{
+    color: #ba75ff!important;
 }
 .materiais-adicionados a::-webkit-input-placeholder{
     color: #ADA9A9;
@@ -532,6 +537,7 @@ a{
 .atividade{
     width: 100%;
 }
+
 .senha{
     background-image: url(/static/img/imagemlogin.png)!important;
     background-repeat: no-repeat;
