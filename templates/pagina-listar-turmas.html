@@ -37,16 +37,16 @@
                     <a href="#" class="d-flex justify-content-end mm" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="/static/img/imagem-engrenagem.svg" alt="">
                     </a>
-                    <ul class="dropdown-menu p-2 dropdown-menu-end" aria-labelledby="userDropdown">
-                        <p class=" opc-turmas fw-bold fs-4 m-0 text-center">Opções</p>
+                    <ul class="dropdown-menu p-2 dropdown-menu-end caixa-turma" aria-labelledby="userDropdown">
+                        <p class=" text-light fw-bold fs-4 m-0 text-center">Opções</p>
 
                         <form action="/turmas/delete/{{t.id}}" method="POST" onsubmit="console.log('Enviando formulário...'); return confirm('Tem certeza que deseja excluir esta turma?');">
-                            <button type="submit" class="dropdown-item opc-turmas fw-normal border-bottom fs-4 align-items-center">
+                            <button type="submit" class="dropdown-item text-light fw-normal border-bottom fs-4 align-items-center">
                                 Excluir Turma
                             </button>
                         </form>
 
-                        <a class="dropdown-item opc-turma s fw-normal fs-4" href="/editar_turma/{{t.id}}">Editar Turma</a>
+                        <a class="dropdown-item text-light fw-normal fs-4" href="/editar_turma/{{t.id}}">Editar Turma</a>
                     </ul>
                 </div>
 

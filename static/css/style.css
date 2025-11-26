@@ -347,16 +347,56 @@ a{
 .navbar{
     height: 62px;
 }
-.opc-turmas{
-    color: #4D2B80!important;
-    
+
+.caixa-turma{
+    background-color: #302F2F!important;
 }
+
+.caixa-turma a:hover , .caixa-turma button:hover{
+    background-color: #010101!important;
+}
+
 
 .form-check-input:checked {
     background-color: #7641C5!important;
     border-color: #7641C5!important;
     color: #7641C5;
 }
+
+.material-img {
+    transition: transform .25s ease; /* animação suave */
+}
+
+.material-img:hover {
+    transform: scale(1.05); /* aumenta 5% */
+}
+
+.material-img{
+    width: 250px!important;
+    height: 66px!important;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.img-video{
+    background-image: url(/static/img/imagem-videos.svg);
+}
+.img-apostila{
+    background-image: url(/static/img/imagem-apostilas.svg);
+}
+.img-writing{
+    background-image: url(/static/img/imagem-writing.svg);
+}
+.img-listening{
+    background-image: url(/static/img/imagem-listening.svg);
+}
+.img-reading{
+    background-image: url(/static/img/imagem-reading.svg);
+}
+
+.text-shadow{
+    text-shadow: #333333 0px 0 5px!important;
+}
+
 
 .scroll-container {
     overflow-x: auto;

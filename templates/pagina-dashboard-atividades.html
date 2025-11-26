@@ -60,12 +60,32 @@
                 </div>
             </form>
         </div>
-        <a href="#" class="d-flex flex-row gap-1 text-decoration-none align-items-center">
-            <img src="/static/img/simbolo-add.svg" alt="">
-            <p class="m-0 text-light fs-5 fw-semibold">Novo Material</p>
-            
+        <div class="dropdown d-flex justify-content-end">
+            <a href="#" class="d-flex flex-row gap-1 text-decoration-none align-items-center" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="/static/img/simbolo-add.svg" alt="">
+                <p class="m-0 text-light fs-5 fw-semibold">Novo Material</p>
+            </a>
 
-        </a>
+            <ul class="dropdown-menu p-3 dropdown-menu-end caixa-turma" aria-labelledby="userDropdown">
+                <div class="d-flex gap-2 flex-column">
+                    <li>
+                        <a class="dropdown-item rounded material-img img-writing d-flex align-items-center justify-content-end text-light fw-normal fs-4" href="#">
+                            <span class="text-shadow fw-bold">Writing</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item rounded material-img img-listening d-flex align-items-center justify-content-end text-light fw-normal fs-4" href="#">
+                            <span class="text-shadow fw-bold">Listening</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item rounded material-img img-reading d-flex align-items-center justify-content-end text-light fw-normal fs-4" href="#">
+                            <span class="text-shadow fw-bold">Reading</span>
+                        </a>
+                    </li>
+                </div>
+            </ul>
+        </div>
     </div>
     <div class="materiais-adicionados link-hover-roxo">
         <h5 class="border-bottom border-2 text-light my-3 fw-bold">Writing</h5>
@@ -75,7 +95,7 @@
                 <p class="my-2 ms-1 fs-6">Título do sdasdda 1</p>
             </div>
             <div>
-                <p class="my-2 fs-6">Data de upload: 01/01/2024</p>
+                <p class="my-2 fs-6">Postado: 28 de ago.</p>
             </div>
         </a>
     </div>
@@ -88,7 +108,7 @@
                 <p class="my-2 ms-1 fs-6">Título da listening 1</p>
             </div>
             <div>
-                <p class="my-2 fs-6">Data de upload: 01/01/2024</p>
+                <p class="my-2 fs-6">Postado: 28 de ago.</p>
             </div>
         </a>
         <a href="#" class="d-flex flex-row justify-content-between ">
@@ -96,7 +116,7 @@
                 <p class="my-2 ms-1 fs-6">Título da listening 2</p>
             </div>
             <div>
-                <p class="my-2 fs-6">Data de upload: 01/01/2024</p>
+                <p class="my-2 fs-6">Postado: 28 de ago.</p>
             </div>
         </a>
     </div>
@@ -109,7 +129,7 @@
                 <p class="my-2 ms-1 fs-6">Título do reading 1</p>
             </div>
             <div>
-                <p class="my-2 fs-6">Data de upload: 01/01/2024</p>
+                <p class="my-2 fs-6">Postado: 28 de ago.</p>
             </div>
         </a>
         <a href="#" class="d-flex flex-row justify-content-between ">
@@ -117,7 +137,7 @@
                 <p class="my-2 ms-1 fs-6">Título do reading 2</p>
             </div>
             <div>
-                <p class="my-2 fs-6">Data de upload: 01/01/2024</p>
+                <p class="my-2 fs-6">Postado: 28 de ago.</p>
             </div>
         </a>
     </div>
