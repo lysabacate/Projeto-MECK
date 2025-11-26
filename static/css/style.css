@@ -365,11 +365,11 @@ a{
 }
 
 .material-img {
-    transition: transform .25s ease; /* animação suave */
+    transition: transform .25s ease; 
 }
 
 .material-img:hover {
-    transform: scale(1.05); /* aumenta 5% */
+    transform: scale(1.05);
 }
 
 .material-img{
@@ -660,9 +660,7 @@ a{
 }
 
 /*tela das turmas*/
-.conteudo-turmas, .conteudo-listar-turmas{
-  
-}
+
 
 .imagem-turma-conteudo{
     width: 320px;
