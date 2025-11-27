@@ -614,7 +614,7 @@ a{
         background-position: center;
         background-size:contain;
     }
-    .busca-dashboard input{
+    .busca-dashboard input{ 
         max-width: 140px;
         border-radius: 3px 0px 0px 3px;
         border: 0;
@@ -687,7 +687,7 @@ a{
 .forms-criar-turma .input-roxo, .forms-add-material .input-roxo{
     border-radius: 4px;
     background: #010101;
-    width: 400px;
+   
     height: 30px;
 }
 

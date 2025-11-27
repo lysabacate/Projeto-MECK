@@ -1,122 +1,193 @@
 {% extends 'pagina-base-dashboard.html' %}
 
-{%block titulo %} Lista de Turmas {% endblock %} 
+{% block titulo %} Lista de Turmas {% endblock %} 
 
 {% block plus %}
-    <a id="openModal" class="nav-link"><img src="{{url_for('static', filename='img/simbolo-add.svg')}}" alt="" class="imagem-add"></a>
+<a id="openModal" class="nav-link" data-bs-toggle="modal" data-bs-target="#modalCriar">
+    <img src="{{ url_for('static', filename='img/simbolo-add.svg') }}" class="imagem-add">
+</a>
 {% endblock %}
 
 {% block conteudo %}
 
 <div class="conteudo-listar-turmas pt-4 container d-flex flex-column gap-2">
+
+    {# FLASH MESSAGES #}
     {% set mensagens = get_flashed_messages() %} 
     {% if mensagens %} 
     <div class="d-flex justify-content-center">
-        <div id = "flash-message" class='alert alertbg text-light d-flex justify-content-center w-50 m-0' role="alert">
+        <div id="flash-message" class='alert alertbg text-light d-flex justify-content-center w-50 m-0' role="alert">
             {% for msg in mensagens %}
                 {{ msg }}
             {% endfor %}
         </div>
     </div>
     {% endif %}
+
     <div class="d-flex justify-content-between align-items-center">
         <h1 class="ingles-titulo d-flex row align-self-start m-0">Turmas</h1>
-        <form class="d-flex ">
+
+        <form class="d-flex">
             <input class="pesquisa" type="search" placeholder="Pesquisar..." aria-label="Search">
             <button class="enviar" type="submit">
                 <img class="luparoxa" src="/static/img/luparoxa.svg" alt="">
             </button>
         </form>
     </div>
+
     <ul class="lista-turmas d-flex gap-3 list-unstyled flex-wrap">
+
         {% for t in turmas %}
-        <li class="p-3 text-decoration-none gap-2 d-flex flex-column justify-content-center"> 
+        <li class="p-3 text-decoration-none gap-2 d-flex flex-column justify-content-center">
             <div class="h-100">
 
                 <div class="dropdown d-flex justify-content-end">
-                    <a href="#" class="d-flex justify-content-end mm" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a href="#" class="d-flex justify-content-end mm" id="userDropdown" role="button" data-bs-toggle="dropdown">
                         <img src="/static/img/imagem-engrenagem.svg" alt="">
                     </a>
-                    <ul class="dropdown-menu p-2 dropdown-menu-end caixa-turma" aria-labelledby="userDropdown">
-                        <p class=" text-light fw-bold fs-4 m-0 text-center">Opções</p>
 
-                        <form action="/turmas/delete/{{t.id}}" method="POST" onsubmit="console.log('Enviando formulário...'); return confirm('Tem certeza que deseja excluir esta turma?');">
-                            <button type="submit" class="dropdown-item text-light fw-normal border-bottom fs-4 align-items-center">
+                    <ul class="dropdown-menu p-2 dropdown-menu-end caixa-turma">
+                        <p class="text-light fw-bold fs-4 m-0 text-center">Opções</p>
+
+                        <form action="/turmas/delete/{{ t.id }}" method="POST"
+                              onsubmit="return confirm('Tem certeza que deseja excluir esta turma?');">
+                            <button type="submit" class="dropdown-item text-light fw-normal border-bottom fs-4">
                                 Excluir Turma
                             </button>
                         </form>
 
-                        <a class="dropdown-item text-light fw-normal fs-4" href="/editar_turma/{{t.id}}">Editar Turma</a>
+                        <a class="dropdown-item text-light fw-normal fs-4" href="/listar_turmas?editar={{ t.id }}">
+                            Editar Turma
+                        </a>
                     </ul>
                 </div>
 
-    
-                <a href="/turma_aluno/{{t.id}}" class="m-0 text-decoration-none">{{t.nome}}</a>
-                <p class="m-0">{{t.nivel}}</p>
+                <a href="/turma_aluno/{{ t.id }}" class="m-0 text-decoration-none">{{ t.nome }}</a>
+                <p class="m-0">{{ t.nivel }}</p>
             </div>
         </li>
         {% endfor %}
     </ul>
-    <div id="popap" class="popap">
-        <div class="add-nome-desc-turma rounded  d-flex flex-column gap-3">
 
-            <h4 class="text-roxo fw-bold">Nova Turma</h4>
+    
+    <!-- Modal Criar Turma -->
+    <div class="modal fade" id="modalCriar" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-light p-4 rounded">
 
-            <div class="mb-2">
-                <label for="nome_turma" class="form-label fs-5 text-light">Nome</label>
-                <input 
-                    type="text" 
-                    class="form-control input-roxo border-0" 
-                    id="nome_turma" 
-                    name="nome_turma"
-                    placeholder="Digite o nome da turma"
-                >
-            </div>
+                <h4 class="text-roxo fw-bold">Nova Turma</h4>
 
-            <div>
-                <p class="text-light fs-5 fw-semibold m-0">Nível</p>
+                <form method="POST" action="/turmas/create" class="d-flex flex-column gap-3 mt-3">
 
-                <div class="d-flex gap-4 flex-wrap">
-
-                    <div class="form-check d-flex align-items-center gap-2">
-                        <input 
-                            class="form-check-input" 
-                            type="radio" 
-                            name="nivel_turma" 
-                            id="ingles1" 
-                            value="Inglês I"
-                        >
-                        <label class="form-check-label text-light" for="ingles1">
-                            Inglês 1
-                        </label>
+                    <div>
+                        <label for="nome_turma" class="form-label fs-5">Nome</label>
+                        <input type="text" class="form-control input-roxo border-0"
+                            id="nome_turma" name="nome_turma" placeholder="Digite o nome da turma">
                     </div>
 
-                    <div class="form-check d-flex align-items-center gap-2">
-                        <input 
-                            class="form-check-input" 
-                            type="radio" 
-                            name="nivel_turma" 
-                            id="ingles2" 
-                            value="Inglês II"
-                        >
-                        <label class="form-check-label text-light" for="ingles2">
-                            Inglês 2
-                        </label>
+                    <div>
+                        <p class="fs-5 fw-semibold m-0">Nível</p>
+                        <div class="d-flex gap-4 flex-wrap">
+
+                            <label class="form-check d-flex align-items-center gap-2">
+                                <input class="form-check-input" type="radio" name="nivel_turma" value="Inglês I">
+                                Inglês 1
+                            </label>
+
+                            <label class="form-check d-flex align-items-center gap-2">
+                                <input class="form-check-input" type="radio" name="nivel_turma" value="Inglês II">
+                                Inglês 2
+                            </label>
+
+                        </div>
                     </div>
 
-                </div>
-            </div>
+                    <div class="d-flex gap-2 justify-content-end mt-2">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Confirmar</button>
+                    </div>
+                </form>
 
-            <div class="d-flex justify-content-end gap-3 ">
-                <button id="cancelButton" class="btn btn-outline-light fw-bold">Cancelar</button>
-                <button id="confirmButton" class="btn btn-roxo fw-bold">Confirmar</button>
             </div>
-
         </div>
     </div>
 
-           
-</div> 
-<script src="/static/js/script.js"></script>
-{% endblock %}
 
+    {% if turma %}
+        <div class="modal fade show" id="modalEditar" tabindex="-1" style="display: block;">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content bg-dark text-light p-4 rounded">
+
+                    <h4 class="text-roxo fw-bold">Editar Turma</h4>
+
+                    <form method="POST" action="/turmas/update/{{ turma.id }}" class="d-flex flex-column gap-4 mt-3">
+
+                        <div>
+                            <label class="form-label">Código</label>
+                            <input class="form-control input-roxo border-0" type="text"
+                                name="codigo_turma" readonly value="{{ turma.codigo }}">
+                        </div>
+
+                        <div>
+                            <label class="form-label">Nome</label>
+                            <input class="form-control input-roxo border-0" type="text"
+                                name="nome_turma" value="{{ turma.nome }}">
+                        </div>
+
+                        <div>
+                            <label class="form-label">Nível</label>
+
+                            <div class="d-flex gap-4">
+                                <label class="form-check d-flex align-items-center gap-2">
+                                    <input type="radio" class="form-check-input"
+                                        name="nivel_turma" value="Inglês I"
+                                        {{ "checked" if turma.nivel == "Inglês I" else "" }}>
+                                    Inglês 1
+                                </label>
+
+                                <label class="form-check d-flex align-items-center gap-2">
+                                    <input type="radio" class="form-check-input"
+                                        name="nivel_turma" value="Inglês II"
+                                        {{ "checked" if turma.nivel == "Inglês II" else "" }}>
+                                    Inglês 2
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-end gap-2">
+                            <a href="/listar_turmas" class="btn btn-secondary">Cancelar</a>
+                            <button type="submit" class="btn btn-primary">Confirmar</button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Força o modal abrir automaticamente -->
+        <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const editarModal = new bootstrap.Modal(document.getElementById("modalEditar"));
+            editarModal.show();
+        });
+        </script>
+    {% endif %}
+
+
+</div>
+
+<script src="/static/js/script.js"></script>
+
+{% if turma %}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("popap").style.display = "flex";});
+    function fecharPopupEditar() {
+        document.getElementById("popap").style.display = "none";
+        window.location.href = "/listar_turmas";}
+</script>
+
+{% endif %}
+
+{% endblock %}

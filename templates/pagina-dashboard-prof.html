@@ -5,7 +5,9 @@
 {% endblock %}
 
 {% block plus %}
-    <a class="nav-link" href="/criar_turma"><img src="{{url_for('static', filename='img/simbolo-add.svg')}}" alt="" class="imagem-add"></a>
+    <a id="openModal" class="nav-link" data-bs-toggle="modal" data-bs-target="#modalCriar">
+        <img src="{{ url_for('static', filename='img/simbolo-add.svg') }}" class="imagem-add">
+    </a>
 {% endblock %}
 
 {% block conteudo %}
@@ -22,9 +24,48 @@
         {% endif %}
         <img src="static/img/capybara-comendo.svg" alt="" class="capivara-comendo">
         <h5 class="ops-texto mx-5">Ops... Você ainda não criou nenhuma turma</h5>
-        <a href="/criar_turma" class="btn text-light roxobg text-align-center fw-bold">Criar turma</a>
+    
+        <a id="openModal" class="btn text-light roxobg text-align-center fw-bold" data-bs-toggle="modal" data-bs-target="#modalCriar">Criar turma</a>
+    </div>
+    <div class="modal fade" id="modalCriar" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-light p-4 rounded">
 
-        
+                <h4 class="text-roxo fw-bold">Nova Turma</h4>
+
+                <form method="POST" action="/turmas/create" class="d-flex flex-column gap-3 mt-3">
+
+                    <div>
+                        <label for="nome_turma" class="form-label fs-5">Nome</label>
+                        <input type="text" class="form-control input-roxo border-0"
+                            id="nome_turma" name="nome_turma" placeholder="Digite o nome da turma">
+                    </div>
+
+                    <div>
+                        <p class="fs-5 fw-semibold m-0">Nível</p>
+                        <div class="d-flex gap-4 flex-wrap">
+
+                            <label class="form-check d-flex align-items-center gap-2">
+                                <input class="form-check-input" type="radio" name="nivel_turma" value="Inglês I">
+                                Inglês 1
+                            </label>
+
+                            <label class="form-check d-flex align-items-center gap-2">
+                                <input class="form-check-input" type="radio" name="nivel_turma" value="Inglês II">
+                                Inglês 2
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-2 justify-content-end mt-2">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Confirmar</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
     </div>
     <script src="/static/js/script.js"></script>
 {% endblock %}

@@ -67,10 +67,21 @@ def dashboard():
     elif current_user.is_authenticated and not current_user.admin:
         return render_template('pagina-dashboard-aluno.html')
 
+'''@app.route('/atividades')
+@login_required
+def atividades():
+    return render_template('pagina-dashboard-atividades.html')'''
 @app.route('/atividades')
 @login_required
 def atividades():
-    return render_template('pagina-dashboard-atividades.html')
+    alunos = {aluno.aluno_id: aluno.turma_id for aluno in Aluno.query.with_entities(Aluno.aluno_id, Aluno.turma_id).all()}
+
+    turma = None
+    if current_user.id in alunos:
+        turma_id = alunos[current_user.id]
+        turma = Turma.query.get(turma_id)
+
+    return render_template('pagina-dashboard-atividades.html', turma=turma)
 
 @app.route('/links')
 @login_required
@@ -98,12 +109,12 @@ def turma_aluno(id):
     return render_template('pagina-turma-aluno.html', turma=turma)
 
 
-@app.route('/criar_turma')
+'''@app.route('/criar_turma')
 @login_required
 def criar_turma():
-    return render_template('pagina-criar-turma.html')
+    return render_template('pagina-criar-turma.html')'''
 
-@app.route('/listar_turmas')
+'''@app.route('/listar_turmas')
 @login_required
 def listar_turma():
     turmas = Turma.query.all()
@@ -111,13 +122,32 @@ def listar_turma():
     if not turmas:
         return redirect('/')
     
-    return render_template('pagina-listar-turmas.html', turmas = turmas)
+    return render_template('pagina-listar-turmas.html', turmas = turmas)'''
+@app.route('/listar_turmas')
+@login_required
+def listar_turma():
+    turmas = Turma.query.all()
 
-@app.route('/editar_turma/<int:id>')
+    # Para abrir o pop-up de edição
+    turma_id = request.args.get("editar")
+    turma = None
+
+    if turma_id:
+        turma = Turma.query.get(turma_id)
+
+    if not turmas:
+        return redirect('/')
+
+    return render_template(
+        'pagina-listar-turmas.html',
+        turmas=turmas,
+        turma=turma  # importante!
+    )
+'''@app.route('/editar_turma/<int:id>')
 @login_required
 def editar_turma(id):
     turma = Turma.query.get(id)
-    return render_template('pagina-editar-turmas.html', turma = turma)
+    return render_template('pagina-editar-turmas.html', turma = turma)'''
 
 @app.route('/listar_materiais/<tipo>')
 def listar_materiais(tipo):

@@ -16,7 +16,7 @@
     </div>
     {% endif %}
     <div class="nav-item active">
-        <a class="materiais d-flex align-items-center gap-1 text-decoration-none" href="#">
+        <a class="materiais d-flex align-items-center gap-1 text-decoration-none" href="{{ url_for('turmas.materiais_opcoes', id=turma.id) }}">
             <img src="{{url_for('static', filename='img/imagem-material.svg')}}" alt="">
             <h6 class="text-light text-center fs-6 my-0" >Materiais</h6>
         </a>
