@@ -123,12 +123,11 @@ def listar_turma():
         return redirect('/')
     
     return render_template('pagina-listar-turmas.html', turmas = turmas)'''
+
 @app.route('/listar_turmas')
 @login_required
 def listar_turma():
     turmas = Turma.query.all()
-
-    # Para abrir o pop-up de edição
     turma_id = request.args.get("editar")
     turma = None
 
@@ -141,7 +140,7 @@ def listar_turma():
     return render_template(
         'pagina-listar-turmas.html',
         turmas=turmas,
-        turma=turma  # importante!
+        turma=turma
     )
 '''@app.route('/editar_turma/<int:id>')
 @login_required

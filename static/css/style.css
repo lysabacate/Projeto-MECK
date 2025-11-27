@@ -261,6 +261,9 @@ a{
     border-radius: 5px;
     cursor: pointer;
 }
+#confirmButton:hover, #cancelButton:hover{
+    color: #7641C5;
+}
 
 /* fim do popup */
 
@@ -684,11 +687,10 @@ a{
     font-weight: 700;
 }
 
-.forms-criar-turma .input-roxo, .forms-add-material .input-roxo{
-    border-radius: 4px;
-    background: #010101;
-   
-    height: 30px;
+.input-roxo{
+    color: #F1F1F1!important;
+    height: 50px;
+    background: #010101!important;
 }
 
 

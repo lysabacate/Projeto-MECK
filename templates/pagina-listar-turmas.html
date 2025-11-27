@@ -81,8 +81,7 @@
 
                     <div>
                         <label for="nome_turma" class="form-label fs-5">Nome</label>
-                        <input type="text" class="form-control input-roxo border-0"
-                            id="nome_turma" name="nome_turma" placeholder="Digite o nome da turma">
+                        <input type="text" class="form-control input-roxo border-0" id="nome_turma" name="nome_turma" placeholder="Digite o nome da turma">
                     </div>
 
                     <div>
@@ -103,8 +102,8 @@
                     </div>
 
                     <div class="d-flex gap-2 justify-content-end mt-2">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-primary">Confirmar</button>
+                        <button type="button" id="cancelButton" class="btn fw-bold fs-5" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" id="confirmButton" class="btn fw-bold fs-5">Confirmar</button>
                     </div>
                 </form>
 
@@ -114,8 +113,8 @@
 
 
     {% if turma %}
-        <div class="modal fade show" id="modalEditar" tabindex="-1" style="display: block;">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal fade" id="modalEditar" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered ">
                 <div class="modal-content bg-dark text-light p-4 rounded">
 
                     <h4 class="text-roxo fw-bold">Editar Turma</h4>
@@ -123,15 +122,15 @@
                     <form method="POST" action="/turmas/update/{{ turma.id }}" class="d-flex flex-column gap-4 mt-3">
 
                         <div>
-                            <label class="form-label">Código</label>
-                            <input class="form-control input-roxo border-0" type="text"
-                                name="codigo_turma" readonly value="{{ turma.codigo }}">
-                        </div>
-
-                        <div>
                             <label class="form-label">Nome</label>
                             <input class="form-control input-roxo border-0" type="text"
                                 name="nome_turma" value="{{ turma.nome }}">
+                        </div>
+
+                        <div class="add-cod-turma  rounded gap-2 d-flex flex-column h-100">
+                            <label for="cod_turma" class="cod_turma m-0 titulo-input d-flex flex-column">Código da turma</label>
+                            <input class="form-control border-0 input-roxo input-roxo-codigo ps-2" type="text" name="codigo_turma" id="cod_turma" readonly value="{{turma.codigo}}">
+                            <button type="button" class="botao-gerar-codigo rounded border-0 fs-6" onclick="gerarCodigo()">Gerar Código</button>
                         </div>
 
                         <div>
@@ -155,8 +154,8 @@
                         </div>
 
                         <div class="d-flex justify-content-end gap-2">
-                            <a href="/listar_turmas" class="btn btn-secondary">Cancelar</a>
-                            <button type="submit" class="btn btn-primary">Confirmar</button>
+                            <a href="/listar_turmas" class="btn fw-bold fs-5" id="cancelButton">Cancelar</a>
+                            <button type="submit" class="btn fw-bold fs-5" id="confirmButton">Confirmar</button>
                         </div>
 
                     </form>
@@ -186,6 +185,7 @@
     function fecharPopupEditar() {
         document.getElementById("popap").style.display = "none";
         window.location.href = "/listar_turmas";}
+    
 </script>
 
 {% endif %}
